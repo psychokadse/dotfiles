@@ -1,0 +1,10 @@
+^/\.git
+
+^/README\.md
+
+# files that belong in /etc
+^/global
+
+# copy these if you like them
+^/wallpapers
+
