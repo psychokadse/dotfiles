@@ -18,3 +18,5 @@ Also install:
 * Htop
 * GIMP
 
+Uninstall:
+* rxvt-unicode-truecolor, it's no good, use standard rxvt-unicode instead
