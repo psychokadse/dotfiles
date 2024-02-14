@@ -4,7 +4,7 @@ Usage:
 * Clone this repo into your stow directory (the parent directory should be the target directory)
 * Run 'mkdir -p .config .local/share' in the target directory to create the required file structure
 * Run 'stow .' in the stow directory
-* If you want to stow global configuration files as well, run a seperate stow on stow directory 'global' and target directory '/etc'
+* If you want to stow global configuration files as well, run a separate stow on stow directory 'global' and target directory '/etc'
 * 'wallpapers' is not intended to be stowed, just copy the desired images to a directory of your choice
 
 Notes:
