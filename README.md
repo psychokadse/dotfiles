@@ -12,20 +12,24 @@ To be used with GNU Stow.
 8. 'wallpapers' is not intended to be stowed, just copy the desired images to a directory of your choice
 
 ## Notes:
+* NetworkManager.service has to be enabled
 * 'global/etc/X11/xorg.conf.d/00-keyboard.conf' should be adjusted to fit keyboard layout
-* 'theme' variable in .config/rofi/launchers/type-3/launcher.sh should be changed to 'style-10'
+* 'theme' variable in .config/rofi/launchers/type-3/launcher.sh should be set to 'style-10'
 
 ## Required packages:
+* dex
 * flameshot
-* i3
+* i3 (group)
 * i3exit (AUR)
 * neovim
+* network-manager-applet
 * nitrogen
 * picom
 * rofi
 * rxvt-unicode
 * stow
 * tmux
+* xss-lock
 * zsh
 
 ## Other dependencies (in order):
