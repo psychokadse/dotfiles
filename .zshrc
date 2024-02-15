@@ -87,7 +87,6 @@ plugins=(
 	rust
 	sudo
 	systemd
-	tmux
 	zsh-autosuggestions 
 	zsh-autocomplete
 )
