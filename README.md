@@ -1,22 +1,37 @@
-To be used with GNU Stow. Usage: * Clone this repo into your stow directory (the parent directory should be the target directory)
-* Run 'mkdir -p .config .local/share' in the target directory to create the required file structure
-* Install packer for neovim according to the instructions on GitHub
-* Open '.config/nvim/lua/psychokadse/packer.lua' in neovim and source it
-* Run ':PackerSync' in nvim to install the necessary packages
-* Run 'stow .' in the stow directory
-* If you want to stow global configuration files as well, run a separate stow on stow directory 'global' and target directory '/etc'
-* 'wallpapers' is not intended to be stowed, just copy the desired images to a directory of your choice
+## Description:
+To be used with GNU Stow.
 
-Notes:
+## Usage: * Clone this repo into your stow directory (the parent directory should be the target directory)
+1. Run 'mkdir -p .config' in the target directory to create the required file structure
+2. Install packer for neovim according to the instructions on GitHub
+3. Open '.config/nvim/lua/psychokadse/packer.lua' in neovim and source it
+4. Run ':PackerSync' in nvim to install the necessary packages
+5. Run 'stow .' in the stow directory
+6. If you want to stow global configuration files as well, run a separate stow on stow directory 'global' and target directory '/etc'
+7. 'wallpapers' is not intended to be stowed, just copy the desired images to a directory of your choice
+
+## Notes:
 * 'global/etc/X11/xorg.conf.d/00-keyboard.conf' should be adjusted to fit keyboard layout
 * 'theme' variable in .config/rofi/launchers/type-3/launcher.sh should be changed to 'style-10'
 
-Also install:
-* Flameshot
-* Discord
-* Thunderbird
-* Htop
-* GIMP
+## Required packages:
+* flameshot
+* i3
+* i3exit (AUR)
+* neovim
+* nitrogen
+* picom
+* rofi
+* rxvt-unicode
+* stow
+* tmux
+* zsh
 
-Uninstall:
-* rxvt-unicode-truecolor, it's no good, use standard rxvt-unicode instead
+## Other dependencies (in order):
+* https://github.com/ohmyzsh/ohmyzsh
+* https://github.com/zdharma-continuum/fast-syntax-highlighting
+* https://github.com/marlonrichert/zsh-autocomplete
+* https://github.com/zsh-users/zsh-autosuggestions
+* https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
+* https://github.com/adi1090x/rofi
+* https://github.com/wbthomason/packer.nvim
