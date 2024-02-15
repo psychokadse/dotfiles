@@ -222,7 +222,7 @@ bindsym $mod+BackSpace mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 
 # Open specific applications in floating mode
-for_window [title="Nitrogen"] floating enable sticky enable border normal
+for_window [title="Nitrogen"] floating enable border normal
 
 # Set window colors		border	backgr.	text	indic.	child_border
 client.focused			#303030 #5F8787 #303030 #5F8787 #5F8787
