@@ -6,10 +6,11 @@ To be used with GNU Stow.
 2. Run 'mkdir -p .config Pictures/wallpapers' in the target directory to create the required file structure
 3. Install the required packages and other dependencies (see below)
 4. Make zsh your default shell
-5. Open '.config/nvim/lua/psychokadse/packer.lua' in neovim and source it
-6. Run ':PackerSync' in nvim to install the necessary packages
+5. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into .dotfiles)
 7. Run 'stow .' in the stow directory
-8. If you want to stow global configuration files as well, run a separate stow on stow directory 'global' and target directory '/etc'
+8. Open '.config/nvim/lua/psychokadse/packer.lua' in Neovim and source it
+6. Run ':PackerSync' in Neovim to install the necessary packages
+9. If you want to stow global configuration files as well, run a separate stow on stow directory 'global' and target directory '/etc'
 
 ## Required packages (pacman with arch repos except AUR):
 * dex
