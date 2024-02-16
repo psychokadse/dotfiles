@@ -3,13 +3,12 @@ To be used with GNU Stow.
 
 ## Usage: 
 1. Clone this repo into your stow directory (the parent directory should be the target directory)
-2. Run 'mkdir -p .config' in the target directory to create the required file structure
+2. Run 'mkdir -p .config Pictures/wallpapers' in the target directory to create the required file structure
 3. Install packer for neovim according to the instructions on GitHub
 4. Open '.config/nvim/lua/psychokadse/packer.lua' in neovim and source it
 5. Run ':PackerSync' in nvim to install the necessary packages
 6. Run 'stow .' in the stow directory
 7. If you want to stow global configuration files as well, run a separate stow on stow directory 'global' and target directory '/etc'
-8. 'wallpapers' is not intended to be stowed, just copy the desired images to a directory of your choice
 
 ## Notes:
 * NetworkManager.service has to be enabled
