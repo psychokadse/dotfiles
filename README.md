@@ -35,13 +35,13 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * zsh
 
 ## Other dependencies (in order):
-* https://github.com/ohmyzsh/ohmyzsh
-* https://github.com/zdharma-continuum/fast-syntax-highlighting
-* https://github.com/marlonrichert/zsh-autocomplete
-* https://github.com/zsh-users/zsh-autosuggestions
-* https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
-* https://github.com/adi1090x/rofi
-* https://github.com/wbthomason/packer.nvim
+1. https://github.com/ohmyzsh/ohmyzsh
+2. https://github.com/zdharma-continuum/fast-syntax-highlighting
+3. https://github.com/marlonrichert/zsh-autocomplete
+4. https://github.com/zsh-users/zsh-autosuggestions
+5. https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
+6. https://github.com/adi1090x/rofi
+7. https://github.com/wbthomason/packer.nvim
 
 ## Notes:
 * `NetworkManager.service` has to be enabled (systemd)
