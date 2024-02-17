@@ -34,7 +34,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * xss-lock
 * zsh
 
-## Other dependencies (in order):
+## Other dependencies (Install these after required packages, follow order of list for ideal installation):
 1. https://github.com/ohmyzsh/ohmyzsh
 2. https://github.com/zdharma-continuum/fast-syntax-highlighting
 3. https://github.com/marlonrichert/zsh-autocomplete
