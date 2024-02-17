@@ -6,7 +6,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 ## Usage: 
 1. Clone this repo into your target directory so it can act as the stow directory
 2. Run `mkdir -p .config Pictures/wallpapers` in the target directory to create the required file structure
-3. Install the required packages and other dependencies ([see below](https://github.com/psychokadse/.dotfiles/edit/main/README.md#requires-packages))
+3. Install the required packages and other dependencies ([see below](https://github.com/psychokadse/.dotfiles/tree/main/README.md#required-packages))
 4. Make Zsh your default shell
 5. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into .dotfiles)
 6. Run `stow .` in the stow directory
@@ -19,7 +19,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 Install these using pacman, ideally from the official Arch repositories.
 Get packages from the AUR where noted.
 Install the yay AUR helper from https://github.com/Jguer/yay for easier installation of AUR packages.
-**When you're done installing these, move on to the [other dependencies](https://github.com/psychokadse/.dotfiles/edit/main/README.md#other-dependencies).**
+**When you're done installing these, move on to the [other dependencies](https://github.com/psychokadse/.dotfiles/tree/main/README.md#other-dependencies).**
 * dex
 * firefox
 * flameshot
