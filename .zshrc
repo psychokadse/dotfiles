@@ -80,13 +80,11 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
 	docker
 	fast-syntax-highlighting
-	git
 	mvn
 	npm
 	pip
 	rust
 	sudo
-	systemd
 	zsh-autosuggestions 
 	zsh-autocomplete
 )
