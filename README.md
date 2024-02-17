@@ -1,12 +1,12 @@
 # About .dotfiles
 ## Description:
-Synchronizing my personal dotfiles and providing a reference for configuring my desktop according to my home machine.
+This repo synchronizes my personal dotfiles and provides a reference for configuring my desktop according to my home machine.
 To be used with GNU Stow on Arch Linux or distros based on Arch that provide pacman.
 
 ## Usage: 
-1. Clone this repo into your stow directory (the parent directory should be the target directory)
+1. Clone this repo into your target directory so it can act as the stow directory
 2. Run `mkdir -p .config Pictures/wallpapers` in the target directory to create the required file structure
-3. Install the required packages and other dependencies (see below)
+3. Install the required packages and other dependencies ([see below](https://github.com/psychokadse/.dotfiles/edit/main/README.md#requires-packages))
 4. Make Zsh your default shell
 5. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into .dotfiles)
 6. Run `stow .` in the stow directory
@@ -15,7 +15,11 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 9. If you want to stow global configuration files as well, run a separate stow on stow directory `.dotfiles/global` and target directory `/etc`
 10. If you included step 9, run `cp -r Pictures/wallpapers /usr/share/wallpapers` as root in the stow directory to make the included wallpapers globally accessible
 
-## Required packages (pacman with arch repos except AUR):
+## Required packages:
+Install these using pacman, ideally from the official Arch repositories.
+Get packages from the AUR where noted.
+Install the yay AUR helper from https://github.com/Jguer/yay for easier installation of AUR packages.
+**When you're done installing these, move on to the [other dependencies](https://github.com/psychokadse/.dotfiles/edit/main/README.md#other-dependencies).**
 * dex
 * firefox
 * flameshot
@@ -34,14 +38,18 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * xss-lock
 * zsh
 
-## Other dependencies (Install these after required packages, follow order of list for ideal installation):
-1. https://github.com/ohmyzsh/ohmyzsh
-2. https://github.com/zdharma-continuum/fast-syntax-highlighting
-3. https://github.com/marlonrichert/zsh-autocomplete
-4. https://github.com/zsh-users/zsh-autosuggestions
-5. https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
-6. https://github.com/adi1090x/rofi
-7. https://github.com/wbthomason/packer.nvim
+## Other dependencies:
+Install these according to the instructions in their respective READMEs on GitHub.
+Make sure you installed all of the required packages above.
+For an ideal installation, follow the list order.
+1. https://github.com/Jguer/yay (if not already installed at this point)
+2. https://github.com/ohmyzsh/ohmyzsh
+3. https://github.com/zdharma-continuum/fast-syntax-highlighting
+4. https://github.com/marlonrichert/zsh-autocomplete
+5. https://github.com/zsh-users/zsh-autosuggestions
+6. https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
+7. https://github.com/adi1090x/rofi
+8. https://github.com/wbthomason/packer.nvim
 
 ## Notes:
 * `NetworkManager.service` has to be enabled (systemd)
