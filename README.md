@@ -6,7 +6,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 ## Usage: 
 1. Clone this repo into your target directory so it can act as the stow directory
 2. Run `mkdir -p .config Pictures/wallpapers` in the target directory to create the required file structure
-3. Install the required packages and other dependencies ([see below](#required-packages))
+3. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
 4. Make Zsh your default shell
 5. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into .dotfiles)
 6. Run `stow .` in the stow directory
