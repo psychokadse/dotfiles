@@ -25,6 +25,8 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * flameshot
 * i3 (group)
 * i3exit (AUR)
+* lightdm
+* lightdm-gtk-greeter
 * neovim
 * network-manager-applet
 * nitrogen
@@ -52,6 +54,6 @@ For an ideal installation, follow the list order.
 8. https://github.com/wbthomason/packer.nvim
 
 ## Notes:
-* `NetworkManager.service` has to be enabled (systemd)
+* `NetworkManager.service` and `lightdm.service` have to be enabled (systemd)
 * `.dotfiles/global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
 * `theme` variable in `.config/rofi/launchers/type-3/launcher.sh` should be set to `'style-10'`
