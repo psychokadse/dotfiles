@@ -15,6 +15,11 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 9. If you want to stow global configuration files as well, run a separate stow on stow directory `.dotfiles/global` and target directory `/etc`
 10. If you included step 9, run `cp -r Pictures/wallpapers /usr/share/wallpapers` as root in the stow directory to make the included wallpapers globally accessible
 
+## Notes:
+* `NetworkManager.service` and `lightdm.service` have to be enabled in systemd
+* `.dotfiles/global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
+* `theme` variable in `.config/rofi/launchers/type-3/launcher.sh` should be set to `'style-10'`
+
 ## Required packages:
 Install these using pacman, ideally from the official Arch repositories.
 Get packages from the AUR where noted.
@@ -67,8 +72,3 @@ For an ideal installation, follow the list order.
 6. https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
 7. https://github.com/adi1090x/rofi
 8. https://github.com/wbthomason/packer.nvim
-
-## Notes:
-* `NetworkManager.service` and `lightdm.service` have to be enabled (systemd)
-* `.dotfiles/global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
-* `theme` variable in `.config/rofi/launchers/type-3/launcher.sh` should be set to `'style-10'`
