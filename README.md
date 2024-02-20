@@ -5,10 +5,10 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 
 ## Usage: 
 1. Clone this repo into your target directory so it can act as the stow directory
-2. Run `mkdir -p .config Pictures/wallpapers` in the target directory to create the required file structure
-3. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
-4. Make Zsh your default shell
-5. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into .dotfiles)
+2. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
+3. Make Zsh your default shell
+4. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into .dotfiles)
+5. Run `mkdir -p .config/i3status Pictures/wallpapers` in the target directory to create the required file structure
 6. Run `stow .` in the stow directory
 7. Open `.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
 8. Run `:PackerSync` in Neovim to install the necessary packages
