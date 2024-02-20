@@ -35,6 +35,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * flameshot
 * fuse2
 * git
+* gvfs
 * i3 (group)
 * i3exit (AUR)
 * lightdm
