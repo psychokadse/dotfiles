@@ -17,7 +17,8 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 
 ## Notes:
 * `NetworkManager.service` and `lightdm.service` have to be enabled in systemd
-* `.dotfiles/global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
+* `global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
+* The `path` in `cpu_temperature 0` inside `.config/i3status/config` may need to be adjusted to your system's temperatur input
 * `theme` variable in `.config/rofi/launchers/type-3/launcher.sh` should be set to `'style-10'`
 * Run xdg-user-dirs-update to create standard XDG desktop directories in your home folder (this won't overwrite any existing files)
 
@@ -32,6 +33,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * dex
 * docker
 * firefox
+* firefox-profile-switcher-connector-bin (AUR)
 * flameshot
 * fuse2
 * git
