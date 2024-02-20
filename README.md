@@ -40,7 +40,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * lightdm-gtk-greeter
 * linux
 * linux-firmware
-* lxsession-gtk3
+* lxsession
 * man-db
 * man-pages
 * neovim
