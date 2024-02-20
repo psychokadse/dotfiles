@@ -47,7 +47,6 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * network-manager-applet
 * nitrogen
 * pavucontrol
-* pcmanfm
 * picom
 * polkit
 * pulseaudio-alsa
@@ -55,6 +54,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * rxvt-unicode
 * sof-firmware
 * stow
+* thunar
 * tmux
 * tree
 * xss-lock
