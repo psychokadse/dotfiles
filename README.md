@@ -32,6 +32,8 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * base-devel
 * dex
 * docker
+* docker-buildx
+* docker-compose
 * firefox
 * firefox-profile-switcher-connector-bin (AUR)
 * flameshot
