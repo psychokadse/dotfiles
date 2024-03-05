@@ -38,6 +38,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * firefox-profile-switcher-connector-bin (AUR)
 * flameshot
 * fuse2
+* gedit
 * git
 * graphviz
 * gvfs
