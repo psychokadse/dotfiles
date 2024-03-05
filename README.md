@@ -39,6 +39,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * flameshot
 * fuse2
 * git
+* graphviz
 * gvfs
 * i3 (group)
 * i3exit (AUR)
@@ -52,17 +53,22 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * neovim
 * network-manager-applet
 * nitrogen
+* openresolv
 * pavucontrol
 * picom
+* plantuml
 * polkit
 * pulseaudio-alsa
 * rofi
 * rxvt-unicode
 * sof-firmware
 * stow
+* strace
 * thunar
 * tmux
 * tree
+* valgrind
+* wireguard-tools
 * xdg-user-dirs
 * xss-lock
 * zsh
