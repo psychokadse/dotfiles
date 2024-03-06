@@ -54,6 +54,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * neovim
 * network-manager-applet
 * nitrogen
+* nmap
 * openresolv
 * pavucontrol
 * picom
