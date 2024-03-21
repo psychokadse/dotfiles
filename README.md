@@ -62,7 +62,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * polkit
 * pulseaudio-alsa
 * rofi
-* rxvt-unicode
+* rxvt-unicode-truecolor-wide-glyphs (AUR)
 * sof-firmware
 * stow
 * strace
