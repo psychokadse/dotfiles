@@ -18,7 +18,8 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 ## Notes:
 * `NetworkManager.service` and `lightdm.service` have to be enabled in systemd
 * `global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
-* The `path` in `cpu_temperature 0` inside `.config/i3status/config` may need to be adjusted to your system's temperatur input
+* The `path` in `cpu_temperature 0` inside `.config/i3status/config` may need to be adjusted to your system's temperature input
+* dunst is configured as a dbus service in `global/usr/share/dbus-1/services/org.freedesktop.Notifications.service`, copy the file to the appropriate location to run it on startup
 * `theme` variable in `.config/rofi/launchers/type-3/launcher.sh` should be set to `'style-10'`
 * Run xdg-user-dirs-update to create standard XDG desktop directories in your home folder (this won't overwrite any existing files)
 
