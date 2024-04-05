@@ -31,6 +31,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * arc-gtk-theme
 * base
 * base-devel
+* bitwarden
 * dex
 * docker
 * docker-buildx
