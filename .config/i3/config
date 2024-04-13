@@ -21,7 +21,7 @@ set $mod Mod4
 font pango:MesloLGS NF 11
 
 # Start picom for compositing and transparence
-exec_always --no-startup-id picom -b --config /etc/xdg/picom.conf
+exec_always --no-startup-id picom
 
 exec_always --no-startup-id lxpolkit
 exec_always --no-startup-id nitrogen --restore 
