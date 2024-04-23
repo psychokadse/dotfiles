@@ -16,7 +16,8 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 10. If you included step 9, run `cp -r Pictures/wallpapers /usr/share/wallpapers` as root in the stow directory to make the included wallpapers globally accessible
 
 ## Notes:
-* `NetworkManager.service` and `lightdm.service` have to be enabled in systemd
+* `NetworkManager.service`, `apparmor.service` and `lightdm.service` have to be enabled in systemd
+* copy `global/etc/default/grub` to `/etc/default/grub` and run `grub-mkconfig -o /boot/grub/grub.cfg` to update the grub configuration
 * `global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
 * The `path` in `cpu_temperature 0` inside `.config/i3status/config` may need to be adjusted to your system's temperature input
 * dunst is configured as a dbus service in `global/usr/share/dbus-1/services/org.freedesktop.Notifications.service`, copy the file to the appropriate location to run it on startup
@@ -28,6 +29,7 @@ Install these using pacman, ideally from the official Arch repositories.
 Get packages from the AUR where noted.
 Install the yay AUR helper from https://github.com/Jguer/yay for easier installation of AUR packages.
 **When you're done installing these, move on to the [other dependencies](#other-dependencies).**
+* apparmor
 * arc-gtk-theme
 * base
 * base-devel
@@ -60,6 +62,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * nmap
 * ntp
 * openresolv
+* os-prober
 * pavucontrol
 * picom
 * plantuml
