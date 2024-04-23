@@ -23,6 +23,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * dunst is configured as a dbus service in `global/usr/share/dbus-1/services/org.freedesktop.Notifications.service`, copy the file to the appropriate location to run it on startup
 * `theme` variable in `.config/rofi/launchers/type-3/launcher.sh` should be set to `'style-10'`
 * Run xdg-user-dirs-update to create standard XDG desktop directories in your home folder (this won't overwrite any existing files)
+* The kernel module `i2c-dev` needs to be loaded in order to use ddcutil
 
 ## Required packages:
 Install these using pacman, ideally from the official Arch repositories.
@@ -34,6 +35,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * base
 * base-devel
 * bitwarden
+* ddcutil
 * dex
 * docker
 * docker-buildx
