@@ -21,7 +21,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * `global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
 * The `path` in `cpu_temperature 0` inside `.config/i3status/config` may need to be adjusted to your system's temperature input
 * dunst is configured as a dbus service in `global/usr/share/dbus-1/services/org.freedesktop.Notifications.service`, copy the file to the appropriate location to run it on startup
-* Run xdg-user-dirs-update to create standard XDG desktop directories in your home folder (this won't overwrite any existing files)
+* Run `xdg-user-dirs-update` to create standard XDG desktop directories in your home folder (this won't overwrite any existing files)
 * The kernel module `i2c-dev` needs to be loaded in order to use ddcutil
 
 ## Required packages:
@@ -36,6 +36,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * bitwarden
 * ddcutil
 * dex
+* discord
 * docker
 * docker-buildx
 * docker-compose
@@ -45,9 +46,12 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * flameshot
 * fuse2
 * gedit
+* gimp
 * git
+* gparted
 * graphviz
 * gvfs
+* htop
 * i3 (group)
 * i3exit (AUR)
 * lightdm
@@ -62,6 +66,8 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * nitrogen
 * nmap
 * ntp
+* nvidia
+* nvidia-settings
 * openresolv
 * os-prober
 * pavucontrol
@@ -78,6 +84,8 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * tmux
 * tree
 * valgrind
+* virtualbox
+* virtualbox-host-modules-arch
 * wireguard-tools
 * xdg-user-dirs
 * xorg-xprop
@@ -96,3 +104,4 @@ For an ideal installation, follow the list order.
 6. https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
 7. https://github.com/adi1090x/rofi
 8. https://github.com/wbthomason/packer.nvim
+9. https://www.jetbrains.com/toolbox-app
