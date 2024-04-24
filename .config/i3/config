@@ -182,7 +182,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10; workspace number 
 
 # Assign applications to specific workspaces
 assign [class="^firefox$"] number $ws1
-assign [class="^Mail$"] number $ws2
+assign [class="^thunderbird$"] number $ws2
 assign [class="^URxvt$"] number $ws3
 assign [class="^Bitwarden$"] number $ws4
 assign [class="^discord$"] number $ws5
