@@ -80,6 +80,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * valgrind
 * wireguard-tools
 * xdg-user-dirs
+* xorg-xprop
 * xss-lock
 * zsh
 
