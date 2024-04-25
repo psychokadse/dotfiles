@@ -2,6 +2,8 @@
 
 ^/README\.md
 
+^/upgrade-all\.bash
+
 # files that belong in /etc
 ^/global
 
