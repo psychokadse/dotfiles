@@ -22,7 +22,7 @@ function ensure-installed {
 	if [[ ! -x $(which $1) ]]
 	then
 		echo "Executable dependency $1 could not be found. Make sure it is installed correctly." 1>&2
-		error=1
+		errno=1
 		return $(false)
 	else
 		return $(true)
