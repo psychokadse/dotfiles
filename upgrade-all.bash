@@ -1,22 +1,39 @@
 #!/bin/bash
 
+# Exit status codes:
+# 0 - All okay, no errors
+# 1 - Executable dependency not found
+# 2 - Required script not found
+# 3 - Script error, script function misused
+
+# Record the exit status
+errno=0
+
 # Notify and exit if dependency isn't found
 function ensure-installed {
 	if [[ $# -ne 1 ]]
 	then
-		echo -e "Function ensure-installed takes exactly one argument, $# given.\nAborting."
-		exit $(false)
+		echo -e "Function ensure-installed takes exactly one argument, $# given.\nAborting." 1>&2
+		errno=3
+		exit $errno
 	fi
 
 	# Dependency must be found and executable
 	if [[ ! -x $(which $1) ]]
 	then
-		echo -e "Executable $1 could not be found. Make sure it is installed correctly.\nAborting." 
-		exit $(false)
+		echo "Executable dependency $1 could not be found. Make sure it is installed correctly." 1>&2
+		error=1
+		return $(false)
 	else
 		return $(true)
 	fi
 }
+
+# Notify about excess arguments
+if [[ $# -ne 0 ]]
+then
+	echo "Script takes no arguments, $# given. Excess arguments are ignored." 1>&2
+fi
 
 # Upgrade all installed pacman packages
 ensure-installed pacman && sudo pacman -Syu
@@ -44,6 +61,9 @@ then
 		# Upgrade via git pull if directory is a git repository
 		git -C $dir rev-parse --is-inside-work-tree 1>/dev/null 2>&1 && git -C $dir pull
 	done
+else
+	echo "oh-my-zsh upgrade tool could not be found at path $OMZ_UPGRADE_TOOL. Make sure it is installed correctly." 1>&2
+	errno=2
 fi
 
-exit 0
+exit $errno
