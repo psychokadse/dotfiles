@@ -33,10 +33,11 @@ then
 	OMZ_CUSTOM=${ZSH_CUSTOM:-$OMZ_HOME/custom}
 
 	# Upgrade custom Zsh plugins
-	find $OMZ_CUSTOM/plugins -mindepth 1 -maxdepth 1 -type d -not -name example |\
-	while read -r dir
+	find $OMZ_CUSTOM/plugins \
+		-mindepth 1 -maxdepth 1 -type d -not -name example \
+		| while read -r dir
 	do
-		git rev-parse --is-inside-work-tree 1>/dev/null 2>&1 && git -C $dir pull
+		git -C $dir rev-parse --is-inside-work-tree 1>/dev/null 2>&1 && git -C $dir pull
 	done
 fi
 
