@@ -6,9 +6,9 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 ## Usage: 
 1. Clone this repo into your target directory so it can act as the stow directory
 2. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
-3. Make Zsh your default shell
+3. Make zsh your default shell
 4. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into .dotfiles)
-5. Run `mkdir -p .config/i3status .config/xfce4/xfconf Pictures/wallpapers` in the target directory to create the required file structure
+5. Run `mkdir -p .config/i3status .config/xfce4/xfconf .ssh Pictures/wallpapers` in the target directory to create the required file structure
 6. Run `stow .` in the stow directory
 7. Open `.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
 8. Run `:PackerSync` in Neovim to install the necessary packages
@@ -23,6 +23,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * dunst is configured as a dbus service in `global/usr/share/dbus-1/services/org.freedesktop.Notifications.service`, copy the file to the appropriate location to run it on startup
 * Run `xdg-user-dirs-update` to create standard XDG desktop directories below your home directory (this won't overwrite any existing files)
 * The kernel module `i2c-dev` needs to be loaded in order to use ddcutil
+* The identity files required in `.ssh/config` need to be generated using `ssh-keygen -t ed25519 -C '<EMAIL_ADDRESS>'`, and the public keys subsequently added to the corresponding GitHub accounts
 
 ## Required packages:
 Install these using pacman, ideally from the official Arch repositories.
