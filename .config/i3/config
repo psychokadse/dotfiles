@@ -186,6 +186,9 @@ assign [class="^thunderbird$"] number $ws2
 assign [class="^URxvt$"] number $ws3
 assign [class="^Bitwarden$"] number $ws4
 assign [class="^discord$"] number $ws5
+assign [class="^jetbrains-(?:idea|pycharm|rider|webstorm)$"] number $ws6
+assign [class="^jetbrains-datagrip$"] number $ws8
+assign [class="^Thunar$"] number $ws9
 
 # Jump to urgent window
 bindsym $mod+x [urgent=latest] focus
