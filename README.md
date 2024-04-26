@@ -43,7 +43,6 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * docker-compose
 * dunst
 * firefox
-* firefox-profile-switcher-connector-bin (AUR)
 * flameshot
 * fuse2
 * gedit
