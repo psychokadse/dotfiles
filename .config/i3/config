@@ -20,6 +20,9 @@ set $mod Mod4
 # font pango:DejaVu Sans Mono 10
 font pango:MesloLGS NF 11
 
+# Set keyboard layouts, in case that's needed here
+# exec_always --no-startup-id setxkbmap us,de
+
 # Start picom for compositing and transparence
 exec --no-startup-id picom
 
@@ -66,11 +69,15 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-set $rofi-theme-dir $HOME/.config/rofi/launchers/type-3
-set $rofi-theme-style style-10
+set $rofi-theme-dir $HOME/.config/rofi/launchers
+set $rofi-theme-type type-1
+set $rofi-theme-style style-6
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -theme $rofi-theme-dir/$rofi-theme-style.rasi -run-command 'i3-msg exec {cmd}'
+bindsym $mod+d exec --no-startup-id rofi \
+	-show drun \
+	-theme $rofi-theme-dir/$rofi-theme-type/$rofi-theme-style.rasi \
+	-run-command 'i3-msg exec {cmd}'
 
 # Used to be:
 # bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-3/launcher.sh
@@ -80,6 +87,9 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -theme $rofi-theme-dir/$rofi
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
+
+bindsym $mod+space exec --no-startup-id xkb-switch -n && \
+	notify-send -u low -t 800 'xkb-switch' "Current layout: $(xkb-switch)"
 
 # change focus
 bindsym $mod+h focus left
@@ -123,7 +133,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# unused and commented out because of duplicate binding
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
