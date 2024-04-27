@@ -8,7 +8,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 2. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
 3. Make zsh your default shell
 4. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into .dotfiles)
-5. Run `mkdir -p .config/i3status .config/xfce4/xfconf .ssh Pictures/wallpapers` in the target directory to create the required file structure
+5. Run `mkdir -p .config/xfce4/xfconf .ssh Pictures/wallpapers` in the target directory to create the required file structure
 6. Run `stow .` in the stow directory
 7. Open `.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
 8. Run `:PackerSync` in Neovim to install the necessary packages
