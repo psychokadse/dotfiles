@@ -106,4 +106,5 @@ For an ideal installation, follow the list order.
 6. https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
 7. https://github.com/adi1090x/rofi
 8. https://github.com/wbthomason/packer.nvim
-9. https://www.jetbrains.com/toolbox-app
+9. https://github.com/grwlf/xkb-switch
+10. https://www.jetbrains.com/toolbox-app
