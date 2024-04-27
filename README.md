@@ -88,6 +88,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * virtualbox-host-modules-arch
 * wireguard-tools
 * xdg-user-dirs
+* xorg-xinit
 * xorg-xprop
 * xorg-xrandr
 * xss-lock
