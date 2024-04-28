@@ -6,6 +6,6 @@
 
 ^/upgrade-all\.bash
 
-# files that belong in /etc
+# system configuration files need to be stowed or copied separately
 ^/global
 
