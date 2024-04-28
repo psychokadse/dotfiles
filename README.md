@@ -55,7 +55,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * gvfs
 * htop
 * i3 (group)
-* i3exit (AUR)
+* imagemagick
 * lightdm
 * lightdm-gtk-greeter
 * linux
