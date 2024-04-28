@@ -239,13 +239,15 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 set $logind systemctl
+set $i3-config-home ~/.config/i3
+set $blurlock blurlock.bash
 
 mode "$mode_system" {
-	bindsym l exec --no-startup-id blurlock, mode "default"
-	bindsym s exec --no-startup-id blurlock && $logind suspend, mode "default"
+	bindsym l exec --no-startup-id $i3-config-home/$blurlock, mode "default"
+	bindsym s exec --no-startup-id $i3-config-home/$blurlock && $logind suspend, mode "default"
 	bindsym u exec --no-startup-id dm-tool switch-to-greeter, mode "default"
 	bindsym e exec --no-startup-id i3-msg exit, mode "default"
-	bindsym h exec --no-startup-id blurlock && $logind hibernate, mode "default"
+	bindsym h exec --no-startup-id $i3-config-home/$blurlock && $logind hibernate, mode "default"
 	bindsym r exec --no-startup-id $logind reboot, mode "default"
 	bindsym Shift+s exec --no-startup-id $logind poweroff, mode "default"
 
