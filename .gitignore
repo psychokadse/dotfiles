@@ -1,0 +1,2 @@
+# Ignore nvim packer plugin installations
+/.config/nvim/plugin/
