@@ -49,5 +49,5 @@ volume master {
 }
 
 tztime local {
-        format = "%F %I:%M:%S %p"
+        format = "%F %r"
 }
