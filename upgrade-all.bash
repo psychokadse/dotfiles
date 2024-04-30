@@ -5,6 +5,7 @@
 # 1 - Executable dependency not found
 # 2 - Required script not found
 # 3 - Script error, script function misused
+# 4 - User error, run as root
 
 # Record the exit status
 errno=0
@@ -33,6 +34,14 @@ function ensure-installed {
 if [[ $# -ne 0 ]]
 then
 	echo "Script takes no arguments, $# given. Excess arguments are ignored." 1>&2
+fi
+
+# Prohibit running script as root
+if [[ $(id -u) -eq 0 ]]
+then
+	echo -e "Script must not be run as root.\nAborting." 1>&2
+	errno=4
+	exit $errno
 fi
 
 # Upgrade all installed pacman packages
