@@ -1,0 +1,8 @@
+[user]
+	name = pkerschbaumer
+	email = paul.kerschbaumer@ausbildung-bbw.de
+	signingkey = paul.kerschbaumer@ausbildung-bbw.de
+[credential "https://github.com/psychokadse"]
+	username = psychokadse
+[credential "https://github.com/pkerschbaumer"]
+	username = pkerschbaumer
