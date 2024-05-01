@@ -45,6 +45,7 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * docker-buildx
 * docker-compose
 * dunst
+* fastfetch
 * firefox
 * flameshot
 * fuse2
