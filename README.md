@@ -3,18 +3,19 @@
 This repo synchronizes my personal dotfiles and provides a reference for configuring my desktop according to my home machine.
 To be used with GNU Stow on Arch Linux or distros based on Arch that provide pacman.
 
-## Usage: 
+## Usage:
 1. Clone this repo into your target directory so it can act as the stow directory
-2. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
-3. Make zsh your default shell
-4. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
-5. Remove `~/.config/i3` and `~/.config/i3status` to ensure the symlinks are created correctly
-6. Run `mkdir -p .config/xfce4/xfconf .ssh Pictures/wallpapers` in the target directory to create the required file structure
-7. Run `stow .` in the stow directory
-8. Open `.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
-9. Run `:PackerSync` in Neovim to install the necessary packages
-10. If you want to stow global configuration files as well, run a separate stow on stow directory `.dotfiles/global` and target directory `/etc`
-11. If you included step 10, run `cp -r Pictures/wallpapers /usr/share/wallpapers` as root in the stow directory to make the included wallpapers globally accessible
+2. Run `curl 'https://archlinux.org/mirrorlist/?country=DE&protocol=https&ip_version=4' | sed '/^#Server/s/^#//' | sudo tee /etc/pacman.d/mirrorlist > /dev/null` to update your pacman mirrors
+3. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
+4. Make zsh your default shell
+5. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
+6. Remove `~/.config/i3` and `~/.config/i3status` to ensure the symlinks are created correctly
+7. Run `mkdir -p .config/xfce4/xfconf .ssh Pictures/wallpapers` in the target directory to create the required file structure
+8. Run `stow .` in the stow directory
+9. Open `.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
+10. Run `:PackerSync` in Neovim to install the necessary packages
+11. If you want to stow global configuration files as well, run a separate stow on stow directory `.dotfiles/global` and target directory `/etc`
+12. If you included step 10, run `cp -r Pictures/wallpapers /usr/share/wallpapers` as root in the stow directory to make the included wallpapers globally accessible
 
 ## Notes:
 * `NetworkManager.service`, `apparmor.service` and `lightdm.service` have to be enabled using `systemctl`
