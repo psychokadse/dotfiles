@@ -54,7 +54,6 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * gparted
 * graphviz
 * gvfs
-* hostname
 * htop
 * i3 (group)
 * imagemagick
