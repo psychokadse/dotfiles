@@ -15,7 +15,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 5. Set your hardware clock to use UTC rather than localtime by running `timedatectl set-local-rtc 0`
 6. Make zsh your default shell
 7. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
-8. Remove `~/.config/i3` and `~/.config/i3status` to ensure the symlinks are created correctly
+8. In the `~/.config` directory, remove the `autostart`, `i3` and `i3status` directories to ensure the symlinks are created correctly
 9. Run `mkdir -p .config/xfce4/xfconf .ssh Pictures/wallpapers` in the target directory to create the required file structure
 10. Run `stow .` in the stow directory
 11. Open `.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
