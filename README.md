@@ -47,7 +47,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 14. If you included step 13, you also have to make the included wallpapers accessible system-wide:
 
       ```sh
-      sudo cp -r Pictures/wallpapers /usr/share/wallpapers
+      sudo cp -r ~/Pictures/wallpapers /usr/share/wallpapers
       ```
 
 ## Notes:
