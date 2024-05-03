@@ -23,13 +23,6 @@ font pango:MesloLGS NF 11
 # Set keyboard layouts, in case that's needed here
 # exec_always --no-startup-id setxkbmap us,de
 
-# Start picom for compositing and transparence
-exec --no-startup-id picom
-
-exec --no-startup-id lxpolkit
-exec_always --no-startup-id nitrogen --restore 
-exec_always --no-startup-id flameshot
-
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec_always --no-startup-id dex --autostart --environment i3
@@ -43,7 +36,7 @@ exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec_always --no-startup-id nm-applet
+# exec_always --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
