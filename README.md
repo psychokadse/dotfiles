@@ -38,18 +38,17 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
    mkdir -p ~/{.ssh,.config/xfce4,Pictures/wallpapers} && rm -fr ~/.config/{autostart,i3,i3status}
    ```
 10. Create symlinks from your home directory to the repository:
-
-   ```sh
-   stow -d ~/.dotfiles .
-   ```
+      ```sh
+      stow -d ~/.dotfiles .
+      ```
 11. Open `~/.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
 12. Run `:PackerSync` in Neovim to install the necessary packages
 13. If you want to stow global configuration files as well, run a separate stow on stow directory `~/.dotfiles/global` and target directory `/etc`
 14. If you included step 13, you also have to make the included wallpapers accessible system-wide:
 
-   ```sh
-   sudo cp -r Pictures/wallpapers /usr/share/wallpapers
-   ```
+      ```sh
+      sudo cp -r Pictures/wallpapers /usr/share/wallpapers
+      ```
 
 ## Notes:
 * copy `global/etc/default/grub` to `/etc/default/grub` and run `grub-mkconfig -o /boot/grub/grub.cfg` to update the grub configuration
