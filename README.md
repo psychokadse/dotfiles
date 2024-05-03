@@ -73,7 +73,6 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * network-manager-applet
 * nitrogen
 * nmap
-* ntp
 * nvidia
 * nvidia-settings
 * openresolv
