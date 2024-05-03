@@ -12,15 +12,16 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
     * `lightdm.service`
     * `NetworkManager.service`
     * `systemd-timesyncd.service`
-5. Make zsh your default shell
-6. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
-7. Remove `~/.config/i3` and `~/.config/i3status` to ensure the symlinks are created correctly
-8. Run `mkdir -p .config/xfce4/xfconf .ssh Pictures/wallpapers` in the target directory to create the required file structure
-9. Run `stow .` in the stow directory
-10. Open `.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
-11. Run `:PackerSync` in Neovim to install the necessary packages
-12. If you want to stow global configuration files as well, run a separate stow on stow directory `.dotfiles/global` and target directory `/etc`
-13. If you included step 10, run `cp -r Pictures/wallpapers /usr/share/wallpapers` as root in the stow directory to make the included wallpapers globally accessible
+5. Set your hardware clock to use UTC rather than localtime by running `timedatectl set-local-rtc 0`
+6. Make zsh your default shell
+7. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
+8. Remove `~/.config/i3` and `~/.config/i3status` to ensure the symlinks are created correctly
+9. Run `mkdir -p .config/xfce4/xfconf .ssh Pictures/wallpapers` in the target directory to create the required file structure
+10. Run `stow .` in the stow directory
+11. Open `.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
+12. Run `:PackerSync` in Neovim to install the necessary packages
+13. If you want to stow global configuration files as well, run a separate stow on stow directory `.dotfiles/global` and target directory `/etc`
+14. If you included step 10, run `cp -r Pictures/wallpapers /usr/share/wallpapers` as root in the stow directory to make the included wallpapers globally accessible
 
 ## Notes:
 * copy `global/etc/default/grub` to `/etc/default/grub` and run `grub-mkconfig -o /boot/grub/grub.cfg` to update the grub configuration
