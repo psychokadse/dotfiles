@@ -1,11 +1,10 @@
+# Stowing the .git directory would cause trouble in target
 ^/\.git
 
+# Only relevant in repository
 ^/\.gitignore
-
 ^/README\.md
-
 ^/upgrade-all\.bash
-
 ^/dependencies\.list
 
 # global git config only here for reference
@@ -13,4 +12,3 @@
 
 # system configuration files need to be stowed or copied separately
 ^/global
-
