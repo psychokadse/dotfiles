@@ -21,13 +21,14 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
    ```
 4. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
 5. Enable the following services using `systemctl` (requires a reboot):
-    * `apparmor.service`
-    * `lightdm.service`
-    * `NetworkManager.service`
-    * `systemd-homed.service`
-    * `systemd-resolved.service`
-    * `systemd-timesyncd.service`
-    
+    * apparmor
+    * lightdm
+    * NetworkManager
+    * systemd-homed
+    * systemd-resolved
+    * systemd-timesyncd
+
+    You can do this using the following the command:
     ```sh
     sudo systemctl enable apparmor lightdm NetworkManager systemd-{homed,resolved,timesyncd}
     ```
