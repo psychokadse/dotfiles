@@ -1,7 +1,7 @@
 # About .dotfiles
 ## Description:
-This repo synchronizes my personal dotfiles and provides a reference for configuring my desktop according to my home machine.
-To be used with GNU Stow on Arch Linux or distros based on Arch that provide pacman.
+This repository synchronizes my personal dotfiles and provides a reference for configuring my desktop based on my home machine.
+To be used with GNU Stow on Arch Linux or distros based on Arch that provide pacman and systemd.
 
 ## Usage:
 1. Clone this repository into your stow directory (`~/.dotfiles`):
@@ -20,13 +20,17 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
    sudo pacman -Syy
    ```
 4. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
-5. Enable the following services using `systemctl`:
+5. Enable the following services using `systemctl` (requires a reboot):
     * `apparmor.service`
     * `lightdm.service`
     * `NetworkManager.service`
     * `systemd-homed.service`
     * `systemd-resolved.service`
     * `systemd-timesyncd.service`
+    
+    ```sh
+    sudo systemctl enable apparmor lightdm NetworkManager systemd-{homed,resolved,timesyncd}
+    ```
 6. Set your hardware clock to use UTC rather than localtime:
 
    ```sh
