@@ -64,76 +64,15 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * dunst is configured as a dbus service in `global/usr/share/dbus-1/services/org.freedesktop.Notifications.service`, copy the file to the appropriate location to run it on startup
 * Run `xdg-user-dirs-update` to create standard XDG desktop directories below your home directory (this won't overwrite any existing files)
 * The kernel module `i2c-dev` needs to be loaded in order to use `ddcutil`
-* The identity files required in `.ssh/config` need to be generated using `ssh-keygen -t ed25519 -C '<EMAIL_ADDRESS>'`, and the public keys subsequently added to the corresponding GitHub accounts
+* The identity files required in `.ssh/config` need to be generated using `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`, and the public keys subsequently added to the corresponding GitHub accounts
 * `global/etc/ld.so.conf` mirrors the necessary configuration to provide `xkb-switch` with the required shared objects created during the system-wide installation
 
 ## Required packages:
 Install these using pacman, ideally from the official Arch repositories.
 Get packages from the AUR where noted.
 Install the yay AUR helper from https://github.com/Jguer/yay for easier installation of AUR packages.
+A complete list of required packages is provided in [dependencies.list](/dependencies.list).
 **When you're done installing these, move on to the [other dependencies](#other-dependencies).**
-* accountsservice
-* apparmor
-* arc-gtk-theme
-* base
-* base-devel
-* bitwarden
-* ddcutil
-* dex
-* discord
-* docker
-* docker-buildx
-* docker-compose
-* dunst
-* fastfetch
-* firefox
-* flameshot
-* fuse2
-* gedit
-* gimp
-* git
-* gparted
-* graphviz
-* gvfs
-* htop
-* i3 (group)
-* imagemagick
-* lightdm-gtk-greeter
-* linux
-* linux-firmware
-* lxsession
-* man-db
-* man-pages
-* neovim
-* network-manager-applet
-* nitrogen
-* nmap
-* nvidia
-* nvidia-settings
-* openresolv
-* os-prober
-* pavucontrol
-* picom
-* plantuml
-* pulseaudio-alsa
-* rofi
-* rxvt-unicode-truecolor-wide-glyphs (AUR)
-* sof-firmware
-* stow
-* strace
-* thunar
-* tmux
-* tree
-* valgrind
-* virtualbox
-* virtualbox-host-modules-arch
-* wireguard-tools
-* xdg-user-dirs
-* xorg-xinit
-* xorg-xprop
-* xorg-xrandr
-* xss-lock
-* zsh
 
 ## Other dependencies:
 Install these according to the instructions in their respective READMEs on GitHub.
