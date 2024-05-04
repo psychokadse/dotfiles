@@ -65,6 +65,7 @@ Install these using pacman, ideally from the official Arch repositories.
 Get packages from the AUR where noted.
 Install the yay AUR helper from https://github.com/Jguer/yay for easier installation of AUR packages.
 **When you're done installing these, move on to the [other dependencies](#other-dependencies).**
+* accountsservice
 * apparmor
 * arc-gtk-theme
 * base
@@ -90,7 +91,6 @@ Install the yay AUR helper from https://github.com/Jguer/yay for easier installa
 * htop
 * i3 (group)
 * imagemagick
-* lightdm
 * lightdm-gtk-greeter
 * linux
 * linux-firmware
