@@ -42,7 +42,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 9. Create the required directory structure in your home directory to ensure the symlinks are created correctly:
 
    ```sh
-   mkdir -p ~/{.ssh,.config/xfce4,Pictures/wallpapers} && rm -fr ~/.config/{autostart,i3,i3status}
+   mkdir -p ~/{.ssh,.config/xfce4,Pictures} && rm -fr ~/.config/{autostart,i3,i3status}
    ```
 10. Create symlinks from your home directory to the repository:
       ```sh
