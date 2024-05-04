@@ -6,6 +6,8 @@
 
 ^/upgrade-all\.bash
 
+^/dependencies\.list
+
 # global git config only here for reference
 ^/\.gitconfig
 
