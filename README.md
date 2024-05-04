@@ -24,6 +24,8 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
     * `apparmor.service`
     * `lightdm.service`
     * `NetworkManager.service`
+    * `systemd-homed.service`
+    * `systemd-resolved.service`
     * `systemd-timesyncd.service`
 6. Set your hardware clock to use UTC rather than localtime:
 
