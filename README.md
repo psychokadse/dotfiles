@@ -37,7 +37,10 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
    ```sh
    timedatectl set-local-rtc 0
    ```
-8. Make zsh your default shell
+8. Make zsh your default shell:
+   ```sh
+   chsh -s /usr/bin/zsh
+   ```
 9. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
 10. Create the required directory structure in your home directory to ensure the symlinks are created correctly:
       ```sh
@@ -47,11 +50,14 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
     ```sh
     stow -d ~/.dotfiles .
     ```
-12. Open `~/.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
-13. Run `:PackerSync` in Neovim to install the necessary packages
-14. If you want to stow global configuration files as well, run a separate stow on stow directory `~/.dotfiles/global` and target directory `/etc`
-15. If you included step 13, you also have to make the included wallpapers accessible system-wide:
+12. Source `~/.config/nvim/lua/psychokadse/packer.lua` in neovim and run `:PackerSync` to install the required packages.
 
+    This can be done as a shell one-liner:
+    ```sh
+    nvim -c ':so ~/.config/nvim/lua/psychokadse/packer.lua | :PackerSync'
+    ```
+13. If you want to stow global configuration files as well, run a separate stow on stow directory `~/.dotfiles/global` and target directory `/etc`
+14. If you included step 13, you also have to make the included wallpapers accessible system-wide:
     ```sh
     sudo cp -r ~/Pictures/wallpapers /usr/share/wallpapers
     ```
