@@ -5,17 +5,14 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 
 ## Usage:
 1. Clone this repository into your stow directory (`~/.dotfiles`):
-
    ```sh
    git clone https://github.com/psychokadse/.dotfiles.git ~/.dotfiles
    ```
 2. Update your pacman mirrors and enable all servers:
-
    ```sh
    curl 'https://archlinux.org/mirrorlist/?country=DE&protocol=https&ip_version=4' | sed '/^#Server/s/^#//' | sudo tee /etc/pacman.d/mirrorlist > /dev/null
    ```
 3. Force pacman to refresh its database:
-
    ```sh
    sudo pacman -Syy
    ```
@@ -32,30 +29,32 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
     ```sh
     sudo systemctl enable apparmor lightdm NetworkManager systemd-{homed,resolved,timesyncd}
     ```
-6. Set your hardware clock to use UTC rather than localtime:
-
+6. Enable pulseaudio for your user so it starts automatically when a client attempts to connect:
+   ```sh
+   systemctl --user enable --now pulseaudio.socket
+   ```
+7. Set your hardware clock to use UTC rather than localtime:
    ```sh
    timedatectl set-local-rtc 0
    ```
-7. Make zsh your default shell
-8. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
-9. Create the required directory structure in your home directory to ensure the symlinks are created correctly:
-
-   ```sh
-   mkdir -p ~/{.ssh,.config/xfce4,Pictures} && rm -fr ~/.config/{autostart,i3,i3status}
-   ```
-10. Create symlinks from your home directory to the repository:
+8. Make zsh your default shell
+9. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
+10. Create the required directory structure in your home directory to ensure the symlinks are created correctly:
       ```sh
-      stow -d ~/.dotfiles .
+      mkdir -p ~/{.ssh,.config/xfce4,Pictures} && rm -fr ~/.config/{autostart,i3,i3status}
       ```
-11. Open `~/.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
-12. Run `:PackerSync` in Neovim to install the necessary packages
-13. If you want to stow global configuration files as well, run a separate stow on stow directory `~/.dotfiles/global` and target directory `/etc`
-14. If you included step 13, you also have to make the included wallpapers accessible system-wide:
+11. Create symlinks from your home directory to the repository:
+    ```sh
+    stow -d ~/.dotfiles .
+    ```
+12. Open `~/.config/nvim/lua/psychokadse/packer.lua` in Neovim and source it
+13. Run `:PackerSync` in Neovim to install the necessary packages
+14. If you want to stow global configuration files as well, run a separate stow on stow directory `~/.dotfiles/global` and target directory `/etc`
+15. If you included step 13, you also have to make the included wallpapers accessible system-wide:
 
-      ```sh
-      sudo cp -r ~/Pictures/wallpapers /usr/share/wallpapers
-      ```
+    ```sh
+    sudo cp -r ~/Pictures/wallpapers /usr/share/wallpapers
+    ```
 
 ## Notes:
 * copy `global/etc/default/grub` to `/etc/default/grub` and run `grub-mkconfig -o /boot/grub/grub.cfg` to update the grub configuration
