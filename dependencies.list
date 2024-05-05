@@ -11,6 +11,7 @@ docker
 docker-buildx
 docker-compose
 dunst
+efibootmgr
 fastfetch
 firefox
 flameshot
