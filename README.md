@@ -82,14 +82,14 @@ A complete list of required packages is provided in [dependencies.list](/depende
 ## Other dependencies:
 Install these according to the instructions in their respective READMEs on GitHub.
 Make sure you installed all of the required packages above.
+Install zsh plugins into `.config/zsh/plugins` and zsh themes into `.config/zsh/themes`.
 For an ideal installation, follow the list order.
 1. https://github.com/Jguer/yay (if not already installed at this point)
-2. https://github.com/ohmyzsh/ohmyzsh
-3. https://github.com/zdharma-continuum/fast-syntax-highlighting
-4. https://github.com/marlonrichert/zsh-autocomplete
-5. https://github.com/zsh-users/zsh-autosuggestions
-6. https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
-7. https://github.com/adi1090x/rofi
-8. https://github.com/wbthomason/packer.nvim
-9. https://github.com/grwlf/xkb-switch (use the system-wide install)  
-10. https://www.jetbrains.com/toolbox-app
+2. https://github.com/zdharma-continuum/fast-syntax-highlighting
+3. https://github.com/marlonrichert/zsh-autocomplete
+4. https://github.com/zsh-users/zsh-autosuggestions
+5. https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
+6. https://github.com/adi1090x/rofi
+7. https://github.com/wbthomason/packer.nvim
+8. https://github.com/grwlf/xkb-switch (use the system-wide install)  
+9. https://www.jetbrains.com/toolbox-app
