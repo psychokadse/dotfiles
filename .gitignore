@@ -6,3 +6,6 @@
 
 # Ignore zsh theme installations
 /.config/zsh/themes/
+
+# Ignore zcompdump files
+/.config/zsh/*.zcompdump
