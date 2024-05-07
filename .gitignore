@@ -1,2 +1,8 @@
 # Ignore nvim packer plugin installations
 /.config/nvim/plugin/
+
+# Ignore zsh plugin installations
+/.config/zsh/plugins/
+
+# Ignore zsh theme installations
+/.config/zsh/themes/
