@@ -17,7 +17,7 @@ DUMP_FILE=$ZSH_COMPDUMP
 
 # Compile completions into compdump
 if [[ -s $DUMP_FILE(#qN.mh+24) && (! -s "$DUMP_FILE.zwc" || "$DUMP_FILE" -nt "$DUMP_FILE.zwc") ]]; then
-	compinit -i d $ZSH_COMPDUMP
+	compinit -i -d $ZSH_COMPDUMP
 	zrecompile $ZSH_COMPDUMP
 fi
 
