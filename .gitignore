@@ -8,4 +8,4 @@
 /.config/zsh/themes/
 
 # Ignore zcompdump files
-/.config/zsh/*.zcompdump
+/.config/zsh/*.zcompdump*
