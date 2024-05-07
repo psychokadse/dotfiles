@@ -5,21 +5,34 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Set path to zsh custom config directory
-export ZSH_CUSTOM=~/.config/zsh
+ZSH_PLUGINS=$ZDOTDIR/plugins
+ZSH_THEMES=$ZDOTDIR/themes
+ZSH_ALIASES_FILE=$ZDOTDIR/aliases.zsh
 
-ZSH_PLUGINS=$ZSH_CUSTOM/plugins
-ZSH_THEMES=$ZSH_CUSTOM/themes
-ZSH_ALIASES_FILE=$ZSH_CUSTOM/aliases.zsh
+# Load functions necessary for compdump
+autoload -Uz zrecompile
+autoload -Uz compinit
+
+DUMP_FILE=$ZSH_COMPDUMP
+
+# Compile completions into compdump
+if [[ -s $DUMP_FILE(#qN.mh+24) && (! -s "$DUMP_FILE.zwc" || "$DUMP_FILE" -nt "$DUMP_FILE.zwc") ]]; then
+	compinit -i d $ZSH_COMPDUMP
+	zrecompile $ZSH_COMPDUMP
+fi
+
+compinit -C
 
 function source_zsh_plugin () {
-	local CURRENT_PLUGIN=$ZSH_PLUGINS/$1/$1.plugin.zsh
-	[[ -n $1 ]] && source $CURRENT_PLUGIN # && echo "Sourced plugin $CURRENT_PLUGIN"
+	[[ -n $1 ]] \
+		&& local CURRENT_PLUGIN=$ZSH_PLUGINS/$1/$1.plugin.zsh \
+		&& source $CURRENT_PLUGIN
 }
 
 function source_zsh_theme () {
-	local CURRENT_THEME=$ZSH_THEMES/$1/$1.zsh-theme
-	[[ -n $1 ]] && source $CURRENT_THEME # && echo "Sourced theme $CURRENT_THEME"
+	[[ -n $1 ]] \
+		&& local CURRENT_THEME=$ZSH_THEMES/$1/$1.zsh-theme \
+		&& source $CURRENT_THEME
 }
 
 # Load zsh plugins
@@ -73,7 +86,7 @@ bindkey -M menuselect 'l' vi-forward-char
 
 # Enable editing of command line in standard editor
 # Load the edit-command-line widget and bind it to a key sequence
-autoload -z edit-command-line
+autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
