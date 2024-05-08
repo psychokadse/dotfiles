@@ -9,3 +9,6 @@
 
 # Ignore zcompdump files
 /.config/zsh/*.zcompdump*
+
+# JetBrains Toolbox paths can't be used with different users
+/.config/autostart/jetbrains-toolbox.desktop
