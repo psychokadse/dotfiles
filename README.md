@@ -87,8 +87,9 @@ For an ideal installation, follow the list order.
 2. https://github.com/zdharma-continuum/fast-syntax-highlighting
 3. https://github.com/marlonrichert/zsh-autocomplete
 4. https://github.com/zsh-users/zsh-autosuggestions
-5. https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
-6. https://github.com/adi1090x/rofi
-7. https://github.com/wbthomason/packer.nvim
-8. https://github.com/grwlf/xkb-switch (use the system-wide install)  
-9. https://www.jetbrains.com/toolbox-app
+5. https://github.com/zsh-users/zsh-completions
+6. https://github.com/romkatv/powerlevel10k (the recommended fonts are required!)
+7. https://github.com/adi1090x/rofi
+8. https://github.com/wbthomason/packer.nvim
+9. https://github.com/grwlf/xkb-switch (use the system-wide install)  
+10. https://www.jetbrains.com/toolbox-app
