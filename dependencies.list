@@ -16,6 +16,7 @@ fastfetch
 firefox
 flameshot
 fuse2
+fzf
 gedit
 gimp
 git
@@ -28,6 +29,7 @@ i3blocks
 i3lock
 i3status
 imagemagick
+lf
 lightdm-gtk-greeter
 linux
 linux-firmware
