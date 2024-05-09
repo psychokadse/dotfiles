@@ -7,7 +7,12 @@ fi
 
 ZSH_PLUGINS=$ZDOTDIR/plugins
 ZSH_THEMES=$ZDOTDIR/themes
-ZSH_ALIASES_FILE=$ZDOTDIR/aliases.zsh
+
+# Set zsh internal options
+setopt SHARE_HISTORY # Share history between sessions, don't overwrite history
+setopt BANG_HIST
+setopt HIST_REDUCE_BLANKS
+setopt EXTENDED_GLOB
 
 # Load functions necessary for compdump
 autoload -Uz zrecompile
@@ -96,12 +101,6 @@ export HISTFILE=~/.zsh_history
 HISTSIZE=20000
 SAVEHIST=$HISTSIZE
 
-# Set zsh internal options
-setopt SHARE_HISTORY # Share history between sessions, don't overwrite history
-setopt BANG_HIST
-setopt HIST_REDUCE_BLANKS
-setopt EXTENDED_GLOB
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -121,7 +120,7 @@ setopt EXTENDED_GLOB
 # export ARCHFLAGS="-arch x86_64"
 
 # Source custom aliases
-[[ -f $ZSH_ALIASES_FILE ]] && source $ZSH_ALIASES_FILE
+[[ -f ${ZDOTDIR}/aliases.zsh ]] && source ${ZDOTDIR}/aliases.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit $ZDOTDIR/.p10k.zsh.
+[[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
