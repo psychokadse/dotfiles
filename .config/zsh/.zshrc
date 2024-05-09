@@ -40,6 +40,9 @@ function source_zsh_theme () {
 		&& source $CURRENT_THEME
 }
 
+# Add zsh-completions by adding it to the $fpath
+fpath=("${ZSH_PLUGINS}/zsh-completions/src" $fpath)
+
 # Load zsh plugins
 source_zsh_plugin fast-syntax-highlighting
 source_zsh_plugin zsh-autocomplete
@@ -100,9 +103,6 @@ bindkey '^X^E' edit-command-line
 export HISTFILE=~/.zsh_history
 HISTSIZE=20000
 SAVEHIST=$HISTSIZE
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
