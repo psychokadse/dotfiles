@@ -62,15 +62,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-set $rofi-theme-dir $HOME/.config/rofi/launchers
-set $rofi-theme-type type-1
-set $rofi-theme-style style-6
-
-# start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi \
-	-show drun \
-	-theme $rofi-theme-dir/$rofi-theme-type/$rofi-theme-style.rasi \
-	-run-command 'i3-msg exec {cmd}'
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Used to be:
 # bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-3/launcher.sh

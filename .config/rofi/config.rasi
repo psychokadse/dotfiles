@@ -46,9 +46,9 @@ configuration {
     }
 
 	/*---------- Run settings ----------*/
-	run-command: "{cmd}";
+	run-command: "i3-msg exec {cmd}";
 	run-list-command: "";
-	run-shell-command: "{terminal} -e {cmd}";
+	run-shell-command: "{terminal} -e i3-msg exec {cmd}";
 
 	/*---------- Fallback Icon ----------*/
 	run,drun {
@@ -83,7 +83,7 @@ configuration {
 
 	/*---------- Misc setting ----------*/
 	terminal: "rofi-sensible-terminal";
-	font: "Mono 12";
+	font: "MesloLGS NF 11";
 	sort: false;
 	threads: 0;
 	click-to-exit: true;
@@ -95,6 +95,7 @@ configuration {
 /*	  directory: "/home";*/
       directories-first: true;
       sorting-method:    "name";
+	  show-hidden: true;
     }
 
 	/*---------- Other settings ----------*/
@@ -125,8 +126,8 @@ configuration {
 	kb-accept-custom-alt: "Control+Shift+Return";
 	kb-accept-alt: "Shift+Return";
 	kb-delete-entry: "Shift+Delete";
-	kb-mode-next: "Shift+Right,Control+Tab";
-	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";
+	kb-mode-next: "Alt+l,Shift+Right,Control+Tab";
+	kb-mode-previous: "Alt+h,Shift+Left,Control+ISO_Left_Tab";
 	kb-mode-complete: "Control+l";
 	kb-row-left: "Control+Page_Up";
 	kb-row-right: "Control+Page_Down";
@@ -179,3 +180,4 @@ configuration {
 	me-accept-custom: "Control+MouseDPrimary";
 */
 }
+@theme "launchers/type-1/style-6"
