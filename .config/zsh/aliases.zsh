@@ -1,4 +1,5 @@
 alias grep='grep --color=auto'
+alias less='less -R'
 alias ls='ls --color=auto'
 alias la='ls -Ahl'
 alias tmux='tmux -u2'
