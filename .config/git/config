@@ -1,8 +1,21 @@
-[user]
-	name = pkerschbaumer
-	email = paul.kerschbaumer@ausbildung-bbw.de
-	signingkey = paul.kerschbaumer@ausbildung-bbw.de
+[commit]
+	gpgsign = true
 [credential "https://github.com/psychokadse"]
 	username = psychokadse
 [credential "https://github.com/pkerschbaumer"]
 	username = pkerschbaumer
+[diff]
+	tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[merge]
+	tool = nvimmerge
+[mergetool]
+	keepBackup = false
+[mergetool "nvimmerge"]
+	cmd = "nvim -d \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\""
+	trustExitCode = false
+[user]
+	name = pkerschbaumer
+	email = paul.kerschbaumer@ausbildung-bbw.de
+	signingkey = paul.kerschbaumer@ausbildung-bbw.de
