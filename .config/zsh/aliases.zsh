@@ -1,3 +1,4 @@
+alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias less='less -R'
 alias ls='ls --color=auto'
