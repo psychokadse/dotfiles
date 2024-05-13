@@ -12,7 +12,7 @@ ZSH_THEMES=$ZDOTDIR/themes
 setopt SHARE_HISTORY # Share history between sessions, don't overwrite history
 setopt BANG_HIST
 setopt HIST_REDUCE_BLANKS
-setopt EXTENDED_GLOB
+setopt EXTENDED_GLOB # Set temporarily for compiling completions
 
 # Load functions necessary for compdump
 autoload -Uz zrecompile
@@ -27,6 +27,8 @@ if [[ -s $DUMP_FILE(#qN.mh+24) && (! -s "$DUMP_FILE.zwc" || "$DUMP_FILE" -nt "$D
 fi
 
 compinit -C
+
+unsetopt EXTENDED_GLOB
 
 function source_zsh_plugin () {
 	[[ -n $1 ]] \
