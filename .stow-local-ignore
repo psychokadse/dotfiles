@@ -3,6 +3,7 @@
 
 # Only relevant in repository
 ^/\.gitignore
+^/\.gitmodules
 ^/README\.md
 ^/upgrade-all\.bash
 ^/dependencies\.list
