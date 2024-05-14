@@ -61,6 +61,7 @@ unzip
 valgrind
 virtualbox
 virtualbox-host-modules-arch
+vlc
 wireguard-tools
 xdg-user-dirs
 xorg-xinit
