@@ -17,6 +17,7 @@ firefox
 flameshot
 fuse2
 fzf
+gdb
 gedit
 gimp
 git
@@ -24,10 +25,10 @@ gparted
 graphviz
 gvfs
 htop
-i3-wm
 i3blocks
 i3lock
 i3status
+i3-wm
 imagemagick
 lf
 lightdm-gtk-greeter
