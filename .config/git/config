@@ -1,19 +1,30 @@
+[alias]
+	graph = log --graph --oneline
+[blame]
+	coloring = repeatedLines
 [commit]
 	gpgsign = true
+[core]
+	editor = nvim
+	pager = less
 [credential "https://github.com/psychokadse"]
 	username = psychokadse
 [credential "https://github.com/pkerschbaumer"]
 	username = pkerschbaumer
 [diff]
 	tool = nvimdiff
-[difftool "nvimdiff"]
-	cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[difftool]
+	prompt = false
+[fetch]
+	prune = true
+	pruneTags = true
 [merge]
 	tool = nvimmerge
 [mergetool]
 	keepBackup = false
+	prompt = false
 [mergetool "nvimmerge"]
-	cmd = "nvim -d \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\""
+	cmd = nvim -d "$MERGED" "$LOCAL" "$BASE" "$REMOTE"
 	trustExitCode = false
 [user]
 	name = pkerschbaumer
