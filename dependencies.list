@@ -57,6 +57,7 @@ strace
 thunar
 tmux
 tree
+unzip
 valgrind
 virtualbox
 virtualbox-host-modules-arch
@@ -66,4 +67,5 @@ xorg-xinit
 xorg-xprop
 xorg-xrandr
 xss-lock
+zip
 zsh
