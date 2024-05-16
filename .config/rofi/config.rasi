@@ -46,9 +46,9 @@ configuration {
     }
 
 	/*---------- Run settings ----------*/
-	run-command: "i3-msg exec {cmd}";
+	run-command: "i3-msg exec \"{cmd}\"";
 	run-list-command: "";
-	run-shell-command: "{terminal} -e i3-msg exec {cmd}";
+	run-shell-command: "{terminal} -e i3-msg exec \"{cmd}\"";
 
 	/*---------- Fallback Icon ----------*/
 	run,drun {
