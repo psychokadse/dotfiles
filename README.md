@@ -41,6 +41,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
     ```sh
     git submodule update --init --remote
     ```
+    This needs to be run in the repository's root directory (`~/.dotfiles`) for git to interpret the submodule paths correctly.
     The required fonts for powerlevel10k still need to be installed manually.
 9. Make zsh your default shell:
    ```sh
@@ -75,6 +76,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * The kernel module `i2c-dev` needs to be loaded in order to use `ddcutil`
 * The identity files required in `.ssh/config` need to be generated using `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`, and the public keys subsequently added to the corresponding GitHub accounts
 * `global/etc/ld.so.conf` mirrors the necessary configuration to provide `xkb-switch` with the required shared objects created during the system-wide installation
+* Run `git submodule update --remote` in the `~/.dotfiles` directory to update all submodules to the most recent commit on the remote tracking branch
 
 ## Required packages:
 Install these using pacman, ideally from the official Arch repositories.
