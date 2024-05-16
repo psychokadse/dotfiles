@@ -37,9 +37,9 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
    ```sh
    timedatectl set-local-rtc 0
    ```
-8. Initialize and update the submodules defined in the repository:
+8. Initialize and update the submodules defined in the repository with the most recent commit on the remote tracking branch:
     ```sh
-    git submodule update --init
+    git submodule update --init --remote
     ```
     The required fonts for powerlevel10k still need to be installed manually.
 9. Make zsh your default shell:
