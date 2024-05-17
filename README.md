@@ -19,6 +19,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 4. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
 5. Enable the following services using `systemctl` (requires a reboot):
     * apparmor
+    * cronie
     * lightdm
     * NetworkManager
     * systemd-homed
@@ -27,7 +28,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 
     You can do this using the following the command:
     ```sh
-    sudo systemctl enable apparmor lightdm NetworkManager systemd-{homed,resolved,timesyncd}
+    sudo systemctl enable apparmor cronie lightdm NetworkManager systemd-{homed,resolved,timesyncd}
     ```
 6. Enable pulseaudio for your user so it starts automatically when a client attempts to connect:
    ```sh
