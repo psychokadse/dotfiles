@@ -73,11 +73,14 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # Set vi insert mode key bindings for command line editing
 bindkey -v
 
+# Disable entering vicmd mode using `alt`
+bindkey -r '^['
+
 # Set useful custom key bindings
 bindkey '^F' forward-char
 bindkey '^B' backward-char
-bindkey '^[F' forward-word
-bindkey '^[B' backward-word
+bindkey '^[f' forward-word
+bindkey '^[b' backward-word
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^K' kill-line
