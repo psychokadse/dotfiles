@@ -62,8 +62,11 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
     ```sh
     nvim -c ':so ~/.config/nvim/lua/psychokadse/packer.lua | :PackerSync'
     ```
-14. If you want to stow global configuration files as well, run a separate stow on stow directory `~/.dotfiles/global` and target directory `/etc`
-15. If you included step 13, you also have to make the included wallpapers accessible system-wide:
+14. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/global/etc` and `~/.dotfiles/global/usr` into `/etc` and `/usr` respectively:
+    ```sh
+    sudo cp -ir ~/.dotfiles/global/etc /etc && sudo cp -ir ~/.dotfiles/global/usr /usr
+    ```
+15. Finally, the included wallpapers have to be made accessible system-wide:
     ```sh
     sudo cp -r ~/Pictures/wallpapers /usr/share/wallpapers
     ```
