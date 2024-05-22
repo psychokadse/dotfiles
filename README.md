@@ -22,13 +22,12 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
     * cronie
     * lightdm
     * NetworkManager
-    * systemd-homed
     * systemd-resolved
     * systemd-timesyncd
 
     You can do this using the following the command:
     ```sh
-    sudo systemctl enable apparmor cronie lightdm NetworkManager systemd-{homed,resolved,timesyncd}
+    sudo systemctl enable apparmor cronie lightdm NetworkManager systemd-{resolved,timesyncd}
     ```
 6. Enable pulseaudio for your user so it starts automatically when a client attempts to connect:
    ```sh
