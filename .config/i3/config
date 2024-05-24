@@ -129,16 +129,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1:<b>web</b>"
+set $ws2 "2:<b>mail</b>"
+set $ws3 "3:<b>term</b>"
+set $ws4 "4:<b>passwd</b>"
+set $ws5 "5:<b>discord</b>"
+set $ws6 "6:<b>devel</b>"
+set $ws7 "7:<b>devel</b>"
+set $ws8 "8:<b>devel</b>"
+set $ws9 "9:<b>files</b>"
+set $ws10 "10:<b>virt</b>"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -245,6 +245,15 @@ mode "$mode_system" {
 bindsym $mod+BackSpace mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 
+# Configure i3-gaps
+gaps inner 4px
+
+# Only show gaps if workspace has only one fullscreen window
+smart_gaps on
+
+# Settings apply for all windows
+for_window [all] title_format "<b>%title</b>", title_window_icon padding 3px, border normal 1px
+
 # Open specific applications in floating mode
 for_window [class="^Nitrogen$"] floating enable border normal
 for_window [class="^Pavucontrol$"] floating enable border normal
@@ -263,6 +272,12 @@ client.background 	#FFFFFF
 # finds out, if available)
 bar {
         status_command i3status
+
+		padding 3px 0
+
+		# Set system tray options
+		tray_padding 4px
+
 	colors {
 		background	#000000
 		statusline	#5F8787
