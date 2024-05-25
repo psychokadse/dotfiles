@@ -80,6 +80,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * The identity files required in `.ssh/config` need to be generated using `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`, and the public keys subsequently added to the corresponding GitHub accounts
 * `global/etc/ld.so.conf` mirrors the necessary configuration to provide `xkb-switch` with the required shared objects created during the system-wide installation
 * Run `git submodule update --remote` in the `~/.dotfiles` directory to update all submodules to the most recent commit on the remote tracking branch
+* If you need to move `.config/autostart` because it would be deleted, run `stow -d ~/.dotfiles -D . && mv -i ~/.dotfiles.config/autostart ~/.config` to remove the symlinks created by stow and move the autostart directory to its proper location. Restow afterwards according to step 12 above.
 
 ## Required packages:
 Install these using pacman, ideally from the official Arch repositories.
