@@ -260,7 +260,7 @@ for_window [all] title_format "<b>%title</b>", title_window_icon padding 3px
 
 # Open specific applications in floating mode
 for_window [class="^Nitrogen$"] floating enable
-for_window [class="^Pavucontrol$"] floating enable
+for_window [class="^pavucontrol$"] floating enable
 for_window [window_role="^PictureInPicture$"] floating enable sticky enable
 
 # Set window colors		border	backgr.	text	indic.	child_border
