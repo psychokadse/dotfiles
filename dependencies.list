@@ -4,6 +4,7 @@ arc-gtk-theme
 base
 base-devel
 bitwarden
+cmake
 cronie
 ddcutil
 dex
@@ -23,7 +24,6 @@ gedit
 gimp
 git
 gparted
-graphviz
 gvfs
 htop
 i3blocks
@@ -48,7 +48,6 @@ openresolv
 os-prober
 pavucontrol
 picom
-plantuml
 pulseaudio-alsa
 rofi
 rustup
