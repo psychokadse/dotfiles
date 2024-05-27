@@ -258,6 +258,10 @@ default_border normal 2px
 default_floating_border normal 2px
 hide_edge_borders smart_no_gaps
 
+# Set dimension constraints for floating windows (in pixels)
+floating_minimum_size 200 x 140
+floating_maximum_size 1600 x 1040
+
 for_window [all] title_format "<b>%title</b>", title_window_icon padding 3px
 
 # Open specific applications in floating mode
