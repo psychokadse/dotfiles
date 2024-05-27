@@ -77,6 +77,7 @@ bindkey -v
 bindkey -r '^['
 
 # Set useful custom key bindings
+bindkey '\e' vi-cmd-mode
 bindkey '^F' forward-char
 bindkey '^B' backward-char
 bindkey '^[f' forward-word
@@ -89,7 +90,7 @@ bindkey '\t' menu-select # Enter menu selection
 # Set key bindings for vicmd (vi normal) mode
 bindkey -M vicmd '^U' backward-kill-line
 bindkey -M vicmd '^K' kill-line
-bindkey -M vicmd '\E' vi-insert
+bindkey -M vicmd '\e' vi-insert
 
 # Set vi key bindings for completion selection
 bindkey -M menuselect 'h' vi-backward-char
