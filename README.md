@@ -6,7 +6,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 ## Usage:
 1. Clone this repository into your stow directory (`~/.dotfiles`):
    ```sh
-   git clone https://github.com/psychokadse/.dotfiles.git ~/.dotfiles
+   git clone --recursive https://github.com/psychokadse/.dotfiles.git ~/.dotfiles
    ```
 2. Update your pacman mirrors and enable all servers:
    ```sh
@@ -37,36 +37,30 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
    ```sh
    timedatectl set-local-rtc 0
    ```
-8. Initialize and update the submodules defined in the repository with the most recent commit on the remote tracking branch:
-    ```sh
-    git submodule update --init --remote
-    ```
-    This needs to be run in the repository's root directory (`~/.dotfiles`) for git to interpret the submodule paths correctly.
-    The required fonts for powerlevel10k still need to be installed manually.
-9. Make zsh your default shell:
+8. Make zsh your default shell:
    ```sh
    chsh -s /usr/bin/zsh
    ```
-10. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
-11. Create the required directory structure in your home directory to ensure the symlinks are created correctly:
+9. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
+10. Create the required directory structure in your home directory to ensure the symlinks are created correctly:
       ```sh
       mkdir -p ~/{.ssh,.config/xfce4,Pictures} && rm -fr ~/.config/{autostart,i3,i3status}
       ```
-12. Create symlinks from your home directory to the repository:
+11. Create symlinks from your home directory to the repository:
     ```sh
     stow -d ~/.dotfiles .
     ```
-13. Source `~/.config/nvim/lua/psychokadse/packer.lua` in neovim and run `:PackerSync` to install the required packages.
+12. Source `~/.config/nvim/lua/psychokadse/packer.lua` in neovim and run `:PackerSync` to install the required packages.
 
     This can be done as a shell one-liner:
     ```sh
     nvim -c ':so ~/.config/nvim/lua/psychokadse/packer.lua | :PackerSync'
     ```
-14. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/global/etc` and `~/.dotfiles/global/usr` into `/etc` and `/usr` respectively:
+13. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/global/etc` and `~/.dotfiles/global/usr` into `/etc` and `/usr` respectively:
     ```sh
     sudo cp -ir ~/.dotfiles/global/etc /etc && sudo cp -ir ~/.dotfiles/global/usr /usr
     ```
-15. Finally, the included wallpapers have to be made accessible system-wide:
+14. Finally, the included wallpapers have to be made accessible system-wide:
     ```sh
     sudo cp -r ~/Pictures/wallpapers /usr/share/wallpapers
     ```
