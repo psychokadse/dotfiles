@@ -15,6 +15,7 @@ docker-compose
 dunst
 efibootmgr
 fastfetch
+ffmpegthumbnailer
 firefox
 flameshot
 fuse2
