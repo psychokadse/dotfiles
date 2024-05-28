@@ -19,8 +19,7 @@ require'nvim-treesitter.configs'.setup {
 	"tmux",
 	"vim",
 	"vimdoc",
-	"yaml",
-	"zsh"
+	"yaml"
   },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
