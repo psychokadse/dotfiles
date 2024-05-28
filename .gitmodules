@@ -18,3 +18,7 @@
 	path = .config/zsh/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	branch = master
+[submodule ".config/nvim/pack/packer/start/packer.nvim"]
+	path = .config/nvim/pack/packer/start/packer.nvim
+	url = https://github.com/wbthomason/packer.nvim
+	branch = master
