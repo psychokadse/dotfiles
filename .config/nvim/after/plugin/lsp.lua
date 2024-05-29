@@ -35,7 +35,16 @@ local cmp_mappings = cmp.mapping.preset.insert({
 	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
 	['<C-y>'] = cmp.mapping.confirm({ select = true }),
-	['<C-m>'] = cmp.mapping.complete(),
+	['<C-l>'] = cmp.mapping(function()
+		if cmp.visible() then
+			cmp.close()
+		else
+			cmp.complete()
+		end
+	end, { 'i' }),
+	['<CR>'] = cmp.mapping(function(fallback)
+		fallback()
+	end)
 })
 
 cmp.setup({
