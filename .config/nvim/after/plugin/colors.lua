@@ -11,7 +11,6 @@ function ReconfigureColors(color)
 		style = 'storm',
 		transparent = true,
 		terminal_colors = true,
-		print('Reconfigured theme')
 	})
 end
 
