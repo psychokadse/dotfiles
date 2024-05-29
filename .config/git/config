@@ -26,6 +26,8 @@
 [mergetool "nvimmerge"]
 	cmd = nvim -d "$MERGED" "$LOCAL" "$BASE" "$REMOTE"
 	trustExitCode = false
+[rerere]
+	enabled = true
 [user]
 	name = pkerschbaumer
 	email = paul.kerschbaumer@ausbildung-bbw.de
