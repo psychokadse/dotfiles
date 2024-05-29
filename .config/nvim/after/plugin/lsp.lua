@@ -12,7 +12,9 @@ lsp.preset('recommended')
 
 local lspconfig = require('lspconfig')
 
-lspconfig.bashls.setup({})
+lspconfig.bashls.setup({
+	filetypes = { 'bash', 'sh', 'zsh' }
+})
 lspconfig.clangd.setup({})
 lspconfig.lua_ls.setup({})
 lspconfig.pylsp.setup({})
