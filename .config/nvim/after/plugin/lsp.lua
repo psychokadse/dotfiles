@@ -13,7 +13,7 @@ lsp.preset('recommended')
 local lspconfig = require('lspconfig')
 
 lspconfig.bashls.setup({})
-lspconfig.ccls.setup({})
+lspconfig.clangd.setup({})
 lspconfig.lua_ls.setup({})
 lspconfig.pylsp.setup({})
 
