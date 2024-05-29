@@ -1,16 +1,20 @@
 local lsp = require('lsp-zero')
 require('mason').setup()
-require('mason-lspconfig').setup()
+require('mason-lspconfig').setup {
+	ensure_installed = {
+		"bashls",
+		"lua_ls",
+		"pylsp"
+	}
+}
 
 lsp.preset('recommended')
 
 local lspconfig = require('lspconfig')
 
-lspconfig.tsserver.setup({})
-lspconfig.eslint.setup({})
--- lspconfig.lua_ls.setup({})
-lspconfig.rust_analyzer.setup({})
+lspconfig.bashls.setup({})
 lspconfig.ccls.setup({})
+lspconfig.lua_ls.setup({})
 lspconfig.pylsp.setup({})
 
 local cmp = require('cmp')
