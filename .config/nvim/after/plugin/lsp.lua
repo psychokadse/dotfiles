@@ -39,7 +39,19 @@ local cmp_mappings = cmp.mapping.preset.insert({
 })
 
 cmp.setup({
-	mapping = cmp_mappings
+	mapping = cmp_mappings,
+	snippet = {
+		expand = function(args)
+			require('luasnip').lsp_expand(args.body)
+		end,
+	},
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' }
+	}, {
+		{ name = 'buffer' },
+		{ name = 'path' }
+	})
 })
 
 --[[
