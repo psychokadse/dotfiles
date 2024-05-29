@@ -1,4 +1,4 @@
-function ColorMyPencils(color)
+function ReconfigureColors(color)
 	color = color or "tokyonight"
 	vim.cmd.colorscheme(color)
 
@@ -11,7 +11,8 @@ function ColorMyPencils(color)
 		style = 'storm',
 		transparent = true,
 		terminal_colors = true,
+		print('Reconfigured theme')
 	})
 end
 
-ColorMyPencils()
+ReconfigureColors()
