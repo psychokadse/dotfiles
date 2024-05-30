@@ -50,12 +50,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
     ```sh
     stow -d ~/.dotfiles .
     ```
-12. Source `~/.config/nvim/lua/psychokadse/packer.lua` in neovim and run `:PackerSync` to install the required packages.
-
-    This can be done as a shell one-liner:
-    ```sh
-    nvim -c ':so ~/.config/nvim/lua/psychokadse/packer.lua | :PackerSync'
-    ```
+12. Open neovim and install lazy.nvim and the plugins in the plugin specification using `:so ~/.config/nvim/lua/psychokadse/lazy.lua`
 13. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/global/etc` and `~/.dotfiles/global/usr` into `/etc` and `/usr` respectively:
     ```sh
     sudo cp -ir ~/.dotfiles/global/etc /etc && sudo cp -ir ~/.dotfiles/global/usr /usr
@@ -95,6 +90,6 @@ For an ideal installation, follow the list order.
 5. https://github.com/zsh-users/zsh-completions
 6. https://github.com/romkatv/powerlevel10k (the recommended fonts are required and included in their appropriate location in the `global` directory)
 7. https://github.com/adi1090x/rofi
-8. https://github.com/wbthomason/packer.nvim
+8. https://github.com/folke/lazy.nvim
 9. https://github.com/grwlf/xkb-switch (use the system-wide install)  
 10. https://www.jetbrains.com/toolbox-app
