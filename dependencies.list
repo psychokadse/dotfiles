@@ -67,6 +67,7 @@ virtualbox
 virtualbox-host-modules-arch
 vlc
 wireguard-tools
+xclip
 xdg-user-dirs
 xorg-xinit
 xorg-xprop
