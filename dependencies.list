@@ -32,6 +32,7 @@ i3lock
 i3status
 i3-wm
 imagemagick
+jq
 lf
 lightdm-gtk-greeter
 linux
@@ -48,10 +49,12 @@ nvidia
 nvidia-settings
 openresolv
 os-prober
+parallel
 pavucontrol
 picom
 pulseaudio-alsa
 rofi
+rsync
 rustup
 rxvt-unicode-truecolor-wide-glyphs (AUR)
 sof-firmware
