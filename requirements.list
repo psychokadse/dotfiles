@@ -53,6 +53,7 @@ parallel
 pavucontrol
 picom
 pulseaudio-alsa
+ripgrep
 rofi
 rsync
 rustup
