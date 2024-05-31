@@ -11,7 +11,7 @@ require'nvim-treesitter.configs'.setup {
 	"gitcommit",
 	"gitignore",
 	"lua",
-	"markdown_inline",
+	"markdown",
 	"python",
 	"query",
 	"rasi",
