@@ -6,7 +6,7 @@
 ^/\.gitmodules
 ^/README\.md
 ^/upgrade-all\.bash
-^/dependencies\.list
+^/requirements\.list
 
 # global git config only here for reference
 ^/\.config/git
