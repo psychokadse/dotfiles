@@ -30,6 +30,7 @@ require("lazy").setup({
 	'nvim-treesitter/playground',
 	'mbbill/undotree',
 	'tpope/vim-fugitive',
+	'ThePrimeagen/harpoon',
 	{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
