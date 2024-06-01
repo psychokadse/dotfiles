@@ -94,14 +94,9 @@ A complete list of required packages is provided in [dependencies.list](/depende
 Install these according to the instructions in their respective READMEs on GitHub.
 Make sure you installed all of the required packages above.
 Install zsh plugins into `.config/zsh/plugins` and zsh themes into `.config/zsh/themes`.
+The recommended fonts for https://github.com/romkatv/powerlevel10k are required by a number of applications in this repository and included in their appropriate location in the `global` directory.
 For an ideal installation, follow the list order.
 1. https://github.com/Jguer/yay (if not already installed at this point)
-2. https://github.com/zdharma-continuum/fast-syntax-highlighting
-3. https://github.com/marlonrichert/zsh-autocomplete
-4. https://github.com/zsh-users/zsh-autosuggestions
-5. https://github.com/zsh-users/zsh-completions
-6. https://github.com/romkatv/powerlevel10k (the recommended fonts are required and included in their appropriate location in the `global` directory)
-7. https://github.com/adi1090x/rofi
-8. https://github.com/folke/lazy.nvim
-9. https://github.com/grwlf/xkb-switch (use the system-wide install)  
-10. https://www.jetbrains.com/toolbox-app
+2. https://github.com/adi1090x/rofi
+3. https://github.com/grwlf/xkb-switch (use the system-wide install)
+4. https://www.jetbrains.com/toolbox-app
