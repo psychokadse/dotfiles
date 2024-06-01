@@ -19,15 +19,17 @@ require("lazy").setup({
 	{
 		'folke/tokyonight.nvim',
 		name = 'tokyonight',
+		build = function()
+			require('psychokadse.colors')
+		end,
 		config = function()
-			vim.cmd('colorscheme tokyonight')
+			require('psychokadse.colors')
 		end
 	},
 	{
 		'nvim-treesitter/nvim-treesitter',
 		build = vim.cmd.TSUpdate
 	},
-	'nvim-treesitter/playground',
 	'mbbill/undotree',
 	'tpope/vim-fugitive',
 	'ThePrimeagen/harpoon',
