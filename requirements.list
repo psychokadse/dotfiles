@@ -15,6 +15,7 @@ docker-compose
 dunst
 efibootmgr
 fastfetch
+fd
 ffmpegthumbnailer
 firefox
 flameshot
@@ -37,6 +38,7 @@ lf
 lightdm-gtk-greeter
 linux
 linux-firmware
+luarocks
 lxsession
 man-db
 man-pages
@@ -53,6 +55,7 @@ parallel
 pavucontrol
 picom
 pulseaudio-alsa
+python-pip
 ripgrep
 rofi
 rsync
@@ -70,6 +73,7 @@ valgrind
 virtualbox
 virtualbox-host-modules-arch
 vlc
+wget
 wireguard-tools
 xclip
 xdg-user-dirs
