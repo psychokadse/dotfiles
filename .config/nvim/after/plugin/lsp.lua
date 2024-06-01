@@ -79,3 +79,5 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+vim.keymap.set('n', '<leader>mv', vim.cmd.Mason)
