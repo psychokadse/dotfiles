@@ -29,7 +29,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
    ```sh
    sudo pacman -Syy
    ```
-4. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies)
+4. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies).
 5. Enable the following services using `systemctl` (requires a reboot):
     * apparmor
     * cronie
@@ -54,7 +54,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
    ```sh
    chsh -s /usr/bin/zsh
    ```
-9. Remove any files that cause a conflict when stow is run (they'll be replaced by symlinks into `.dotfiles`)
+9. Remove any files that cause a conflict when stow is run. They'll be replaced by symlinks into `.dotfiles`.
 10. Create the required directory structure in your home directory to ensure the symlinks are created correctly:
       ```sh
       mkdir -p ~/{.ssh,.config/xfce4,Pictures} && rm -fr ~/.config/{autostart,i3,i3status}
@@ -74,7 +74,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
     ```
 
 ## Notes:
-* copy `global/etc/default/grub` to `/etc/default/grub` and run `grub-mkconfig -o /boot/grub/grub.cfg` to update the grub configuration
+* Copy `global/etc/default/grub` to `/etc/default/grub` and run `grub-mkconfig -o /boot/grub/grub.cfg` to update the grub configuration
 * `global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
 * dunst is configured as a dbus service in `global/usr/share/dbus-1/services/org.freedesktop.Notifications.service`, copy the file to the appropriate location to run it on startup
 * Run `xdg-user-dirs-update` to create standard XDG desktop directories below your home directory (this won't overwrite any existing files)
