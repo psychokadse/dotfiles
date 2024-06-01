@@ -8,6 +8,19 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
    ```sh
    git clone --recursive https://github.com/psychokadse/.dotfiles.git ~/.dotfiles
    ```
+
+   This repository currently includes submodules for the plugins and themes required by the `.zshrc`, which should be synchronized regularly from the remote using:
+   ```sh
+   git submodule update --remote
+   ```
+
+   This is a list of the included submodules:
+   * https://github.com/zdharma-continuum/fast-syntax-highlighting
+   * https://github.com/marlonrichert/zsh-autocomplete
+   * https://github.com/zsh-users/zsh-autosuggestions
+   * https://github.com/zsh-users/zsh-completions
+   * https://github.com/romkatv/powerlevel10k
+
 2. Update your pacman mirrors and enable all servers:
    ```sh
    curl 'https://archlinux.org/mirrorlist/?country=DE&protocol=https&ip_version=4' | sed '/^#Server/s/^#//' | sudo tee /etc/pacman.d/mirrorlist > /dev/null
@@ -68,7 +81,6 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * The kernel module `i2c-dev` needs to be loaded in order to use `ddcutil`
 * The identity files required in `.ssh/config` need to be generated using `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`, and the public keys subsequently added to the corresponding GitHub accounts
 * `global/etc/ld.so.conf` mirrors the necessary configuration to provide `xkb-switch` with the required shared objects created during the system-wide installation
-* Run `git submodule update --remote` in the `~/.dotfiles` directory to update all submodules to the most recent commit on the remote tracking branch
 * If you need to move `.config/autostart` because it would be deleted, run `stow -d ~/.dotfiles -D . && mv -i ~/.dotfiles/.config/autostart ~/.config` to remove the symlinks created by stow and move the autostart directory to its proper location. Restow afterwards according to step 12 above.
 
 ## Required packages:
