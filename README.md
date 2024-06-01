@@ -63,7 +63,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
     ```sh
     stow -d ~/.dotfiles .
     ```
-12. Open neovim and install lazy.nvim and the plugins in the plugin specification using `:so ~/.config/nvim/lua/psychokadse/lazy.lua`
+12. Open `nvim` to install https://github.com/folke/lazy.nvim and the plugins in the plugin specification. `.config/nvim/init.lua` should source `.config/nvim/lua/psychokadse/lazy.lua` automatically, which installs lazy.nvim using `git clone` if it isn't present.
 13. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/global/etc` and `~/.dotfiles/global/usr` into `/etc` and `/usr` respectively:
     ```sh
     sudo cp -ir ~/.dotfiles/global/etc /etc && sudo cp -ir ~/.dotfiles/global/usr /usr
