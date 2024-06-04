@@ -106,6 +106,23 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
+# Use fzf bindings and completions
+eval "$(fzf --zsh)"
+
+# Use fd instead of find for fzf completions
+export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Overwrite '**' completion functions to use fd instead of find
+_fzf_compgen_path() {
+	fd --hidden --exclude .git . "$1"
+}
+
+_fzf_compgen_dir() {
+	fd --type=d --hidden --exclude .git . "$1"
+}
+
 # Set zsh environment variables
 # Configure history file
 export HISTFILE=~/.zsh_history
