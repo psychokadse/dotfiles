@@ -3,6 +3,7 @@ apparmor
 arc-gtk-theme
 base
 base-devel
+bat
 bitwarden
 cmake
 cronie
