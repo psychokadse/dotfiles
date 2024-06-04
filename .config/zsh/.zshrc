@@ -30,16 +30,18 @@ compinit -C
 
 unsetopt EXTENDED_GLOB
 
-function source_zsh_plugin () {
-	[[ -n $1 ]] \
-		&& local CURRENT_PLUGIN=$ZSH_PLUGINS/$1/$1.plugin.zsh \
-		&& source $CURRENT_PLUGIN
+source_zsh_plugin() {
+	if [[ -n $1 ]]; then
+		local current_plugin=$ZSH_PLUGINS/$1/$1.plugin.zsh
+		source $current_plugin
+	fi
 }
 
-function source_zsh_theme () {
-	[[ -n $1 ]] \
-		&& local CURRENT_THEME=$ZSH_THEMES/$1/$1.zsh-theme \
-		&& source $CURRENT_THEME
+source_zsh_theme() {
+	if [[ -n $1 ]]; then
+		local current_theme=$ZSH_THEMES/$1/$1.zsh-theme
+		source $current_theme
+	fi
 }
 
 # Add zsh-completions by adding it to the $fpath
@@ -107,8 +109,8 @@ bindkey '^X^E' edit-command-line
 # Set zsh environment variables
 # Configure history file
 export HISTFILE=~/.zsh_history
-HISTSIZE=20000
-SAVEHIST=$HISTSIZE
+export HISTSIZE=20000
+export SAVEHIST=$HISTSIZE
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
