@@ -67,6 +67,7 @@ sof-firmware
 stow
 strace
 thunar
+tldr
 tmux
 tree
 tumbler
@@ -83,4 +84,5 @@ xorg-xinit
 xorg-xrandr
 xss-lock
 zip
+zoxide
 zsh
