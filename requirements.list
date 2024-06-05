@@ -27,6 +27,7 @@ gedit
 gimp
 git
 gparted
+grub
 gvfs
 htop
 i3blocks
@@ -79,7 +80,6 @@ wireguard-tools
 xclip
 xdg-user-dirs
 xorg-xinit
-xorg-xprop
 xorg-xrandr
 xss-lock
 zip
