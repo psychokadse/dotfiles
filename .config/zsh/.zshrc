@@ -123,6 +123,9 @@ _fzf_compgen_dir() {
 	fd --type=d --hidden --exclude .git . "$1"
 }
 
+# Use zoxide configuration for zsh
+eval "$(zoxide init zsh)"
+
 # Set zsh environment variables
 # Configure history file
 export HISTFILE=~/.zsh_history
