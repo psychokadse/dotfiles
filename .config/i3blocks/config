@@ -45,6 +45,6 @@ markup=pango
 signal=10
 
 [time]
-command=date '+<b>%F %r</b>'
+command=date '+%F %r'
 interval=1
 markup=pango
