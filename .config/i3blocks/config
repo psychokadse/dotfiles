@@ -7,6 +7,8 @@
 
 
 # Global properties
+_color_urgent=#FF0000
+_color_warn=#F0F000
 separator=true
 separator_block_width=15
 

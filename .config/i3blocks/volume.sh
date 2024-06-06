@@ -9,15 +9,15 @@ get_volume() {
 	if [[ $(pactl get-default-sink) ]]; then
 		case $_muted in
 			yes)
-				printf "<span foreground=\"%s\">\UF075F %s</span>\n" $_color_muted $_volume
+				printf '<span foreground="%s">\UF075F %s</span>\n' $_color_warn $_volume
 				;;
 
 			no)
-				printf "\UF057E %s\n" $_volume
+				printf '\UF057E %s\n' $_volume
 				;;
 		esac
 	else
-		printf "<span foreground=\"%s\">No default sink</span>\n" $_color_urgent
+		printf '<span foreground="%s">No default sink</span>\n' $_color_urgent
 	fi
 }
 
