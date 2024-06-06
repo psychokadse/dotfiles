@@ -1,0 +1,42 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[fixme]
+color=#D08000
+full_text=Please get this working >
+
+[ethernet]
+full_text=ethernet _first_
+
+[disk]
+full_text=disk "/"
+
+[cpu_usage]
+full_text=cpu_usage
+
+[memory]
+full_text=memory
+
+[volume master]
+full_text=volume master
+
+[keyboard]
+color=#4088FF
+command=echo "<b>$(xkb-switch)</b>"
+interval=once
+markup=pango
+signal=10
+
+[time]
+command=date '+<b>%F %r</b>'
+interval=1
+markup=pango
