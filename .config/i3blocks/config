@@ -23,7 +23,9 @@ full_text=ethernet _first_
 full_text=disk "/"
 
 [cpu_usage]
-full_text=cpu_usage
+command=./cpu_usage.sh
+interval=1
+markup=pango
 
 [memory]
 command=./memory.py
