@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Needs a script to listen to volume events additionally, else the status won't be update on time
+
+get_volume() {
+	_volume="$(pactl get-sink-volume @DEFAULT_SINK@ | awk '$1=="Volume:" { print $5 }')"
+	_muted=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '$1=="Mute:" { print $2 }')
+
+	if [[ $(pactl get-default-sink) ]]; then
+		case $_muted in
+			yes)
+				printf "<span foreground=\"%s\">\UF075F %s</span>\n" $_color_muted $_volume
+				;;
+
+			no)
+				printf "\UF057E %s\n" $_volume
+				;;
+		esac
+	else
+		printf "<span foreground=\"%s\">No default sink</span>\n" $_color_urgent
+	fi
+}
+
+get_volume
+
+pactl subscribe | grep --line-buffered 'change' | while read -r event; do
+	get_volume
+done
