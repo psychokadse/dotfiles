@@ -5,7 +5,7 @@
 ^/\.gitignore
 ^/\.gitmodules
 ^/README\.md
-^/upgrade-all\.bash
+^/upgrade-all\.sh
 ^/requirements\.list
 
 # global git config only here for reference
