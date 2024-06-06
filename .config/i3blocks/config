@@ -20,7 +20,9 @@ full_text=Please get this working >
 full_text=ethernet _first_
 
 [disk]
-full_text=disk "/"
+command=./disk.py
+interval=4
+markup=pango
 
 [cpu_usage]
 command=./cpu_usage.sh
