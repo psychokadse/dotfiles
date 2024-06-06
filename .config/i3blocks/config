@@ -27,7 +27,11 @@ full_text=cpu_usage
 full_text=memory
 
 [volume master]
-full_text=volume master
+_color_muted=#808000
+_color_urgent=#FF0000
+command=./volume.sh
+interval=persist
+markup=pango
 
 [keyboard]
 color=#4088FF
