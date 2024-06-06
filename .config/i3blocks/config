@@ -26,11 +26,11 @@ full_text=disk "/"
 full_text=cpu_usage
 
 [memory]
-full_text=memory
+command=./memory.py
+interval=2
+markup=pango
 
 [volume master]
-_color_muted=#808000
-_color_urgent=#FF0000
 command=./volume.sh
 interval=persist
 markup=pango
