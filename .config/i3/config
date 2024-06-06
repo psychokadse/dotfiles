@@ -238,7 +238,7 @@ bindsym $mod+r mode "resize"
 
 set $logind systemctl
 set $i3-config-home ~/.config/i3
-set $blurlock blurlock.bash
+set $blurlock blurlock.sh
 
 mode "$mode_system" {
 	bindsym l exec --no-startup-id $i3-config-home/$blurlock, mode "default"
