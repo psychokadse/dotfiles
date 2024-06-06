@@ -75,8 +75,13 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
+# Old version using dunst
+# bindsym $mod+space exec --no-startup-id xkb-switch -n && \
+# 	notify-send -u low -t 800 'xkb-switch' "Current layout: $(xkb-switch)"
+
+# New version using i3blocks and signals
 bindsym $mod+space exec --no-startup-id xkb-switch -n && \
-	notify-send -u low -t 800 'xkb-switch' "Current layout: $(xkb-switch)"
+	pkill -SIGRTMIN+10 i3blocks
 
 # change focus
 bindsym $mod+h focus left
