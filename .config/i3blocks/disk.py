@@ -4,6 +4,7 @@ import os
 import subprocess
 
 disk_symbol = '\uF0A0'
+
 df_output = subprocess.check_output(
         "df -B 1G --output=target,avail,size | awk '/^\\/[[:space:]]/'",
         shell=True

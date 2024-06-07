@@ -15,7 +15,7 @@ mem_stats_meg = free_decoded[1].split()
 mem_total_gig = float(mem_stats_meg[1]) / 1000
 mem_used_gig = float(mem_stats_meg[2]) / 1000
 mem_available_gig = float(
-    mem_stats_meg[len(mem_stats_meg) - 1]
+    mem_stats_meg[-1]
 ) / 1000
 
 message = f'{mem_symbol} {mem_used_gig:.2f} GiB/{mem_available_gig:.2f} GiB'
