@@ -9,6 +9,8 @@
 # Global properties
 _color_urgent=#FF0000
 _color_warn=#F0F000
+command=$SCRIPT_DIR/$BLOCK_NAME
+markup=pango
 separator=true
 separator_block_width=15
 
@@ -20,33 +22,23 @@ full_text=Please get this working >
 full_text=ethernet _first_
 
 [disk]
-command=./disk.py
 interval=4
-markup=pango
 
 [cpu_usage]
-command=./cpu_usage.sh
 interval=1
-markup=pango
 
 [memory]
-command=./memory.py
 interval=2
-markup=pango
 
-[volume master]
-command=./volume.sh
+[volume]
 interval=persist
-markup=pango
 
 [keyboard]
 color=#4088FF
 command=echo "<b>$(xkb-switch)</b>"
 interval=once
-markup=pango
 signal=10
 
 [time]
 command=date '+%F %r'
 interval=1
-markup=pango
