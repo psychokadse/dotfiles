@@ -23,6 +23,6 @@ get_volume() {
 
 get_volume
 
-pactl subscribe | grep --line-buffered 'change' | while read -r event; do
+pactl subscribe | grep --line-buffered 'sink' | while read -r event; do
 	get_volume
 done
