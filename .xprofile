@@ -2,6 +2,7 @@
 lxpolkit &
 flameshot &
 jetbrains-toolbox --minimize &
+nitrogen --restore &
 nm-applet &
 picom &
 start-pulseaudio-x11 &
