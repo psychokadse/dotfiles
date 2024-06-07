@@ -9,6 +9,7 @@
 # Global properties
 _color_urgent=#FF0000
 _color_warn=#F0F000
+_color_ok=#00F000
 command=$SCRIPT_DIR/$BLOCK_NAME
 markup=pango
 separator=true

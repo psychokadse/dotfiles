@@ -5,7 +5,7 @@ _if_name=$(nmcli --get-values DEVICE,TYPE dev | awk -F ':' '$2=="ethernet" { pri
 case $(nmcli --get-values 'GENERAL.STATE' dev show $_if_name) in
 	'100 (connected)')
 		_ip_address=$(nmcli --get-values 'IP4.ADDRESS' dev show $_if_name)
-		printf '\UF0200 %s\n' "${_ip_address%%/*}"
+		printf '<span foreground="%s">\UF0200 %s</span>\n' $_color_ok "${_ip_address%%/*}"
 		;;
 	'30 (disconnected)')
 		printf '<span foreground="%s">\UF0200 disconnected</span>\n' $_color_warn
