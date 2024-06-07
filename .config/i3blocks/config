@@ -14,12 +14,8 @@ markup=pango
 separator=true
 separator_block_width=15
 
-[fixme]
-color=#D08000
-full_text=Please get this working >
-
 [ethernet]
-full_text=ethernet _first_
+interval=1
 
 [disk]
 interval=4
