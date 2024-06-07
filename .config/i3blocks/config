@@ -37,5 +37,5 @@ signal=10
 interval=persist
 
 [time]
-command=date '+%F %r'
+command=printf '\UF00F0 %s\n' "$(date '+%F %r')"
 interval=1
