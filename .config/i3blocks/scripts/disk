@@ -12,8 +12,8 @@ df_output = subprocess.check_output(
     .strip() \
     .split()
 
-disk_avail = int(df_output[1])
-disk_size = float(df_output[2])
+disk_avail = float(df_output[1]) / 1024
+disk_size = float(df_output[2]) / 1024
 
 message = f'{disk_symbol} {disk_avail:.2f} GiB'
 
