@@ -54,21 +54,22 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
    ```sh
    chsh -s /usr/bin/zsh
    ```
-9. Remove any files that cause a conflict when stow is run. They'll be replaced by symlinks into `.dotfiles`.
+9. Run `xdg-user-dirs-update` to create the standard XDG desktop directories below your home directory. This won't overwrite any existing files.
 10. Create the required directory structure in your home directory to ensure the symlinks are created correctly:
       ```sh
       mkdir -p ~/{.ssh,.config/xfce4}
       ```
-11. Create symlinks from your home directory to the repository:
+11. Remove any files that cause a conflict when stow is run. They'll be replaced by symlinks into `.dotfiles`.
+12. Create symlinks from your home directory to the repository:
     ```sh
     stow -d ~/.dotfiles .
     ```
-12. Open `nvim` to install https://github.com/folke/lazy.nvim and the plugins in the plugin specification. `.config/nvim/init.lua` should source `.config/nvim/lua/psychokadse/lazy.lua` automatically, which installs lazy.nvim using `git clone` if it isn't present.
-13. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/global/etc` and `~/.dotfiles/global/usr` into `/etc` and `/usr` respectively:
+13. Open `nvim` to install https://github.com/folke/lazy.nvim and the plugins in the plugin specification. `.config/nvim/init.lua` should source `.config/nvim/lua/psychokadse/lazy.lua` automatically, which installs lazy.nvim using `git clone` if it isn't present.
+14. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/global/etc` and `~/.dotfiles/global/usr` into `/etc` and `/usr` respectively:
     ```sh
     sudo cp -ir ~/.dotfiles/global/{etc,usr} /
     ```
-14. Finally, the included wallpapers have to be made accessible system-wide:
+15. Finally, the included wallpapers have to be made accessible system-wide:
     ```sh
     sudo cp -r ~/Pictures/wallpapers /usr/share/wallpapers
     ```
@@ -77,7 +78,6 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 * Copy `global/etc/default/grub` to `/etc/default/grub` and run `grub-mkconfig -o /boot/grub/grub.cfg` to update the grub configuration
 * `global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
 * dunst is configured as a dbus service in `global/usr/share/dbus-1/services/org.freedesktop.Notifications.service`, copy the file to the appropriate location to run it on startup
-* Run `xdg-user-dirs-update` to create standard XDG desktop directories below your home directory (this won't overwrite any existing files)
 * The kernel module `i2c-dev` needs to be loaded in order to use `ddcutil`
 * The identity files required in `.ssh/config` need to be generated using `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`, and the public keys subsequently added to the corresponding GitHub accounts
 * `global/etc/ld.so.conf` mirrors the necessary configuration to provide `xkb-switch` with the required shared objects created during the system-wide installation
