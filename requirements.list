@@ -38,6 +38,7 @@ imagemagick
 jq
 lf
 lightdm-gtk-greeter
+lightdm-slick-greeter
 linux
 linux-firmware
 luarocks
