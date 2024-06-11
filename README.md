@@ -57,7 +57,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 9. Remove any files that cause a conflict when stow is run. They'll be replaced by symlinks into `.dotfiles`.
 10. Create the required directory structure in your home directory to ensure the symlinks are created correctly:
       ```sh
-      mkdir -p ~/{.ssh,.config/xfce4,Pictures} && rm -fr ~/.config/{autostart,i3,i3status}
+      mkdir -p ~/{.ssh,.config/xfce4}
       ```
 11. Create symlinks from your home directory to the repository:
     ```sh
