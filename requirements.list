@@ -60,7 +60,7 @@ picom
 pulseaudio-alsa
 python-pip
 ripgrep
-rofi
+rofi-wayland
 rsync
 rustup
 rxvt-unicode-truecolor-wide-glyphs (AUR)
