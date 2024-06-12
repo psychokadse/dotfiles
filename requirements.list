@@ -18,6 +18,7 @@ dunst
 efibootmgr
 fastfetch
 fd
+feh
 ffmpegthumbnailer
 firefox
 flameshot
@@ -71,6 +72,10 @@ rxvt-unicode-truecolor-wide-glyphs (AUR)
 sof-firmware
 stow
 strace
+sway
+swaybg
+swayidle
+swaylock
 thunar
 tldr
 tmux
@@ -88,6 +93,7 @@ xclip
 xdg-user-dirs
 xorg-xinit
 xorg-xrandr
+xorg-xwayland
 xss-lock
 zip
 zoxide
