@@ -51,8 +51,6 @@ network-manager-applet
 nitrogen
 nmap
 npm
-nvidia
-nvidia-settings
 openresolv
 os-prober
 parallel
@@ -82,6 +80,9 @@ valgrind
 virtualbox
 virtualbox-host-modules-arch
 vlc
+vulkan-nouveau
+vulkan-tools
+waybar
 wezterm
 wget
 wireguard-tools
