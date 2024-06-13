@@ -2,6 +2,11 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local config = {}
 
+config.color_scheme = 'tokyonight_storm'
+config.colors = {
+	background = 'black',
+	foreground = 'white'
+}
 config.disable_default_key_bindings = true
 config.font = wezterm.font 'JetBrainsMono Nerd Font'
 config.font_size = 11.0
