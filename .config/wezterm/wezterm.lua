@@ -66,6 +66,11 @@ config.keys = {
 		key = 'v',
 		mods = 'CTRL|SHIFT',
 		action = act.PasteFrom('Clipboard')
+	},
+	{
+		key = 'u',
+		mods = 'CTRL|SHIFT',
+		action = act.CharSelect
 	}
 }
 config.window_background_opacity = .75
