@@ -2,6 +2,7 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local config = {}
 
+config.char_select_font_size = 13.0
 config.color_scheme = 'tokyonight_storm'
 config.colors = {
 	background = 'black',
@@ -21,6 +22,11 @@ config.keys = {
 		key = '-',
 		mods = 'CTRL|ALT',
 		action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }
+	},
+	{
+		key = 'w',
+		mods = 'CTRL|ALT',
+		action = act.CloseCurrentPane { confirm = true }
 	},
 	{
 		key = 'h',
