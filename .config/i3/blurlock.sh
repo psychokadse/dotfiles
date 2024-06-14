@@ -3,14 +3,18 @@
 # Take screenshot
 # import -window root /tmp/screenshot.png
 
-nitrogen_config_home=~/.config/nitrogen
-blurred_prefix=/tmp/nitrogen-wallpaper-blur_
+waypaper_config_home=~/.config/waypaper
+blurred_prefix=/tmp/wallpaper-blur_
 
-# Get path of currently selected nitrogen wallpaper
-wallpaper_path=$(awk -F ' *= *' '/file/ {print $2}' $nitrogen_config_home/bg-saved.cfg) 
+# Get path of currently selected waypaper wallpaper
+wallpaper_path_relative=$(eval echo $(awk -F ' *= *' '/^wallpaper/ {print $2}' "$waypaper_config_home/config.ini"))
+wallpaper_path_absolute=$(realpath "$wallpaper_path_relative")
+
+echo $wallpaper_path_relative
+echo $wallpaper_path_absolute
 
 # Get only the file's basename
-wallpaper_filename=$(basename $wallpaper_path)
+wallpaper_filename=$(basename $wallpaper_path_absolute)
 
 # Concatenate to construct the blurred image's path
 blurred_path=$blurred_prefix$wallpaper_filename.png
@@ -21,11 +25,15 @@ then
 	# Delete old files
 	rm $blurred_prefix*
 
-	convert $wallpaper_path -blur 0x5 $blurred_path
+	magick $wallpaper_path_absolute -blur 0x5 $blurred_path
 fi
 
-# Lock the screen
-i3lock -i $blurred_path
+if [[ -v WAYLAND_DISPLAY ]]; then
+	swaylock -i $blurred_path
+else
+	# Lock the screen
+	i3lock -i $blurred_path
+fi
 
 # Sleep adds a small delay to prevent possible race conditions with suspend
 sleep 0.25
