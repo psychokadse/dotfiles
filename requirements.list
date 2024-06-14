@@ -48,7 +48,6 @@ man-db
 man-pages
 neovim
 network-manager-applet
-nitrogen
 nmap
 noto-fonts
 noto-fonts-cjk
@@ -87,6 +86,7 @@ vlc
 vulkan-nouveau
 vulkan-tools
 waybar
+waypaper (AUR)
 wezterm
 wget
 wireguard-tools
