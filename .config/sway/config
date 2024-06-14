@@ -32,9 +32,16 @@ font pango:JetBrains Mono, MesloLGS NF 11
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
+set $i3-config-home ~/.config/i3
+set $blurlock blurlock.sh
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec_always --no-startup-id xss-lock --transfer-sleep-lock -- swaylock --nofork
+exec_always --no-startup-id swayidle -w \
+	timeout 20 "swaymsg 'exec --no-startup-id $i3-config-home/$blurlock'" \
+	timeout 10 'swaymsg "output * power off"' \
+	before-sleep "swaymsg 'exec --no-startup-id $i3-config-home/$blurlock'" \
+	resume 'swaymsg "output * power on"'
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -215,10 +222,8 @@ assign [app_id="^Thunar$"] number $ws9
 # Jump to urgent window
 bindsym $mod+x [urgent=latest] focus
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+# reload configuration file and apply changes
+bindsym $mod+Shift+r reload
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'"
 
@@ -250,15 +255,15 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 set $logind systemctl
-set $sway-config-home ~/.config/sway
-set $blurlock blurlock.sh
+
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 
 mode "$mode_system" {
-	bindsym l exec --no-startup-id $sway-config-home/$blurlock, mode "default"
-	bindsym s exec --no-startup-id $sway-config-home/$blurlock && $logind suspend, mode "default"
+	bindsym l exec --no-startup-id $i3-config-home/$blurlock, mode "default"
+	bindsym s exec --no-startup-id $i3-config-home/$blurlock && $logind suspend, mode "default"
 	bindsym u exec --no-startup-id dm-tool switch-to-greeter, mode "default"
 	bindsym e exec --no-startup-id swaymsg exit, mode "default"
-	bindsym h exec --no-startup-id $sway-config-home/$blurlock && $logind hibernate, mode "default"
+	bindsym h exec --no-startup-id $i3-config-home/$blurlock && $logind hibernate, mode "default"
 	bindsym r exec --no-startup-id $logind reboot, mode "default"
 	bindsym Shift+s exec --no-startup-id $logind poweroff, mode "default"
 
@@ -269,7 +274,6 @@ mode "$mode_system" {
 
 # Set shutdown, restart and locking features
 bindsym $mod+BackSpace mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 
 # Configure i3-gaps
 gaps inner 4px
@@ -289,9 +293,9 @@ floating_maximum_size 1600 x 1040
 for_window [all] title_format "<b>%title</b>", title_window_icon padding 3px
 
 # Open specific applications in floating mode
-for_window [app_id="^Waypaper$"] floating enable
-for_window [app_id="^pavucontrol$"] floating enable
-for_window [title="^PictureInPicture$"] floating enable sticky enable
+for_window [app_id="^waypaper$"] floating enable
+for_window [app_id="^org\.pulseaudio\.pavucontrol$"] floating enable
+for_window [app_id="^firefox$" title="^Picture-in-Picture$"] floating enable, sticky enable
 
 # Set window colors		border	backgr.	text	indic.	child_border
 client.focused			#303030 #5F8787 #303030 #5F8787 #5F8787
