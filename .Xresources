@@ -1,7 +1,7 @@
 ! URxvt global settings
 URxvt*background: rgba:0000/0000/0200/c800
 URxvt*depth: 32
-URxvt*font: xft:MesloLGS NF:size=11:pixelsize=15
+URxvt*font: xft:JetBrains Mono:size=11:pixelsize=15, xft:MesloLGS NF:size=11:pixelsize=15
 URxvt.foreground: white
 URxvt*geometry: 400x400+0+0
 URxvt*inheritPixmap: true
