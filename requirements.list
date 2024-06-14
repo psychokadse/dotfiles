@@ -48,7 +48,6 @@ man-db
 man-pages
 neovim
 network-manager-applet
-nitrogen
 nmap
 noto-fonts
 noto-fonts-cjk
@@ -86,6 +85,7 @@ valgrind
 virtualbox
 virtualbox-host-modules-arch
 vlc
+waypaper (AUR)
 wezterm
 wget
 wireguard-tools
