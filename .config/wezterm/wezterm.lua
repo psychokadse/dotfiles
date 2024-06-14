@@ -15,7 +15,7 @@ config.hide_tab_bar_if_only_one_tab = true
 config.keys = {
 	{
 		key = '|',
-		mods = 'CTRL|ALT',
+		mods = 'CTRL|ALT|SHIFT',
 		action = act.SplitVertical { domain = 'CurrentPaneDomain' }
 	},
 	{
