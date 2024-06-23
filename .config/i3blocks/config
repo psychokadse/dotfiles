@@ -29,7 +29,6 @@ interval=2
 
 [keyboard]
 color=#4088FF
-command=printf '<b>\UF030C %s</b>\n' "$(xkb-switch)"
 interval=once
 signal=10
 
