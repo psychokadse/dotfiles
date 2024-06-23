@@ -64,6 +64,14 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id ddcutil setvcp 10 + 5
 bindsym XF86MonBrightnessDown exec --no-startup-id ddcutil setvcp 10 - 5
 
+# Keyboard layout configuration
+input type:keyboard {
+	xkb_layout "us,de"
+	xkb_model "pc104"
+}
+
+bindsym $mod+space input type:keyboard xkb_switch_layout next, exec --no-startup-id pkill -SIGRTMIN+10 i3blocks
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -87,14 +95,6 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-
-# Old version using dunst
-# bindsym $mod+space exec --no-startup-id xkb-switch -n && \
-# 	notify-send -u low -t 800 'xkb-switch' "Current layout: $(xkb-switch)"
-
-# New version using i3blocks and signals
-bindsym $mod+space exec --no-startup-id xkb-switch -n && \
-	pkill -SIGRTMIN+10 i3blocks
 
 # change focus
 bindsym $mod+h focus left
