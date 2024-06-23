@@ -296,6 +296,7 @@ for_window [all] title_format "<b>%title</b>", title_window_icon padding 3px
 for_window [app_id="^waypaper$"] floating enable
 for_window [app_id="^org\.pulseaudio\.pavucontrol$"] floating enable
 for_window [app_id="^firefox$" title="^Picture-in-Picture$"] floating enable, sticky enable
+for_window [app_id="^firefox$" title="^Extension: .+ — Mozilla Firefox$"] floating enable
 
 # Set window colors		border	backgr.	text	indic.	child_border
 client.focused			#303030 #5F8787 #303030 #5F8787 #5F8787
