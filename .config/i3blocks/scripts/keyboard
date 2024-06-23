@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [[ -v WAYLAND_DISPLAY ]]; then
+	# If using Wayland compositor
+	SWAY_CURRENT_LAYOUT=$(swaymsg -t get_inputs \
+		| jq 'map(select(has("xkb_active_layout_name")))[0].xkb_active_layout_name')
+	case $SWAY_CURRENT_LAYOUT in
+		'"English (US)"')
+			CURRENT_LAYOUT=us
+			;;
+		'"German"')
+			CURRENT_LAYOUT=de
+			;;
+	esac
+else
+	# If using X11
+	CURRENT_LAYOUT=$(xkb-switch)
+fi
+
+printf '<b>\UF030C %s</b>\n' "$CURRENT_LAYOUT"
