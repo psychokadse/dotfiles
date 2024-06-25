@@ -24,7 +24,7 @@ config.keys = {
 		action = act.SplitHorizontal { domain = 'CurrentPaneDomain' }
 	},
 	{
-		key = 'w',
+		key = 'x',
 		mods = 'CTRL|ALT',
 		action = act.CloseCurrentPane { confirm = true }
 	},
