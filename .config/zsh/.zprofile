@@ -4,6 +4,7 @@ fi
 
 /usr/lib/at-spi-bus-launcher --launch-immediately &
 lxpolkit &
+gammastep -P &
 flameshot &
 jetbrains-toolbox --minimize &
 nm-applet &
