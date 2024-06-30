@@ -86,7 +86,7 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 Install these using pacman, ideally from the official Arch repositories.
 Get packages from the AUR where noted.
 Install the yay AUR helper from https://github.com/Jguer/yay for easier installation of AUR packages.
-A complete list of required packages is provided in [dependencies.list](/dependencies.list).
+A complete list of required packages is provided in [requirements.list](/requirements.list).
 **When you're done installing these, move on to the [other dependencies](#other-dependencies).**
 
 ## Other dependencies:
