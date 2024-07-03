@@ -29,8 +29,14 @@ then
 fi
 
 if [[ -v WAYLAND_DISPLAY ]]; then
+	# Set keyboard layout to us before locking
+	xkb-switch -s us && pkill -SIGRTMIN+10 i3blocks
+
 	swaylock -i $blurred_path
 else
+	# Set keyboard layout to us before locking
+	xkb-switch -s us && pkill -SIGRTMIN+10 i3blocks
+
 	# Lock the screen
 	i3lock -i $blurred_path
 fi
