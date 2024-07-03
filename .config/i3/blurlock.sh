@@ -10,9 +10,6 @@ blurred_prefix=/tmp/wallpaper-blur_
 wallpaper_path_relative=$(eval echo $(awk -F ' *= *' '/^wallpaper/ {print $2}' "$waypaper_config_home/config.ini"))
 wallpaper_path_absolute=$(realpath "$wallpaper_path_relative")
 
-echo $wallpaper_path_relative
-echo $wallpaper_path_absolute
-
 # Get only the file's basename
 wallpaper_filename=$(basename $wallpaper_path_absolute)
 
