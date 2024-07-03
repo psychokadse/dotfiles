@@ -25,14 +25,17 @@ then
 	magick $wallpaper_path_absolute -blur 0x5 $blurred_path
 fi
 
+update_keyboard_block='pkill -SIGRTMIN+10 i3blocks'
+
 if [[ -v WAYLAND_DISPLAY ]]; then
 	# Set keyboard layout to us before locking
-	xkb-switch -s us && pkill -SIGRTMIN+10 i3blocks
+	swaymsg 'input type:keyboard xkb_switch_layout 0' && $update_keyboard_block
 
+	# Lock the screen
 	swaylock -i $blurred_path
 else
 	# Set keyboard layout to us before locking
-	xkb-switch -s us && pkill -SIGRTMIN+10 i3blocks
+	xkb-switch -s us && $update_keyboard_block
 
 	# Lock the screen
 	i3lock -i $blurred_path
