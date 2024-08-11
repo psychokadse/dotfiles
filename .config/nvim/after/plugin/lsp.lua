@@ -4,7 +4,8 @@ require('mason-lspconfig').setup {
 	ensure_installed = {
 		"bashls",
 		"lua_ls",
-		"pylsp"
+		"pylsp",
+		"rust_analyzer"
 	}
 }
 
@@ -28,6 +29,7 @@ lspconfig.java_language_server.setup({
 })
 lspconfig.lua_ls.setup({})
 lspconfig.pylsp.setup({})
+lspconfig.rust_analyzer.setup({})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
