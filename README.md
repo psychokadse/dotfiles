@@ -33,7 +33,6 @@ To be used with GNU Stow on Arch Linux or distros based on Arch that provide pac
 5. Enable the following services using `systemctl` (requires a reboot):
     * apparmor
     * cronie
-    * lightdm
     * NetworkManager
     * systemd-resolved
     * systemd-timesyncd

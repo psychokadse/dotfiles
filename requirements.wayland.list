@@ -56,8 +56,6 @@ noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-extra
 npm
-nvidia
-nvidia-settings
 openresolv
 os-prober
 parallel
@@ -73,6 +71,10 @@ rxvt-unicode-truecolor-wide-glyphs (AUR)
 sof-firmware
 stow
 strace
+sway
+swaybg
+swayidle
+swaylock
 thunar
 tldr
 tmux
@@ -83,6 +85,9 @@ valgrind
 virtualbox
 virtualbox-host-modules-arch
 vlc
+vulkan-nouveau
+vulkan-tools
+waybar
 waypaper (AUR)
 wezterm
 wget
@@ -91,6 +96,7 @@ xclip
 xdg-user-dirs
 xorg-xinit
 xorg-xrandr
+xorg-xwayland
 xss-lock
 zip
 zoxide
