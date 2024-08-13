@@ -3,21 +3,31 @@
 import os
 import subprocess
 
-disk_symbol = '\uF0A0'
 
-df_output = subprocess.check_output(
-        "df -B 1M --output=target,avail,size | awk '/^\\/[[:space:]]/'",
-        shell=True
-    ).decode() \
-    .strip() \
-    .split()
+def get_disk_info():
+    info = subprocess.check_output(
+            "df -B 1M --output=target,avail,size | awk '/^\\/[[:space:]]/'",
+            shell=True)
 
-disk_avail = float(df_output[1]) / 1024
-disk_size = float(df_output[2]) / 1024
+    _, disk_avail, disk_size, *_ = info.decode().strip().split()
 
-message = f'{disk_symbol} {disk_avail:.2f} GiB'
+    return disk_avail, disk_size
 
-if disk_avail <= disk_size / 100 * 5:
+
+ONE_KIBIBYTE = 1024
+DISK_SYMBOL = '\uF0A0'
+
+disk_avail, disk_size = get_disk_info()
+
+disk_avail = float(disk_avail) / ONE_KIBIBYTE
+disk_size = float(disk_size) / ONE_KIBIBYTE
+
+message = f'{DISK_SYMBOL} {disk_avail:.2f} GiB'
+
+disk_size_one_percent = disk_size / 100
+
+# disk capacity lower than or equal to 5%
+if disk_avail <= disk_size_one_percent * 5:
     print(f'<span foreground="{os.getenv('_color_urgent')}">{message}</span>')
 else:
     print(message)

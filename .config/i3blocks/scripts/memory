@@ -3,25 +3,35 @@
 import os
 import subprocess
 
-mem_symbol = '\U000F035B'
 
-free_decoded = subprocess.run(['free', '-m'], capture_output=True) \
-    .stdout \
-    .decode() \
-    .splitlines()
+def get_mem_info():
+    info = subprocess.run(['free', '-m'], capture_output=True).stdout
+    lines = info.decode().splitlines()
 
-mem_stats_meg = free_decoded[1].split()
+    _, mem_total_gig, mem_used_gig, *_, mem_available_gig = lines[1].split()
 
-mem_total_gig = float(mem_stats_meg[1]) / 1024
-mem_used_gig = float(mem_stats_meg[2]) / 1024
-mem_available_gig = float(mem_stats_meg[-1]) / 1024
+    return mem_total_gig, mem_used_gig, mem_available_gig
 
-message = f'{mem_symbol} {mem_used_gig:.2f} GiB/{mem_available_gig:.2f} GiB'
-one_percent = mem_total_gig / 100
 
-if mem_used_gig >= one_percent * 95:
+ONE_KIBIBYTE = 1024
+MEM_SYMBOL = '\U000F035B'
+
+mem_total_gig, mem_used_gig, mem_available_gig = get_mem_info()
+
+mem_total_gig = float(mem_total_gig) / ONE_KIBIBYTE
+mem_used_gig = float(mem_used_gig) / ONE_KIBIBYTE
+mem_available_gig = float(mem_available_gig) / ONE_KIBIBYTE
+
+message = f'{MEM_SYMBOL} {mem_used_gig:.2f} GiB/{mem_available_gig:.2f} GiB'
+
+mem_total_one_percent = mem_total_gig / 100
+
+# memory lower than or equal to five percent
+if mem_used_gig >= mem_total_one_percent * 95:
     print(f'<span foreground="{os.getenv('_color_urgent')}">{message}</span>')
-elif mem_used_gig >= one_percent * 90:
+
+    # memory lower than or equal to ten percent
+elif mem_used_gig >= mem_total_one_percent * 90:
     print(f'<span foreground="{os.getenv('_color_warn')}">{message}</span>')
 else:
     print(message)
