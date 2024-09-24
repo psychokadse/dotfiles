@@ -30,6 +30,11 @@ lspconfig.java_language_server.setup({
 lspconfig.lua_ls.setup({})
 lspconfig.pylsp.setup({})
 lspconfig.rust_analyzer.setup({})
+lspconfig.eslint.setup({})
+lspconfig.ts_ls.setup({})
+lspconfig.prettier.setup({})
+lspconfig.html.setup({})
+lspconfig.cssls.setup({})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
