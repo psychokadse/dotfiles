@@ -32,7 +32,6 @@ lspconfig.pylsp.setup({})
 lspconfig.rust_analyzer.setup({})
 lspconfig.eslint.setup({})
 lspconfig.ts_ls.setup({})
-lspconfig.prettier.setup({})
 lspconfig.html.setup({})
 lspconfig.cssls.setup({})
 
