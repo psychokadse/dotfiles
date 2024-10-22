@@ -73,6 +73,12 @@ rxvt-unicode-truecolor-wide-glyphs (AUR)
 sof-firmware
 stow
 strace
+texlive-basic
+texlive-fontsrecommended
+texlive-latex
+texlive-latexextra
+texlive-latexrecommended
+texlive-mathscience
 thunar
 tldr
 tmux

@@ -75,6 +75,12 @@ sway
 swaybg
 swayidle
 swaylock
+texlive-basic
+texlive-fontsrecommended
+texlive-latex
+texlive-latexextra
+texlive-latexrecommended
+texlive-mathscience
 thunar
 tldr
 tmux
