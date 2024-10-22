@@ -34,6 +34,7 @@ lspconfig.eslint.setup({})
 lspconfig.ts_ls.setup({})
 lspconfig.html.setup({})
 lspconfig.cssls.setup({})
+lspconfig.texlab.setup({})
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
