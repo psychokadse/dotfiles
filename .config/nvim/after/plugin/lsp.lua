@@ -16,7 +16,9 @@ local lspconfig = require('lspconfig')
 lspconfig.bashls.setup({
 	filetypes = { 'bash', 'sh', 'zsh' }
 })
+
 lspconfig.clangd.setup({})
+
 lspconfig.java_language_server.setup({
 	handlers = {
 		['client/registerCapability'] = function(err, result, ctx, config)
@@ -27,6 +29,7 @@ lspconfig.java_language_server.setup({
 		end
 	}
 })
+
 lspconfig.lua_ls.setup({})
 lspconfig.pylsp.setup({})
 lspconfig.rust_analyzer.setup({})
@@ -37,7 +40,9 @@ lspconfig.cssls.setup({})
 lspconfig.texlab.setup({})
 
 local cmp = require('cmp')
+
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
 local cmp_mappings = cmp.mapping.preset.insert({
 	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
@@ -70,7 +75,7 @@ cmp.setup({
 	})
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set('n', 'gd', function() vim.lsp.buf.definition() end, opts)
