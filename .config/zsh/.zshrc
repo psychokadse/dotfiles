@@ -130,6 +130,9 @@ eval "$(zoxide init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
 # Set zsh environment variables
 # Configure history file
 export HISTFILE=~/.zsh_history
