@@ -98,4 +98,5 @@ For an ideal installation, follow the list order.
 1. https://github.com/Jguer/yay (if not already installed at this point)
 2. https://github.com/adi1090x/rofi
 3. https://github.com/grwlf/xkb-switch (use the system-wide install)
-4. https://www.jetbrains.com/toolbox-app
+4. https://github.com/nvm-sh/nvm
+5. https://www.jetbrains.com/toolbox-app

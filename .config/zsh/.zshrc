@@ -126,6 +126,10 @@ _fzf_compgen_dir() {
 # Use zoxide configuration for zsh
 eval "$(zoxide init zsh)"
 
+# Set up nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # Set zsh environment variables
 # Configure history file
 export HISTFILE=~/.zsh_history
@@ -152,3 +156,4 @@ export SAVEHIST=$HISTSIZE
 
 # To customize prompt, run `p10k configure` or edit $ZDOTDIR/.p10k.zsh.
 [[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
+
