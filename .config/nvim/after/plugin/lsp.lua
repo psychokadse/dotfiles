@@ -5,7 +5,6 @@ require('mason-lspconfig').setup {
 		"bashls",
 		"lua_ls",
 		"pylsp",
-		"rust_analyzer"
 	}
 }
 
