@@ -5,11 +5,27 @@ require("formatter").setup({
 	log_level = vim.log.levels.WARN,
 	-- All formatter configurations are opt-in
 	filetype = {
-		lua = {
-			require("formatter.filetypes.lua").stylua,
+		css = {
+			require("formatter.filetypes.css").prettier,
+		},
+		html = {
+			require("formatter.filetypes.html").prettier,
 		},
 		javascript = {
 			require("formatter.filetypes.javascript").prettier,
+		},
+		json = {
+			require("formatter.filetypes.json").prettier,
+		},
+		lua = {
+			require("formatter.filetypes.lua").stylua,
+		},
+		scss = {
+			-- prettier uses the same underlying parser for scss as it does for css
+			require("formatter.filetypes.css").prettier,
+		},
+		typescript = {
+			require("formatter.filetypes.typescript").prettier,
 		},
 		-- Use the special '*' filetype for defining formatter configurations on any filtype
 		["*"] = {
