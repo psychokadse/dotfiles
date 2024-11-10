@@ -17,18 +17,6 @@ lspconfig.bashls.setup({
 })
 
 lspconfig.clangd.setup({})
-
-lspconfig.java_language_server.setup({
-    handlers = {
-        ["client/registerCapability"] = function(err, result, ctx, config)
-            local registration = {
-                registrations = { result },
-            }
-            return vim.lsp.handlers["client/registerCapability"](err, registration, ctx, config)
-        end,
-    },
-})
-
 lspconfig.lua_ls.setup({})
 lspconfig.pylsp.setup({})
 lspconfig.rust_analyzer.setup({})
