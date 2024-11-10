@@ -20,6 +20,9 @@ require("formatter").setup({
         lua = {
             require("formatter.filetypes.lua").stylua,
         },
+        python = {
+            require("formatter.filetypes.python").black,
+        },
         scss = {
             -- prettier uses the same underlying parser for scss as it does for css
             require("formatter.filetypes.css").prettier,
