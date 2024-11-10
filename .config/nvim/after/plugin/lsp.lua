@@ -38,6 +38,14 @@ lspconfig.html.setup({})
 lspconfig.cssls.setup({})
 lspconfig.texlab.setup({})
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.emmet_ls.setup({
+	capabilities = capabilities,
+	filetypes = { "css", "html", "javascript", "scss", "typescript" },
+})
+
 local cmp = require("cmp")
 
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
