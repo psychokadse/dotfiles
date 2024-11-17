@@ -1,13 +1,3 @@
-# Stowing the .git directory would cause trouble in target
-^/\.git
-
-# Only relevant in repository
-^/\.githooks
-^/\.gitignore
-^/\.gitmodules
-^/README\.md
-^/requirements(\..+)?\.list
-
 # global git config only here for reference
 ^/\.config/git
 
