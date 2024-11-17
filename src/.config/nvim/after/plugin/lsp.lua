@@ -1,4 +1,9 @@
 local lsp = require("lsp-zero")
+
+local lsp_attach = function(_, bufnr)
+    lsp.default_keymaps({ bufnr = bufnr })
+end
+
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
@@ -8,7 +13,12 @@ require("mason-lspconfig").setup({
     },
 })
 
-lsp.preset("recommended")
+lsp.extend_lspconfig({
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    lsp_attach = lsp_attach,
+    float_border = "rounded",
+    sign_text = true,
+})
 
 local lspconfig = require("lspconfig")
 
