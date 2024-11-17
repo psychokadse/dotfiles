@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if which npm 1>/dev/null && npm -g ls -depth 1 @commitlint/cli 1>/dev/null; then
+	grep -v '^#' "$1" | npm exec commitlint -V
+fi
