@@ -1,4 +1,4 @@
-# About .dotfiles
+# About this repository
 ## Description:
 This repository synchronizes my personal dotfiles and provides a reference for configuring my desktop based on my home machine.
 To be used with GNU Stow on Arch Linux or distros based on Arch that provide pacman and systemd.
@@ -9,7 +9,7 @@ All files outside this directory are related to the repository itself and should
 ## Usage:
 1. Clone this repository into `~/.dotfiles`:
    ```sh
-   git clone --recursive https://github.com/psychokadse/.dotfiles.git ~/.dotfiles
+   git clone --recursive https://github.com/psychokadse/dotfiles.git ~/.dotfiles
    ```
 
    This repository currently includes submodules for the plugins and themes required by the `.zshrc`, which should be synchronized regularly from the remote using:
