@@ -2,6 +2,7 @@
 ^/\.git
 
 # Only relevant in repository
+^/\.githooks
 ^/\.gitignore
 ^/\.gitmodules
 ^/README\.md
