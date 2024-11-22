@@ -9,7 +9,7 @@ config.colors = {
     foreground = "white",
 }
 config.disable_default_key_bindings = true
-config.font = wezterm.font_with_fallback({ "JetBrains Mono", "MesloLGS NF" })
+config.font = wezterm.font_with_fallback({ "JetBrains Mono", "JetBrainsMonoNerdFontMono", "MesloLGS NF" })
 config.font_size = 11.0
 config.hide_tab_bar_if_only_one_tab = true
 config.keys = {
