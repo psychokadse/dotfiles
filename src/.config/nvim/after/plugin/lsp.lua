@@ -35,6 +35,7 @@ lspconfig.ts_ls.setup({})
 lspconfig.html.setup({})
 lspconfig.cssls.setup({})
 lspconfig.texlab.setup({})
+lspconfig.awk_ls.setup({})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
