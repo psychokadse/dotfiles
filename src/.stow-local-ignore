@@ -1,5 +1,2 @@
-# global git config only here for reference
-^/\.config/git
-
 # system configuration files need to be stowed or copied separately
 ^/global
