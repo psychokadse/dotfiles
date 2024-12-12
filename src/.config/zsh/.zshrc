@@ -131,8 +131,8 @@ eval "$(zoxide init zsh)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+# Load Angular CLI autocompletion if available
+npm list -g --depth=0 | grep -q '@angular/cli' && source <(ng completion script)
 
 # Set zsh environment variables
 # Configure history file
@@ -160,4 +160,3 @@ export SAVEHIST=$HISTSIZE
 
 # To customize prompt, run `p10k configure` or edit $ZDOTDIR/.p10k.zsh.
 [[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
-
