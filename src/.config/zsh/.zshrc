@@ -106,8 +106,9 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
-# Use fzf bindings and completions
-eval "$(fzf --zsh)"
+# Source completions for fzf
+# This is preferable to invoking fzf --zsh on systems with outdated packages
+[[ ! -f ${ZDOTDIR}/completion.zsh ]] || source ${ZDOTDIR}/completion.zsh
 
 # Use fd instead of find for fzf completions
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
