@@ -14,8 +14,8 @@ if [[ $# == 0 ]]; then
 			$_tmux_command new -s "$_default_session"
 		fi
 	else
-		$_tmux_command new -ds dotfiles
-		$_tmux_command new -s "$_default_session"
+		$_tmux_command new -ds dotfiles -c ~/.dotfiles
+		$_tmux_command new -s "$_default_session" -c ~
 	fi
 else
 	# Invoke original command if other arguments are specified
