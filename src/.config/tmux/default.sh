@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 _tmux_command='tmux -u2'
-_default_session='system'
+_default_session='home'
 
 if [[ $# == 0 ]]; then
 	# Invoke default command if no other arguments are specified
