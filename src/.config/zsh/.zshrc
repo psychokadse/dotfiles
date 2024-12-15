@@ -88,6 +88,7 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^K' kill-line
 bindkey '\t' menu-select # Enter menu selection
+bindkey '^R' history-incremental-search-backward # This also exits the search
 
 # Set key bindings for vicmd (vi normal) mode
 bindkey -M vicmd '^U' backward-kill-line
