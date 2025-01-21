@@ -35,6 +35,9 @@ font pango:JetBrains Mono, MesloLGS NF 11
 # Set paths for blurlock script
 set $i3-config-home ~/.config/i3
 set $blurlock blurlock.sh
+set $autostart autostart.sh
+
+exec --no-startup-id $i3-config-home/$autostart
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
