@@ -60,6 +60,7 @@ os-prober
 parallel
 pavucontrol
 picom
+plocate
 pulseaudio-alsa
 python-pip
 ripgrep
