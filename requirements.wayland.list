@@ -7,7 +7,10 @@ bat
 bc
 bitwarden
 cmake
+code
+code-marketplace
 cronie
+cryptsetup
 ddcutil
 dex
 discord
@@ -15,6 +18,7 @@ docker
 docker-buildx
 docker-compose
 dosfstools
+dotnet-sdk
 dunst
 efibootmgr
 fastfetch
@@ -33,21 +37,23 @@ gparted
 grub
 gvfs
 htop
-i3blocks
-i3lock
-i3status
-i3-wm
+i3 (group)
 imagemagick
+jdk17-openjdk
 jq
 lf
 lightdm-gtk-greeter
 lightdm-slick-greeter
 linux
 linux-firmware
+linux-lts
+linux-lts-headers
 luarocks
+lvm2
 lxsession
 man-db
 man-pages
+maven
 neovim
 network-manager-applet
 nmap
@@ -60,6 +66,9 @@ os-prober
 parallel
 pavucontrol
 picom
+pipewire-audio
+pipewire-pulse
+plasma (group)
 plocate
 pulseaudio-alsa
 python-pip
@@ -83,8 +92,10 @@ texlive-latexextra
 texlive-latexrecommended
 texlive-mathscience
 thunar
+thunderbird
 tldr
 tmux
+traceroute
 tree
 tree-sitter-cli
 ttf-jetbrains-mono-nerd
@@ -92,7 +103,6 @@ tumbler
 unzip
 valgrind
 virtualbox
-virtualbox-host-modules-arch
 vlc
 vulkan-nouveau
 vulkan-tools
@@ -103,9 +113,8 @@ wget
 wireguard-tools
 xclip
 xdg-user-dirs
+xorg (group)
 xorg-xinit
-xorg-xrandr
-xorg-xwayland
 xss-lock
 zip
 zoxide
