@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 _tmux_command='tmux -u2'
-_default_session='home'
+_default_session=$(basename $PWD)
 
 if [[ $# == 0 ]]; then
 	# Invoke default command if no other arguments are specified
@@ -15,7 +15,8 @@ if [[ $# == 0 ]]; then
 		fi
 	else
 		$_tmux_command new -ds dotfiles -c ~/.dotfiles
-		$_tmux_command new -s "$_default_session" -c ~
+		$_tmux_command new -ds home -c ~
+		$_tmux_command new -s "$_default_session"
 	fi
 else
 	# Invoke original command if other arguments are specified
