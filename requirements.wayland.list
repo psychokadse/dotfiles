@@ -102,6 +102,8 @@ tree
 tree-sitter-cli
 ttf-jetbrains-mono-nerd
 tumbler
+tuxedo-control-center-bin
+tuxedo-drivers-dkms
 unzip
 valgrind
 virtualbox
