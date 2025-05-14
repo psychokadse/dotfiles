@@ -1,5 +1,6 @@
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
+alias ip='ip -color'
 alias less='less -R'
 alias ls='ls --color=auto'
 alias la='ls -A'
