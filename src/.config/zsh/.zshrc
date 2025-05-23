@@ -107,14 +107,19 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
-# Source completions for fzf
-# This is preferable to invoking fzf --zsh on systems with outdated packages
-[[ ! -f ${ZDOTDIR}/completion.zsh ]] || source ${ZDOTDIR}/completion.zsh
-
 # Use fd instead of find for fzf completions
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
+
+# Source completions for fzf
+# This is preferable to invoking fzf --zsh on systems with outdated packages
+[[ ! -f ${ZDOTDIR}/completion.zsh ]] || source ${ZDOTDIR}/completion.zsh
+
+# Source keybindings for fzf
+# This has to be included in addition to completion.zsh,
+# as these files are separate outside of tmux's builtin shell integration via tmux --zsh
+[[ ! -f ${ZDOTDIR}/key-bindings.zsh ]] || source ${ZDOTDIR}/key-bindings.zsh
 
 # Overwrite '**' completion functions to use fd instead of find
 _fzf_compgen_path() {
