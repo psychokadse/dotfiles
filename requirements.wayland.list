@@ -75,6 +75,7 @@ plasma (group)
 plocate
 pulseaudio-alsa
 python-pip
+python-poetry
 ripgrep
 rofi-wayland
 rsync
