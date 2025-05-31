@@ -9,6 +9,7 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "bashls",
         "lua_ls",
+        "nil_ls",
         "pylsp",
     },
 })
@@ -39,6 +40,7 @@ lspconfig.awk_ls.setup({})
 lspconfig.dockerls.setup({})
 lspconfig.docker_compose_language_service.setup({})
 lspconfig.jdtls.setup({})
+lspconfig.nil_ls.setup({})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true

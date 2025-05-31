@@ -20,6 +20,9 @@ require("formatter").setup({
         lua = {
             require("formatter.filetypes.lua").stylua,
         },
+        nix = {
+            require("formatter.filetypes.nix").nixfmt,
+        },
         python = {
             require("formatter.filetypes.python").black,
         },
