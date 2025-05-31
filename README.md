@@ -83,7 +83,6 @@ All files outside this directory are related to the repository itself and should
 * The kernel module `i2c-dev` needs to be loaded in order to use `ddcutil`
 * The identity files required in `src/.ssh/config` need to be generated using `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`, and the public keys subsequently added to the corresponding GitHub accounts
 * `src/global/etc/ld.so.conf` mirrors the necessary configuration to provide `xkb-switch` with the required shared objects created during the system-wide installation
-* If you need to move `.config/autostart` because it would be deleted, run `stow -d ~/.dotfiles -D src && mv -i ~/.dotfiles/src/.config/autostart ~/.config` to remove the symlinks created by stow and move the autostart directory to its proper location. Restow afterwards according to step 12 above.
 
 ## Required packages:
 Install these using pacman, ideally from the official Arch repositories.
