@@ -245,7 +245,7 @@ name = "code-marketplace"
 depends = ["code"]
 sources = [
 	{ type = "aur" },
-}
+]
 
 [[packages]]
 name = "cronie"
