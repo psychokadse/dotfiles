@@ -1,0 +1,785 @@
+# == host ==
+#
+# A generalization of a host system that allows installing packages.
+#
+# default_source:
+#	The default source used by the host. May be a package manager or a
+#	version control system like Git.
+#	type: string
+#	required: yes
+#
+# default_repository:
+#	The default repository used to acquire packages. Used only by package
+#	managers, therefore optional.
+#	type: string
+#	required: no
+#	default: ""
+#
+# description:
+#	A description of the host. Optional.
+#	type: string
+#	required: no
+#	default: ""
+#
+# name:
+#	The name of the host, e.g. the name of the Linux distribution.
+#	type: string
+#	required: yes
+#
+# supports_env:
+#	Which environments are supported by this host. If a package defines *env*,
+#	a tool may not attempt to install a package unless the host also
+#	defines all *env*s required by the package here.
+#	type: array of string
+#	required: no
+#	default: []
+
+# == package ==
+#
+# A host-agnostic specification of a package.
+#
+# depends:
+#	The names of packages that must be installed before this package.
+#	If unspecified, the package is assumed to have no such dependencies.
+#	type: array of string
+#	required: no
+#	default: []
+#
+# description:
+#	A description of the package. Optional.
+#	type: string
+#	required: no
+#	default: ""
+#
+# name:
+#	The name of the package. Used to uniquely identify a specific package.
+#	type: string
+#	required: yes
+#
+# requires_env:
+#	The environment profiles required for a package, if the package is
+#	only supported on certain hardware or desktop environment, for
+#	instance. If unspecified, the package is assumed to work no matter
+#	the environment.
+#	type: array of string
+#	required: no
+#	default: []
+#
+# sources:
+#	An array of *source*s that can provide the package. If unspecified, the *host*s
+#	*default source* may attempt to install the package using the *name* provided
+#	by the package. Sources are to be tried in the order they are specified until
+#	installation succeeds or there are no sources left to try.
+#	type: array of inline table (*source*, see below)
+#	required: no
+#	default: []
+#
+# virtual:
+#	Whether the package is virtual, e.g. refers to a group of packages
+#	instead of one specific package.
+#	type: boolean
+#	required: no
+#	default: false
+
+# == source ==
+#
+# A source that can be used to acquire a package.
+#
+# destination:
+#	The directory the downloaded file is to be placed in. Only used
+#	when *uri* is specified.
+#	type: string
+#	required: no
+#	default: "~/Downloads"
+#
+# name:
+#	The name of the package. Used to uniquely identify a specific package.
+#	type: string
+#	required: yes
+#
+# repository:
+#	The name of the repository that hosts the package. If unspecified, the
+#	host's default repository may be used to acquire the package.
+#	type: string
+#	required: no
+#	default: ""
+#
+# type:
+#	What package manager, version control system or protocol to use to
+#	acquire the package. Can be one of "pacman", "aur" or "git".
+#	type: string
+#	required: yes
+#
+# uri:
+#	The download URI of the package. Overrides *name* if specified.
+#	If unspecified, the package is assumed to not require a download
+#	URI to be acquired.
+#	type: string
+#	required: no
+#	default: ""
+
+# == tag ==
+#
+# A specification of a tag describing a group of packages by their function,
+# scope etc.
+#
+# description:
+#	A description of the tag. Optional.
+#	type: string
+#	required: no
+#	default: ""
+#
+# name:
+#	The name of the tag. Used to uniquely identify the tag.
+#	type: string
+#	required: yes
+#
+# packages:
+#	A list of all packages included in this tag. A package not marked as
+#	required will be excluded from a minimal installation of a group of
+#	packages identified by *tag*, unless it is depended on by another package
+#	in the group.
+#	Note: A package marked as required may still be blocked from installation
+#	if the host cannot satisfy its env constraints.
+#	type: array of inline table (*tagspec*, see below)
+#	required: yes
+
+# == tagspec ==
+#
+# A specification of a package included in a tag and how it is to be treated.
+#
+# name:
+#	The name of the package as specified by the package's *name* key.
+#	type: string
+#	required: yes
+#
+# repository:
+#	The name of the repository that hosts the package. If unspecified, the
+#	host's default repository may be used to acquire the package.
+#	type: string
+#	required: no
+#	default: ""
+#
+# required:
+#	Whether the package is required for a minimal installation of *tag*.
+#	If false, package may be ignored safely unless depended on by another
+#	package specified by *tag*.
+#	type: boolean
+#	required: no
+#	default: true
+[[hosts]]
+name = "archlinux"
+description = "An installation of Arch Linux using the official ISO"
+supports_env = [
+	"archlinux",
+	"nvidia_gpu",
+	"tuxedo",
+	"wayland",
+	"x11",
+]
+default_source = "pacman"
+default_repository = "extra"
+
+[[packages]]
+name = "accountsservice"
+
+[[packages]]
+name = "apparmor"
+
+[[packages]]
+name = "arc-gtk-theme"
+sources = [
+	{ type = "aur" },
+]
+
+[[packages]]
+name = "aspnet-targeting-pack"
+
+[[packages]]
+name = "base"
+description = "Minimal package set to define a basic Arch Linux installation, should already be installed"
+repository = "core"
+requires_env = ["archlinux"]
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "base-devel"
+description = "Basic tools to build Arch Linux packages, should already be installed"
+repository = "core"
+requires_env = ["archlinux"]
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "bat"
+
+[[packages]]
+name = "bc"
+
+[[packages]]
+name = "bitwarden"
+
+[[packages]]
+name = "bluez-utils"
+
+[[packages]]
+name = "brightnessctl"
+
+[[packages]]
+name = "ca-certificates"
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "cmake"
+
+[[packages]]
+name = "code"
+
+[[packages]]
+name = "code-marketplace"
+depends = ["code"]
+sources = [
+	{ type = "aur" },
+}
+
+[[packages]]
+name = "cronie"
+
+[[packages]]
+name = "cryptsetup"
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "ddcutil"
+
+[[packages]]
+name = "dex"
+
+[[packages]]
+name = "discord"
+depends = ["libnotify"]
+
+[[packages]]
+name = "docker"
+depends = [
+	"docker-buildx",
+	"docker-compose"
+]
+
+[[packages]]
+name = "docker-buildx"
+
+[[packages]]
+name = "docker-compose"
+
+[[packages]]
+name = "dosfstools"
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "dotnet-sdk"
+depends = ["aspnet-targeting-pack"]
+
+[[packages]]
+name = "dunst"
+depends = ["libnotify"]
+
+[[packages]]
+name = "efibootmgr"
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "fastfetch"
+depends = [
+	"ddcutil",
+	"imagemagick",
+	"python",
+]
+
+[[packages]]
+name = "fd"
+
+[[packages]]
+name = "feh"
+depends = ["imagemagick"]
+
+[[packages]]
+name = "ffmpegthumbnailer"
+depends = ["gvfs"]
+
+[[packages]]
+name = "firefox"
+depends = ["libnotify"]
+
+[[packages]]
+name = "flameshot"
+
+[[packages]]
+name = "fuse2"
+
+[[packages]]
+name = "fzf"
+depends = [
+	"tmux",
+	"zsh",
+]
+
+[[packages]]
+name = "gammastep"
+
+[[packages]]
+name = "gdb"
+
+[[packages]]
+name = "gimp"
+depends = ["gvfs"]
+
+[[packages]]
+name = "git"
+depends = [
+	"man-db",
+]
+
+[[packages]]
+name = "gparted"
+depends = [
+	"dosfstools",
+	"ntfs-3g",
+]
+
+[[packages]]
+name = "grub"
+depends = [
+	"dosfstools",
+	"efibootmgr",
+	"os-prober",
+]
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "gvfs"
+
+[[packages]]
+name = "htop"
+depends = ["strace"]
+
+[[packages]]
+name = "i3"
+requires_env = ["x11"]
+virtual = true
+
+[[packages]]
+name = "i3status"
+required_env = ["x11"]
+
+[[packages]]
+name = "imagemagick"
+
+[[packages]]
+name = "jq"
+
+[[packages]]
+name = "lf"
+
+[[packages]]
+name = "libnotify"
+
+[[packages]]
+name = "libpulse"
+
+[[packages]]
+name = "lightdm"
+depends = [
+	"accountsservice",
+	"lightdm-gtk-greeter",
+]
+requires_env = ["x11"]
+
+[[packages]]
+name = "lightdm-gtk-greeter"
+requires_env = ["x11"]
+
+[[packages]]
+name = "lightdm-slick-greeter"
+requires_env = ["x11"]
+
+[[packages]]
+name = "linux"
+depends = ["linux-firmware"]
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "linux-firmware"
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "linux-lts"
+depends = ["linux-firmware"]
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "linux-lts-headers"
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "luarocks"
+depends = [
+	"cmake",
+	"git",
+]
+
+[[packages]]
+name = "lvm2"
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "lxsession"
+
+[[packages]]
+name = "man-db"
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "man-pages"
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "maven"
+
+[[packages]]
+name = "neovim"
+depends = [
+	"xclip",
+	"wl-clipboard",
+]
+
+[[packages]]
+name = "network-manager-applet"
+
+[[packages]]
+name = "nix"
+
+[[packages]]
+name = "nmap"
+
+[[packages]]
+name = "nodejs"
+depends = ["npm"]
+
+[[packages]]
+name = "noto-fonts"
+depends = [
+	"noto-fonts-cjk",
+	"noto-fonts-emoji",
+	"noto-fonts-extra",
+]
+
+[[packages]]
+name = "noto-fonts-cjk"
+
+[[packages]]
+name = "noto-fonts-emoji"
+
+[[packages]]
+name = "noto-fonts-extra"
+
+[[packages]]
+name = "npm"
+depends = ["git"]
+
+[[packages]]
+name = "ntfs-3g"
+
+[[packages]]
+name = "nvidia"
+requires_env = ["nvidia_gpu"]
+
+[[packages]]
+name = "nvidia-settings"
+requires_env = ["nvidia_gpu"]
+
+[[packages]]
+name = "openresolv"
+
+[[packages]]
+name = "os-prober"
+
+[[packages]]
+name = "parallel"
+
+[[packages]]
+name = "pavucontrol"
+
+[[packages]]
+name = "picom"
+depends = ["python"]
+requires_env = ["x11"]
+
+[[packages]]
+name = "pipewire-audio"
+
+[[packages]]
+name = "pipewire-pulse"
+
+[[packages]]
+name = "plasma"
+virtual = true
+
+[[packages]]
+name = "plocate"
+
+[[packages]]
+name = "pulseaudio-alsa"
+
+[[packages]]
+name = "python"
+sources = [
+	{ type = "pacman", repository = "core" },
+]
+
+[[packages]]
+name = "python-pip"
+
+[[packages]]
+name = "python-poetry"
+depends = ["python-pip"]
+
+[[packages]]
+name = "ripgrep"
+
+[[packages]]
+name = "rofi-wayland"
+
+[[packages]]
+name = "rsync"
+depends = ["python"]
+
+[[packages]]
+name = "rustup"
+depends = ["gdb"]
+
+[[packages]]
+name = "rxvt-unicode-truecolor-wide-glyphs"
+required_env = ["x11"]
+sources = [
+	{ type = "aur" },
+]
+
+[[packages]]
+name = "sof-firmware"
+
+[[packages]]
+name = "stow"
+
+[[packages]]
+name = "strace"
+
+[[packages]]
+name = "sway"
+depends = [
+	"brightnessctl",
+	"i3status",
+	"libpulse",
+	"swaybg",
+	"swayidle",
+	"swaylock",
+	"waybar",
+]
+required_env = ["wayland"]
+
+[[packages]]
+name = "swaybg"
+required_env = ["wayland"]
+
+[[packages]]
+name = "swayidle"
+required_env = ["wayland"]
+
+[[packages]]
+name = "swaylock"
+required_env = ["wayland"]
+
+[[packages]]
+name = "waybar"
+required_env = ["wayland"]
+
+[[packages]]
+name = "texlive-langgerman"
+
+[[packages]]
+name = "texlive-latex"
+
+[[packages]]
+name = "texlive-latexextra"
+
+[[packages]]
+name = "texlive-mathscience"
+
+[[packages]]
+name = "texlive-pictures"
+
+[[packages]]
+name = "thunar"
+depends = [
+	"gvfs",
+	"tumbler",
+]
+
+[[packages]]
+name = "thunderbird"
+depends = ["libnotify"]
+
+[[packages]]
+name = "tmux"
+
+[[packages]]
+name = "traceroute"
+
+[[packages]]
+name = "tree"
+
+[[packages]]
+name = "tree-sitter-cli"
+depends = ["nodejs"]
+
+[[packages]]
+name = "ttf-jetbrains-mono-nerd"
+
+[[packages]]
+name = "tumbler"
+depends = ["ffmpegthumbnailer"]
+
+[[packages]]
+name = "tuxedo-control-center-bin"
+required_env = ["tuxedo"]
+sources = [
+	{ type = "aur" },
+]
+
+[[packages]]
+name = "tuxedo-drivers-dkms"
+required_env = ["tuxedo"]
+sources = [
+	{ type = "aur" },
+]
+
+[[packages]]
+name = "ufw"
+
+[[packages]]
+name = "unzip"
+
+[[packages]]
+name = "valgrind"
+depends = ["python"]
+
+[[packages]]
+name = "virtualbox"
+depends = [
+	"virtualbox-host-modules-arch",
+	"virtualbox-host-modules-lts",
+]
+
+[[packages]]
+name = "vlc"
+
+[[packages]]
+name = "vulkan-nouveau"
+required_env = [
+	"nvidia_gpu",
+	"wayland",
+]
+
+[[packages]]
+name = "vulkan-tools"
+required_env = [
+	"nvidia_gpu",
+	"wayland",
+]
+
+[[packages]]
+name = "waybar"
+required_env = ["wayland"]
+
+[[packages]]
+name = "waypaper"
+depends = [
+	"feh",
+	"swaybg",
+]
+sources = [
+	{ type = "aur" },
+]
+
+[[packages]]
+name = "wezterm"
+depends = ["noto-fonts-emoji"]
+
+[[packages]]
+name = "wget"
+depends = ["ca-certificates"]
+
+[[packages]]
+name = "wireguard-tools"
+depends = ["openresolv"]
+
+[[packages]]
+name = "wl-clipboard"
+required_env = ["wayland"]
+
+[[packages]]
+name = "xclip"
+required_env = ["x11"]
+
+[[packages]]
+name = "xdg-user-dirs"
+
+[[packages]]
+name = "xorg"
+requires_env = ["x11"]
+virtual = true
+
+[[packages]]
+name = "xorg-xinit"
+requires_env = ["x11"]
+
+[[packages]]
+name = "xss-lock"
+requires_env = ["x11"]
+
+[[packages]]
+name = "zip"
+
+[[packages]]
+name = "zoxide"
+depends = ["fzf"]
+
+[[packages]]
+name = "zsh"

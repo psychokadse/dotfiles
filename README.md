@@ -88,7 +88,7 @@ All files outside this directory are related to the repository itself and should
 Install these using pacman, ideally from the official Arch repositories.
 Get packages from the AUR where noted.
 Install the yay AUR helper from https://github.com/Jguer/yay for easier installation of AUR packages.
-A complete list of required packages is provided in [requirements.list](/requirements.list).
+A complete list of required packages is provided in [requirements.toml](/requirements.toml).
 **When you're done installing these, move on to the [other dependencies](#other-dependencies).**
 
 ## Other dependencies:
