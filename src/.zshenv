@@ -6,7 +6,8 @@ ${HOME}/.local/share/JetBrains/Toolbox/bin:\
 ${HOME}/.local/share/JetBrains/Toolbox/scripts:\
 ${HOME}/.cargo/bin:\
 ${HOME}/.cargo/env:\
-${HOME}/.local/bin"
+${HOME}/.local/bin:\
+${HOME}/.fzf/bin"
 
 export TERMINAL=wezterm
 export EDITOR=nvim
