@@ -114,12 +114,12 @@ export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git
 
 # Source completions for fzf
 # This is preferable to invoking fzf --zsh on systems with outdated packages
-[[ ! -f ${ZDOTDIR}/completion.zsh ]] || source ${ZDOTDIR}/completion.zsh
+[[ ! -f ${ZDOTDIR}/fzf/completion.zsh ]] || source ${ZDOTDIR}/fzf/completion.zsh
 
 # Source keybindings for fzf
 # This has to be included in addition to completion.zsh,
 # as these files are separate outside of tmux's builtin shell integration via tmux --zsh
-[[ ! -f ${ZDOTDIR}/key-bindings.zsh ]] || source ${ZDOTDIR}/key-bindings.zsh
+[[ ! -f ${ZDOTDIR}/fzf/key-bindings.zsh ]] || source ${ZDOTDIR}/fzf/key-bindings.zsh
 
 # Overwrite '**' completion functions to use fd instead of find
 _fzf_compgen_path() {
