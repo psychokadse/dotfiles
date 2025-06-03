@@ -7,7 +7,8 @@ ${HOME}/.local/share/JetBrains/Toolbox/scripts:\
 ${HOME}/.cargo/bin:\
 ${HOME}/.cargo/env:\
 ${HOME}/.local/bin:\
-${HOME}/.fzf/bin"
+${HOME}/.fzf/bin:\
+${HOME}/.config/tmux/tmux-sessionizer"
 
 export TERMINAL=wezterm
 export EDITOR=nvim
