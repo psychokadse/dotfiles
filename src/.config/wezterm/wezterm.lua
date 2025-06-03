@@ -12,7 +12,12 @@ config.colors = {
 config.window_background_opacity = 0.75
 
 config.enable_scroll_bar = true
+
 config.hide_tab_bar_if_only_one_tab = true
+config.tab_max_width = 32
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = false
+config.show_new_tab_button_in_tab_bar = false
 
 config.char_select_font_size = 13.0
 config.font_size = 11.0
@@ -48,9 +53,15 @@ config.set_environment_variables = {
     TERM = "xterm-256color",
 }
 
+-- Honor kitty keyboard protocol escape sequences; allows forwarding of unusual keybindings
+config.enable_kitty_keyboard = true
+
 -- Key Bindings
 config.disable_default_key_bindings = true
 config.keys = {
+    -- Debug overlay
+    { key = "l", mods = "CTRL|SHIFT", action = act.ShowDebugOverlay },
+
     -- Font size
     { key = "-", mods = "CTRL", action = act.DecreaseFontSize },
     { key = "+", mods = "CTRL|SHIFT", action = act.IncreaseFontSize },
