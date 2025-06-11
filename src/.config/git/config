@@ -8,10 +8,9 @@
 	editor = nvim
 	hooksPath = .githooks
 	pager = less
+	sshCommand = ssh -i ~/.ssh/psychokadse@github.com_ed25519 -o IdentitiesOnly=yes
 [credential "https://github.com/psychokadse"]
 	username = psychokadse
-[credential "https://github.com/pkerschbaumer"]
-	username = pkerschbaumer
 [diff]
 	tool = nvimdiff
 [difftool]
@@ -35,3 +34,5 @@
 	name = psychokadse
 	email = psyccvx42kits@proton.me
 	signingkey = psyccvx42kits@proton.me
+[includeIf "gitdir:~/Documents/dev/work/"]
+	path = ./config.work

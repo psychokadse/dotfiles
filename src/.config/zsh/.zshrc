@@ -140,6 +140,11 @@ export NVM_DIR="$HOME/.nvm"
 # Load Angular CLI autocompletion if available
 npm list -g --depth=0 | grep -q '@angular/cli' && source <(ng completion script)
 
+# Automatically export SSH_AUTH_SOCK if using systemd user ssh-agent
+if [[ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ]]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
+
 # Set zsh environment variables
 # Configure history file
 export HISTFILE=~/.zsh_history
