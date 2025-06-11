@@ -1,3 +1,4 @@
+require("psychokadse.indent")
 require("psychokadse.netrw")
 require("psychokadse.remap")
 require("psychokadse.set")
