@@ -556,6 +556,12 @@ virtual = true
 name = "plocate"
 
 [[packages]]
+name = "proton-vpn-gtk-app"
+
+[[packages]]
+name = "protonmail-bridge"
+
+[[packages]]
 name = "pulseaudio-alsa"
 
 [[packages]]
