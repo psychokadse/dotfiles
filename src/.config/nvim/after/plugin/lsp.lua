@@ -5,12 +5,19 @@ local lsp_attach = function(_, bufnr)
 end
 
 require("mason").setup()
-require("mason-lspconfig").setup({
+
+require("mason-lspconfig").setup({})
+
+require("mason-tool-installer").setup({
     ensure_installed = {
         "bashls",
+        "black",
+        "cspell",
         "lua_ls",
         "nil_ls",
+        "nixfmt",
         "pylsp",
+        "stylua",
     },
 })
 

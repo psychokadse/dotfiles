@@ -51,4 +51,10 @@ require("lazy").setup({
     {
         "mhartington/formatter.nvim",
     },
+    {
+        "williamboman/mason.nvim",
+        dependencies = {
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
+    },
 })
