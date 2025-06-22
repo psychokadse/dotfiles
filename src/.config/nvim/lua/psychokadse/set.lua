@@ -33,3 +33,13 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "120"
 
 vim.opt.showmode = false
+
+-- Also show diagnostics when no LSP is attached
+vim.diagnostic.config({
+    virtual_text = true,
+    float = {
+        source = true,
+        border = "rounded",
+    },
+    severity_sort = true,
+})
