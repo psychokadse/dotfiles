@@ -57,4 +57,7 @@ require("lazy").setup({
             "WhoIsSethDaniel/mason-tool-installer.nvim",
         },
     },
+    {
+        "mfussenegger/nvim-lint",
+    },
 })
