@@ -1,0 +1,26 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "globRoot": ".",
+  "dictionaryDefinitions": [
+    {
+      "name": "cspell-words",
+      "path": "./cspell-words.txt",
+      "addWords": true,
+      "caseSensitive": false
+    }
+  ],
+  "dictionaries": ["cspell-words"],
+  "ignorePaths": [
+    "./cspell-words.txt",
+    "**/.git",
+    "/src/.config/tmux/tmux-sessionizer/",
+    "/src/.config/zsh/plugins/",
+    "/src/.config/zsh/themes/",
+    "/src/global/usr/local/share/fonts/",
+    "/src/Pictures/",
+    "**/lazy-lock.json",
+    "**/.zcompdump*"
+  ]
+}
