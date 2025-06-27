@@ -129,6 +129,7 @@ incsearch
 initsystem
 inplace
 isfname
+isort
 istioctl
 jackdbus
 jdtls
@@ -188,6 +189,7 @@ mmap
 msdos
 msgqueue
 multilib
+mypy
 nagbar
 neofetch
 nerdfont
