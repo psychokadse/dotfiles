@@ -24,6 +24,7 @@ require("formatter").setup({
             require("formatter.filetypes.nix").nixfmt,
         },
         python = {
+            require("formatter.filetypes.python").isort,
             require("formatter.filetypes.python").black,
         },
         scss = {

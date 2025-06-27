@@ -2,6 +2,7 @@ local lint = require("lint")
 
 -- Set up global linters
 lint.linters_by_ft = {
+    python = { "mypy" },
     ["*"] = { "cspell" },
 }
 
