@@ -50,6 +50,7 @@ lspconfig.dockerls.setup({})
 lspconfig.docker_compose_language_service.setup({})
 lspconfig.jdtls.setup({})
 lspconfig.nil_ls.setup({})
+lspconfig.tsp_server.setup({})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
