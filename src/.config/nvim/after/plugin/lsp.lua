@@ -12,6 +12,7 @@ require("mason-tool-installer").setup({
     ensure_installed = {
         "bashls",
         "black",
+        "commitlint",
         "cspell",
         "isort",
         "lua_ls",
