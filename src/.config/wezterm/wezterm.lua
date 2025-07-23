@@ -87,13 +87,6 @@ config.keys = {
     { key = "h", mods = "CTRL|ALT", action = act.ActivateTabRelative(-1) },
     { key = "l", mods = "CTRL|ALT", action = act.ActivateTabRelative(1) },
 
-    -- tmux-sessionizer integration
-    {
-        key = "p",
-        mods = "CTRL|SHIFT",
-        action = act.SendString("tmux-sessionizer\n"), -- Assumes tmux-sessionizer is in PATH
-    },
-
     -- Close current tab in case you wanted to use a raw shell
     {
         key = "x",
