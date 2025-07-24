@@ -57,21 +57,17 @@ All files outside this directory are related to the repository itself and should
    chsh -s /usr/bin/zsh
    ```
 9. Run `xdg-user-dirs-update` to create the standard XDG desktop directories below your home directory. This won't overwrite any existing files.
-10. Create the required directory structure in your home directory to ensure the symlinks are created correctly:
-      ```sh
-      mkdir -p ~/{.ssh,.config/xfce4}
-      ```
-11. Remove any files that cause a conflict when stow is run. They'll be replaced by symlinks into `.dotfiles/src/local`.
-12. Create symlinks from your home directory to the repository:
+10. Remove any files that cause a conflict when stow is run. They'll be replaced by symlinks into `.dotfiles/src/local`.
+11. Create symlinks from your home directory to the repository:
     ```sh
     stow -d ~/.dotfiles/src -t ~ local
     ```
-13. Open `nvim` to install https://github.com/folke/lazy.nvim and the plugins in the plugin specification. `.config/nvim/init.lua` should source `.config/nvim/lua/psychokadse/lazy.lua` automatically, which installs lazy.nvim using `git clone` if it isn't present.
-14. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/src/global/etc` and `~/.dotfiles/src/global/usr` into `/etc` and `/usr` respectively:
+12. Open `nvim` to install https://github.com/folke/lazy.nvim and the plugins in the plugin specification. `.config/nvim/init.lua` should source `.config/nvim/lua/psychokadse/lazy.lua` automatically, which installs lazy.nvim using `git clone` if it isn't present.
+13. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/src/global/etc` and `~/.dotfiles/src/global/usr` into `/etc` and `/usr` respectively:
     ```sh
     sudo cp -ir ~/.dotfiles/src/global/{etc,usr} /
     ```
-15. Finally, the included wallpapers have to be made accessible system-wide:
+14. Finally, the included wallpapers have to be made accessible system-wide:
     ```sh
     sudo cp -r ~/Pictures/wallpapers /usr/share/wallpapers
     ```
