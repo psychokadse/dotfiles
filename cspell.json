@@ -15,11 +15,11 @@
   "ignorePaths": [
     "./cspell-words.txt",
     "**/.git",
-    "/src/.config/tmux/tmux-sessionizer/",
-    "/src/.config/zsh/plugins/",
-    "/src/.config/zsh/themes/",
     "/src/global/usr/local/share/fonts/",
-    "/src/Pictures/",
+    "/src/local/.config/tmux/tmux-sessionizer/",
+    "/src/local/.config/zsh/plugins/",
+    "/src/local/.config/zsh/themes/",
+    "/src/local/Pictures/",
     "**/lazy-lock.json",
     "**/.zcompdump*"
   ]

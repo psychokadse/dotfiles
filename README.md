@@ -61,10 +61,10 @@ All files outside this directory are related to the repository itself and should
       ```sh
       mkdir -p ~/{.ssh,.config/xfce4}
       ```
-11. Remove any files that cause a conflict when stow is run. They'll be replaced by symlinks into `.dotfiles/src`.
+11. Remove any files that cause a conflict when stow is run. They'll be replaced by symlinks into `.dotfiles/src/local`.
 12. Create symlinks from your home directory to the repository:
     ```sh
-    stow -d ~/.dotfiles src
+    stow -d ~/.dotfiles/src -t ~ local
     ```
 13. Open `nvim` to install https://github.com/folke/lazy.nvim and the plugins in the plugin specification. `.config/nvim/init.lua` should source `.config/nvim/lua/psychokadse/lazy.lua` automatically, which installs lazy.nvim using `git clone` if it isn't present.
 14. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/src/global/etc` and `~/.dotfiles/src/global/usr` into `/etc` and `/usr` respectively:
