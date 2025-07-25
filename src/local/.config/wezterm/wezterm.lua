@@ -4,7 +4,7 @@ local act = wezterm.action
 local config = {}
 
 -- Appearance
-config.color_scheme = "tokyonight_storm"
+config.color_scheme = "tokyonight_moon"
 config.colors = {
     background = "black",
     foreground = "white",
