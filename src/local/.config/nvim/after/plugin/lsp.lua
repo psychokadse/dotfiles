@@ -1,12 +1,6 @@
 local lsp = require("lsp-zero")
 
-local lsp_attach = function(_, bufnr)
-    lsp.default_keymaps({ bufnr = bufnr })
-end
-
 require("mason").setup()
-
-require("mason-lspconfig").setup({})
 
 require("mason-tool-installer").setup({
     ensure_installed = {
@@ -26,39 +20,30 @@ require("mason-tool-installer").setup({
 
 lsp.extend_lspconfig({
     capabilities = require("cmp_nvim_lsp").default_capabilities(),
-    lsp_attach = lsp_attach,
+    lsp_attach = function(_, bufnr)
+        lsp.default_keymaps({ bufnr = bufnr })
+    end,
     float_border = "rounded",
     sign_text = true,
 })
 
-local lspconfig = require("lspconfig")
+require("mason-lspconfig").setup({
+    handlers = {
+        bashls = function()
+            require("lspconfig").bashls.setup({
+                filetypes = { "bash", "sh", "zsh" },
+            })
+        end,
+        emmet_ls = function()
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lspconfig.bashls.setup({
-    filetypes = { "bash", "sh", "zsh" },
-})
-
-lspconfig.clangd.setup({})
-lspconfig.lua_ls.setup({})
-lspconfig.pylsp.setup({})
-lspconfig.rust_analyzer.setup({})
-lspconfig.eslint.setup({})
-lspconfig.ts_ls.setup({})
-lspconfig.html.setup({})
-lspconfig.cssls.setup({})
-lspconfig.texlab.setup({})
-lspconfig.awk_ls.setup({})
-lspconfig.dockerls.setup({})
-lspconfig.docker_compose_language_service.setup({})
-lspconfig.jdtls.setup({})
-lspconfig.nil_ls.setup({})
-lspconfig.tsp_server.setup({})
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-lspconfig.emmet_ls.setup({
-    capabilities = capabilities,
-    filetypes = { "css", "html", "javascript", "scss", "typescript" },
+            require("lspconfig").emmet_ls.setup({
+                capabilities = capabilities,
+                filetypes = { "css", "html", "javascript", "scss", "typescript" },
+            })
+        end,
+    },
 })
 
 local cmp = require("cmp")
@@ -97,19 +82,11 @@ cmp.setup({
     }),
 })
 
-vim.api.nvim_create_autocmd("LspAttach", {
-    callback = function(ev)
-        local mappings = vim.api.nvim_get_keymap("n")
-        for _, map in ipairs(mappings) do
-            if map.lhs == "K" then
-                vim.keymap.del("n", "K", { buffer = ev.buf })
-            end
-        end
-    end,
-})
-
 lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
+
+    -- Restore default behavior of opening manual entry
+    vim.keymap.del("n", "K", opts)
 
     vim.keymap.set({ "n", "i" }, "<leader>K", function()
         vim.lsp.buf.hover()
