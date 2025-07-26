@@ -1,12 +1,12 @@
 # About this repository
-## Description:
+## Description
 This repository synchronizes my personal dotfiles and provides a reference for configuring my desktop based on my home machine.
 To be used with GNU Stow on Arch Linux or distros based on Arch that provide pacman and systemd.
 
 The actual configuration files are located in the `src` directory at the root of the repository's working tree.
 All files outside this directory are related to the repository itself and should not be copied or symlinked into the user's environment.
 
-## Usage:
+## Usage
 1. Clone this repository into `~/.dotfiles`:
    ```sh
    git clone --recursive https://github.com/psychokadse/dotfiles.git ~/.dotfiles
@@ -73,7 +73,7 @@ All files outside this directory are related to the repository itself and should
     sudo cp -r ~/Pictures/wallpapers /usr/share/wallpapers
     ```
 
-## Notes:
+## Notes
 * Copy `~/.dotfiles/src/global/etc/default/grub` to `/etc/default/grub` and run `grub-mkconfig -o /boot/grub/grub.cfg` to update the grub configuration
 * `~/.dotfiles/src/global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
 * dunst is configured as a dbus service in `~/.dotfiles/src/global/usr/share/dbus-1/services/org.freedesktop.Notifications.service`, copy the file to the appropriate location to run it on startup
@@ -81,14 +81,14 @@ All files outside this directory are related to the repository itself and should
 * Any ssh keys need to be generated using `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`, and the public keys subsequently added to the corresponding GitHub accounts
 * `~/.dotfiles/src/global/etc/ld.so.conf` mirrors the necessary configuration to provide `xkb-switch` with the required shared objects created during the system-wide installation
 
-## Required packages:
+## Required packages
 Install these using pacman, ideally from the official Arch repositories.
 Get packages from the AUR where noted.
 Install the yay AUR helper from https://github.com/Jguer/yay for easier installation of AUR packages.
 A complete list of required packages is provided in [requirements.toml](/requirements.toml).
 **When you're done installing these, move on to the [other dependencies](#other-dependencies).**
 
-## Other dependencies:
+## Other dependencies
 Install these according to the instructions in their respective READMEs on GitHub.
 Make sure you installed all of the required packages above.
 Install zsh plugins into `~/.config/zsh/plugins` and zsh themes into `~/.config/zsh/themes`.
