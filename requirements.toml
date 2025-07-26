@@ -167,7 +167,7 @@
 #	type: boolean
 #	required: no
 #	default: true
-[[hosts]]
+[[host]]
 name = "archlinux"
 description = "An installation of Arch Linux using the official ISO"
 supports_env = [
@@ -180,22 +180,22 @@ supports_env = [
 default_source = "pacman"
 default_repository = "extra"
 
-[[packages]]
+[[package]]
 name = "accountsservice"
 
-[[packages]]
+[[package]]
 name = "apparmor"
 
-[[packages]]
+[[package]]
 name = "arc-gtk-theme"
 sources = [
 	{ type = "aur" },
 ]
 
-[[packages]]
+[[package]]
 name = "aspnet-targeting-pack"
 
-[[packages]]
+[[package]]
 name = "base"
 description = "Minimal package set to define a basic Arch Linux installation, should already be installed"
 repository = "core"
@@ -204,7 +204,7 @@ sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "base-devel"
 description = "Basic tools to build Arch Linux packages, should already be installed"
 repository = "core"
@@ -213,93 +213,93 @@ sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "bat"
 
-[[packages]]
+[[package]]
 name = "bc"
 
-[[packages]]
+[[package]]
 name = "bitwarden"
 
-[[packages]]
+[[package]]
 name = "bluez-utils"
 
-[[packages]]
+[[package]]
 name = "brightnessctl"
 
-[[packages]]
+[[package]]
 name = "ca-certificates"
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "cmake"
 
-[[packages]]
+[[package]]
 name = "code"
 
-[[packages]]
+[[package]]
 name = "code-marketplace"
 depends = ["code"]
 sources = [
 	{ type = "aur" },
 ]
 
-[[packages]]
+[[package]]
 name = "cronie"
 
-[[packages]]
+[[package]]
 name = "cryptsetup"
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "ddcutil"
 
-[[packages]]
+[[package]]
 name = "dex"
 
-[[packages]]
+[[package]]
 name = "discord"
 depends = ["libnotify"]
 
-[[packages]]
+[[package]]
 name = "docker"
 depends = [
 	"docker-buildx",
 	"docker-compose"
 ]
 
-[[packages]]
+[[package]]
 name = "docker-buildx"
 
-[[packages]]
+[[package]]
 name = "docker-compose"
 
-[[packages]]
+[[package]]
 name = "dosfstools"
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "dotnet-sdk"
 depends = ["aspnet-targeting-pack"]
 
-[[packages]]
+[[package]]
 name = "dunst"
 depends = ["libnotify"]
 
-[[packages]]
+[[package]]
 name = "efibootmgr"
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "fastfetch"
 depends = [
 	"ddcutil",
@@ -307,58 +307,58 @@ depends = [
 	"python",
 ]
 
-[[packages]]
+[[package]]
 name = "fd"
 
-[[packages]]
+[[package]]
 name = "feh"
 depends = ["imagemagick"]
 
-[[packages]]
+[[package]]
 name = "ffmpegthumbnailer"
 depends = ["gvfs"]
 
-[[packages]]
+[[package]]
 name = "firefox"
 depends = ["libnotify"]
 
-[[packages]]
+[[package]]
 name = "flameshot"
 
-[[packages]]
+[[package]]
 name = "fuse2"
 
-[[packages]]
+[[package]]
 name = "fzf"
 depends = [
 	"tmux",
 	"zsh",
 ]
 
-[[packages]]
+[[package]]
 name = "gammastep"
 
-[[packages]]
+[[package]]
 name = "gdb"
 
-[[packages]]
+[[package]]
 name = "gimp"
 depends = ["gvfs"]
 
-[[packages]]
+[[package]]
 name = "git"
 depends = [
 	"man-db",
 ]
 
-[[packages]]
+[[package]]
 name = "gparted"
 depends = [
 	"dosfstools",
 	"ntfs-3g",
 ]
 
-[[packages]]
+[[package]]
 name = "grub"
 depends = [
 	"dosfstools",
@@ -369,38 +369,38 @@ sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "gvfs"
 
-[[packages]]
+[[package]]
 name = "htop"
 depends = ["strace"]
 
-[[packages]]
+[[package]]
 name = "i3"
 requires_env = ["x11"]
 virtual = true
 
-[[packages]]
+[[package]]
 name = "i3status"
 required_env = ["x11"]
 
-[[packages]]
+[[package]]
 name = "imagemagick"
 
-[[packages]]
+[[package]]
 name = "jq"
 
-[[packages]]
+[[package]]
 name = "lf"
 
-[[packages]]
+[[package]]
 name = "libnotify"
 
-[[packages]]
+[[package]]
 name = "libpulse"
 
-[[packages]]
+[[package]]
 name = "lightdm"
 depends = [
 	"accountsservice",
@@ -408,92 +408,92 @@ depends = [
 ]
 requires_env = ["x11"]
 
-[[packages]]
+[[package]]
 name = "lightdm-gtk-greeter"
 requires_env = ["x11"]
 
-[[packages]]
+[[package]]
 name = "lightdm-slick-greeter"
 requires_env = ["x11"]
 
-[[packages]]
+[[package]]
 name = "linux"
 depends = ["linux-firmware"]
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "linux-firmware"
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "linux-lts"
 depends = ["linux-firmware"]
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "linux-lts-headers"
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "luarocks"
 depends = [
 	"cmake",
 	"git",
 ]
 
-[[packages]]
+[[package]]
 name = "lvm2"
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "lxsession"
 
-[[packages]]
+[[package]]
 name = "man-db"
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "man-pages"
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "maven"
 
-[[packages]]
+[[package]]
 name = "neovim"
 depends = [
 	"xclip",
 	"wl-clipboard",
 ]
 
-[[packages]]
+[[package]]
 name = "network-manager-applet"
 
-[[packages]]
+[[package]]
 name = "nix"
 
-[[packages]]
+[[package]]
 name = "nmap"
 
-[[packages]]
+[[package]]
 name = "nodejs"
 depends = ["npm"]
 
-[[packages]]
+[[package]]
 name = "noto-fonts"
 depends = [
 	"noto-fonts-cjk",
@@ -501,113 +501,113 @@ depends = [
 	"noto-fonts-extra",
 ]
 
-[[packages]]
+[[package]]
 name = "noto-fonts-cjk"
 
-[[packages]]
+[[package]]
 name = "noto-fonts-emoji"
 
-[[packages]]
+[[package]]
 name = "noto-fonts-extra"
 
-[[packages]]
+[[package]]
 name = "npm"
 depends = ["git"]
 
-[[packages]]
+[[package]]
 name = "ntfs-3g"
 
-[[packages]]
+[[package]]
 name = "nvidia"
 requires_env = ["nvidia_gpu"]
 
-[[packages]]
+[[package]]
 name = "nvidia-settings"
 requires_env = ["nvidia_gpu"]
 
-[[packages]]
+[[package]]
 name = "openresolv"
 
-[[packages]]
+[[package]]
 name = "os-prober"
 
-[[packages]]
+[[package]]
 name = "parallel"
 
-[[packages]]
+[[package]]
 name = "pavucontrol"
 
-[[packages]]
+[[package]]
 name = "picom"
 depends = ["python"]
 requires_env = ["x11"]
 
-[[packages]]
+[[package]]
 name = "pipewire-audio"
 
-[[packages]]
+[[package]]
 name = "pipewire-pulse"
 
-[[packages]]
+[[package]]
 name = "plasma"
 virtual = true
 
-[[packages]]
+[[package]]
 name = "plocate"
 
-[[packages]]
+[[package]]
 name = "proton-vpn-gtk-app"
 
-[[packages]]
+[[package]]
 name = "protonmail-bridge"
 
-[[packages]]
+[[package]]
 name = "pulseaudio-alsa"
 
-[[packages]]
+[[package]]
 name = "python"
 sources = [
 	{ type = "pacman", repository = "core" },
 ]
 
-[[packages]]
+[[package]]
 name = "python-pip"
 
-[[packages]]
+[[package]]
 name = "python-poetry"
 depends = ["python-pip"]
 
-[[packages]]
+[[package]]
 name = "ripgrep"
 
-[[packages]]
+[[package]]
 name = "rofi-wayland"
 
-[[packages]]
+[[package]]
 name = "rsync"
 depends = ["python"]
 
-[[packages]]
+[[package]]
 name = "rustup"
 depends = ["gdb"]
 
-[[packages]]
+[[package]]
 name = "rxvt-unicode-truecolor-wide-glyphs"
 required_env = ["x11"]
 sources = [
 	{ type = "aur" },
 ]
 
-[[packages]]
+[[package]]
 name = "sof-firmware"
 
-[[packages]]
+[[package]]
 name = "stow"
 
-[[packages]]
+[[package]]
 name = "strace"
 
-[[packages]]
+[[package]]
 name = "sway"
 depends = [
 	"brightnessctl",
@@ -620,121 +620,121 @@ depends = [
 ]
 required_env = ["wayland"]
 
-[[packages]]
+[[package]]
 name = "swaybg"
 required_env = ["wayland"]
 
-[[packages]]
+[[package]]
 name = "swayidle"
 required_env = ["wayland"]
 
-[[packages]]
+[[package]]
 name = "swaylock"
 required_env = ["wayland"]
 
-[[packages]]
+[[package]]
 name = "waybar"
 required_env = ["wayland"]
 
-[[packages]]
+[[package]]
 name = "texlive-langgerman"
 
-[[packages]]
+[[package]]
 name = "texlive-latex"
 
-[[packages]]
+[[package]]
 name = "texlive-latexextra"
 
-[[packages]]
+[[package]]
 name = "texlive-mathscience"
 
-[[packages]]
+[[package]]
 name = "texlive-pictures"
 
-[[packages]]
+[[package]]
 name = "thunar"
 depends = [
 	"gvfs",
 	"tumbler",
 ]
 
-[[packages]]
+[[package]]
 name = "thunderbird"
 depends = ["libnotify"]
 
-[[packages]]
+[[package]]
 name = "tmux"
 
-[[packages]]
+[[package]]
 name = "traceroute"
 
-[[packages]]
+[[package]]
 name = "tree"
 
-[[packages]]
+[[package]]
 name = "tree-sitter-cli"
 depends = ["nodejs"]
 
-[[packages]]
+[[package]]
 name = "ttf-jetbrains-mono-nerd"
 
-[[packages]]
+[[package]]
 name = "tumbler"
 depends = ["ffmpegthumbnailer"]
 
-[[packages]]
+[[package]]
 name = "tuxedo-control-center-bin"
 required_env = ["tuxedo"]
 sources = [
 	{ type = "aur" },
 ]
 
-[[packages]]
+[[package]]
 name = "tuxedo-drivers-dkms"
 required_env = ["tuxedo"]
 sources = [
 	{ type = "aur" },
 ]
 
-[[packages]]
+[[package]]
 name = "ufw"
 
-[[packages]]
+[[package]]
 name = "unzip"
 
-[[packages]]
+[[package]]
 name = "valgrind"
 depends = ["python"]
 
-[[packages]]
+[[package]]
 name = "virtualbox"
 depends = [
 	"virtualbox-host-modules-arch",
 	"virtualbox-host-modules-lts",
 ]
 
-[[packages]]
+[[package]]
 name = "vlc"
 
-[[packages]]
+[[package]]
 name = "vulkan-nouveau"
 required_env = [
 	"nvidia_gpu",
 	"wayland",
 ]
 
-[[packages]]
+[[package]]
 name = "vulkan-tools"
 required_env = [
 	"nvidia_gpu",
 	"wayland",
 ]
 
-[[packages]]
+[[package]]
 name = "waybar"
 required_env = ["wayland"]
 
-[[packages]]
+[[package]]
 name = "waypaper"
 depends = [
 	"feh",
@@ -744,48 +744,48 @@ sources = [
 	{ type = "aur" },
 ]
 
-[[packages]]
+[[package]]
 name = "wezterm"
 depends = ["noto-fonts-emoji"]
 
-[[packages]]
+[[package]]
 name = "wget"
 depends = ["ca-certificates"]
 
-[[packages]]
+[[package]]
 name = "wireguard-tools"
 depends = ["openresolv"]
 
-[[packages]]
+[[package]]
 name = "wl-clipboard"
 required_env = ["wayland"]
 
-[[packages]]
+[[package]]
 name = "xclip"
 required_env = ["x11"]
 
-[[packages]]
+[[package]]
 name = "xdg-user-dirs"
 
-[[packages]]
+[[package]]
 name = "xorg"
 requires_env = ["x11"]
 virtual = true
 
-[[packages]]
+[[package]]
 name = "xorg-xinit"
 requires_env = ["x11"]
 
-[[packages]]
+[[package]]
 name = "xss-lock"
 requires_env = ["x11"]
 
-[[packages]]
+[[package]]
 name = "zip"
 
-[[packages]]
+[[package]]
 name = "zoxide"
 depends = ["fzf"]
 
-[[packages]]
+[[package]]
 name = "zsh"
