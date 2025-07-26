@@ -155,6 +155,7 @@ lbuffer
 libinput
 libnotify
 libpulse
+librewolf
 localip
 localoptions
 localtime
