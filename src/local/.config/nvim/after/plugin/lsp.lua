@@ -9,12 +9,14 @@ require("mason-tool-installer").setup({
         "commitlint",
         "cspell",
         "isort",
+        "latexindent",
         "lua_ls",
         "mypy",
         "nil_ls",
         "nixfmt",
         "pylsp",
         "stylua",
+        "texlab",
     },
 })
 

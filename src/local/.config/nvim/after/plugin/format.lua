@@ -31,6 +31,9 @@ require("formatter").setup({
             -- prettier uses the same underlying parser for scss as it does for css
             require("formatter.filetypes.css").prettier,
         },
+        tex = {
+            require("formatter.filetypes.tex").latexindent,
+        },
         typescript = {
             require("formatter.filetypes.typescript").prettier,
         },

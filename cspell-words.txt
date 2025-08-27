@@ -149,6 +149,7 @@ kubeseal
 langgerman
 laravel
 latexextra
+latexindent
 lazypath
 lbuf
 lbuffer
