@@ -36,6 +36,13 @@ require("mason-lspconfig").setup({
                 filetypes = { "bash", "sh", "zsh" },
             })
         end,
+        docker_language_server = function()
+            require("lspconfig").docker_language_server.setup({
+                init_options = {
+                    telemetry = "off",
+                },
+            })
+        end,
         emmet_ls = function()
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities.textDocument.completion.completionItem.snippetSupport = true
