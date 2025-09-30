@@ -88,7 +88,9 @@ lsp.on_attach(function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     -- Restore default behavior of opening manual entry
-    vim.keymap.del("n", "K", opts)
+    if vim.fn.maparg("K", "n") ~= "" then
+        vim.keymap.del("n", "K", opts)
+    end
 
     vim.keymap.set({ "n", "i" }, "<leader>K", function()
         vim.lsp.buf.hover()
