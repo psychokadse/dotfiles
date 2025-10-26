@@ -1,5 +1,6 @@
 [alias]
 	graph = log --graph --oneline
+	ls-ignored = ls-files --others --ignored --exclude-standard
 [blame]
 	coloring = repeatedLines
 [commit]
