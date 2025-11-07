@@ -72,7 +72,7 @@ config.keys = {
     { key = "v", mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
 
     -- Character selector
-    { key = "u", mods = "CTRL|SHIFT", action = act.CharSelect },
+    { key = "u", mods = "CTRL|ALT", action = act.CharSelect },
 
     -- Launch into raw shell without tmux
     {
