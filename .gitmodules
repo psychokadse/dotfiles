@@ -21,3 +21,6 @@
 [submodule "src/.config/tmux/tmux-sessionizer"]
 	path = src/local/.config/tmux/tmux-sessionizer
 	url = https://github.com/ThePrimeagen/tmux-sessionizer.git
+[submodule "src/local/.config/tmux/plugins/tpm"]
+	path = src/local/.config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm

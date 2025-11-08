@@ -24,6 +24,7 @@ All files outside this directory are related to the repository itself and should
    * https://github.com/zsh-users/zsh-completions
    * https://github.com/romkatv/powerlevel10k
    * https://github.com/ThePrimeagen/tmux-sessionizer
+   * https://github.com/tmux-plugins/tpm
 
 2. Update your pacman mirrors and enable all servers:
    ```sh

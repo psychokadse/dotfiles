@@ -1,4 +1,5 @@
-export ZDOTDIR="${HOME}/.config/zsh"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 export ZSH_COMPDUMP="${ZDOTDIR}/.zcompdump"
 
 export PATH="${PATH}:\
@@ -8,7 +9,7 @@ ${HOME}/.cargo/bin:\
 ${HOME}/.cargo/env:\
 ${HOME}/.local/bin:\
 ${HOME}/.fzf/bin:\
-${HOME}/.config/tmux/tmux-sessionizer"
+${XDG_CONFIG_HOME}/tmux/tmux-sessionizer"
 
 export TERMINAL=wezterm
 export EDITOR=nvim
