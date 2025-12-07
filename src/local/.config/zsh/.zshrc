@@ -170,7 +170,7 @@ export SAVEHIST=$HISTSIZE
 [[ -f ${ZDOTDIR}/aliases.zsh ]] && source ${ZDOTDIR}/aliases.zsh
 
 # To customize prompt, run `p10k configure` or edit $ZDOTDIR/.p10k.zsh.
-[[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
+[[ -f ${ZDOTDIR}/.p10k.zsh ]] && source ${ZDOTDIR}/.p10k.zsh
 
 # Source ghcup environment
 [[ -f ${HOME}/.ghcup/env ]] && source ${HOME}/.ghcup/env
