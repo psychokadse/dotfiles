@@ -1,9 +1,12 @@
+# C++ implementation files
 If:
-  PathExclude: [.*\.c, .*\.h]
+  PathMatch: [.*\.(cc|cpp|cxx|hpp|hh|hxx)]
 CompileFlags:
   Add: [-std=c++23]
+
 ---
+# C implementation files
 If:
-  PathMatch: [.*\.c, .*\.h]
+  PathMatch: [.*\.c]
 CompileFlags:
   Add: [-std=c11]
