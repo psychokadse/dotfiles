@@ -60,4 +60,8 @@ require("lazy").setup({
     {
         "mfussenegger/nvim-lint",
     },
+    {
+        "Wansmer/langmapper.nvim",
+        lazy = false,
+    },
 })

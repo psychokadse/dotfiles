@@ -147,6 +147,7 @@ kubens
 kubent
 kubeseal
 langgerman
+langmapper
 laravel
 latexextra
 latexindent
@@ -350,6 +351,7 @@ vivis
 vrgb
 vsync
 wallpapersden
+wansmer
 waybar
 waypaper
 webstorm

@@ -43,3 +43,5 @@ vim.diagnostic.config({
     },
     severity_sort = true,
 })
+
+vim.opt.langmap = [[ğ[,ü],ıi,İ\"]]
