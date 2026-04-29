@@ -28,7 +28,11 @@ require("lazy").setup({
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        branch = "master",
         build = vim.cmd.TSUpdate,
+        config = function()
+            require("psychokadse.treesitter")()
+        end,
     },
     "mbbill/undotree",
     "tpope/vim-fugitive",
