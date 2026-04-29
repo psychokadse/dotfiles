@@ -42,4 +42,5 @@ vim.diagnostic.config({
         border = "rounded",
     },
     severity_sort = true,
+    signs = true,
 })
