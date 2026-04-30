@@ -1,37 +1,3 @@
-local registry = {
-    linters = {
-        "commitlint",
-        "cspell",
-        "mypy",
-    },
-    formatters = {
-        "black",
-        "isort",
-        "latexindent",
-        "nixfmt",
-        "prettier",
-        "stylua",
-    },
-    lsp = {
-        "awk_ls",
-        "bashls",
-        "clangd",
-        "cssls",
-        "docker_compose_language_service",
-        "dockerls",
-        "emmet_ls",
-        "eslint",
-        "hls",
-        "html",
-        "lua_ls",
-        "nil_ls",
-        "pylsp",
-        "rust_analyzer",
-        "texlab",
-        "ts_ls",
-    },
-}
-
 local servers = {
     emmet_ls = function()
         local caps = vim.lsp.protocol.make_client_capabilities()
@@ -46,22 +12,6 @@ local servers = {
         filetypes = { "bash", "sh", "zsh" },
     },
 }
-
-local function flatten(t)
-    local out = {}
-
-    for _, v in pairs(t) do
-        for _, item in ipairs(v) do
-            out[#out + 1] = item
-        end
-    end
-
-    return out
-end
-
-require("mason-tool-installer").setup({
-    ensure_installed = flatten(registry),
-})
 
 local on_attach = function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
@@ -104,7 +54,9 @@ local function setup_all(list, overrides)
     end
 end
 
-setup_all(registry.lsp, servers)
+local tools = require("psychokadse.tools")
+
+setup_all(tools.registry.lsp, servers)
 
 local cmp = require("cmp")
 

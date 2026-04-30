@@ -34,23 +34,13 @@ require("lazy").setup({
 
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
-        --[[
         config = function()
+            local tools = require("psychokadse.tools")
+
             require("mason-tool-installer").setup({
-                ensure_installed = {
-                    "bashls",
-                    "black",
-                    "isort",
-                    "mypy",
-                    "lua_ls",
-                    "stylua",
-                    "nixfmt",
-                    "texlab",
-                    "cspell",
-                },
+                ensure_installed = tools.flatten(tools.registry),
             })
         end,
-		--]]
     },
 
     {
