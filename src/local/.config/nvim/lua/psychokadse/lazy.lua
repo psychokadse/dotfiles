@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     {
         "stevearc/conform.nvim",
-        config = require("psychokadse.format"),
+        config = require("psychokadse.plugin.format"),
     },
     {
         "nvim-telescope/telescope.nvim",
@@ -34,9 +34,7 @@ require("lazy").setup({
         "nvim-treesitter/nvim-treesitter",
         branch = "master",
         build = vim.cmd.TSUpdate,
-        config = function()
-            require("psychokadse.treesitter")()
-        end,
+        config = require("psychokadse.plugin.treesitter"),
     },
     "mbbill/undotree",
     "tpope/vim-fugitive",
