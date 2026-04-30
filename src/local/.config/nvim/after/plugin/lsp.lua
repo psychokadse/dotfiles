@@ -47,8 +47,6 @@ local servers = {
     },
 }
 
-require("mason").setup()
-
 local function flatten(t)
     local out = {}
 

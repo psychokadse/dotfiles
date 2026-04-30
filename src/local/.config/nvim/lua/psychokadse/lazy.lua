@@ -21,17 +21,15 @@ require("lazy").setup({
     -- linting
     {
         "mfussenegger/nvim-lint",
-        -- config = require("psychokadse.plugin.lint"),
+        config = require("psychokadse.plugin.lint"),
     },
 
     -- LSP tooling
     {
         "williamboman/mason.nvim",
-        --[[
         config = function()
             require("mason").setup()
         end,
-		--]]
     },
 
     {
