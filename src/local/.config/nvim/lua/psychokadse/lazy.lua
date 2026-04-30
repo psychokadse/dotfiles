@@ -13,6 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
+        "stevearc/conform.nvim",
+        config = require("psychokadse.format"),
+    },
+    {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
     },
