@@ -48,7 +48,7 @@ end
 
 -- If tmux is available, use it as the default program
 -- and attach to or create the main session, else use detected shell
-if tmux_available() then
+if wezterm.target_triple:find("windows") == nil and tmux_available() then
     config.default_prog = {
         "tmux",
         "new",
