@@ -28,7 +28,16 @@ config.font = wezterm.font_with_fallback({
 })
 
 -- Shell detection
-local shell = os.getenv("SHELL") or "/bin/bash"
+local function default_shell()
+    if wezterm.target_triple:find("windows") then
+        -- We're on Windows, always prefer PowerShell
+        return "pwsh.exe"
+    else
+        -- We're on a POSIX system
+        -- A better fallback strategy might be "$SHELL > zsh > bash > sh"
+        return os.getenv("SHELL") or "/bin/sh"
+    end
+end
 
 -- Check whether tmux is available
 local function tmux_available()
@@ -45,7 +54,7 @@ if tmux_available() then
         "main",
     }
 else
-    config.default_prog = { shell }
+    config.default_prog = { default_shell() }
 end
 
 -- Fix terminal color handling
