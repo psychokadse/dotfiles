@@ -50,7 +50,8 @@ end
 
 local function setup_all(list, overrides)
     for _, server in ipairs(list) do
-        setup(server, overrides[server])
+        local lspconfig = server.lspconfig
+        setup(lspconfig, overrides[lspconfig])
     end
 end
 
