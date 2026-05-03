@@ -79,7 +79,15 @@ require("lazy").setup({
     -- editor features
     "tpope/vim-fugitive",
     "mbbill/undotree",
-    "ThePrimeagen/harpoon",
+
+    {
+        "ThePrimeagen/harpoon",
+        -- branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("psychokadse.plugin.harpoon")
+        end,
+    },
 
     -- treesitter
     {
