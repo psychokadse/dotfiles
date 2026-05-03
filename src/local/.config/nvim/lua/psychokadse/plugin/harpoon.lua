@@ -1,12 +1,33 @@
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
+return function()
+    local harpoon = require("harpoon")
+    local harpoon_extensions = require("harpoon.extensions")
 
-vim.keymap.set("n", "<leader>a", mark.add_file)
-vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
+    -- `setup` is required with harpoon2
+    harpoon:setup({
+        -- Custom config...
+    })
 
-vim.keymap.set("n", "<leader>h", function()
-    local keycode = vim.fn.getchar() - 0x30
-    if keycode >= 1 and keycode <= 9 then
-        ui.nav_file(keycode)
+    harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
+    harpoon:extend(harpoon_extensions.builtins.navigate_with_number())
+
+    vim.keymap.set("n", "<leader>a", function()
+        harpoon:list():add()
+    end)
+    vim.keymap.set("n", "<C-e>", function()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+    end)
+
+    vim.keymap.set("n", "<leader>p", function()
+        harpoon:list():prev()
+    end)
+
+    vim.keymap.set("n", "<leader>n", function()
+        harpoon:list():next()
+    end)
+
+    for i = 1, 9 do
+        vim.keymap.set("n", "<leader>" .. i, function()
+            harpoon:list():select(i)
+        end)
     end
-end)
+end
