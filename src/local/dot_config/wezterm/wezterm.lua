@@ -39,6 +39,8 @@ local function default_shell()
     end
 end
 
+local shell = default_shell()
+
 -- Check whether tmux is available
 local function tmux_available()
     return wezterm.run_child_process({ "tmux", "-V" })
@@ -54,7 +56,7 @@ if tmux_available() then
         "main",
     }
 else
-    config.default_prog = { default_shell() }
+    config.default_prog = { shell }
 end
 
 -- Fix terminal color handling
