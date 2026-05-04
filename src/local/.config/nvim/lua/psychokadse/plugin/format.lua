@@ -27,5 +27,5 @@ return function()
 
     vim.keymap.set("n", "<leader>f", function()
         conform.format({ async = true })
-    end)
+    end, { desc = "Format buffer" })
 end

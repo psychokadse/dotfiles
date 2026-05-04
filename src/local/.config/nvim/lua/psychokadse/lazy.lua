@@ -82,6 +82,23 @@ require("lazy").setup({
 
     -- editor features
     {
+        "folke/which-key.nvim",
+        dependencies = {
+            "nvim-mini/mini.icons",
+        },
+        event = "VeryLazy",
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = true })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
+        },
+    },
+
+    {
         "tpope/vim-fugitive",
         config = require("psychokadse.plugin.fugitive"),
     },

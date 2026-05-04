@@ -12,6 +12,8 @@ return function()
             hl.LineNr = { fg = colors.orange }
             hl.LineNrAbove = { fg = colors.dark5 }
             hl.LineNrBelow = { fg = colors.dark5 }
+            -- which-key.nvim
+            hl.WhichKeyNormal = { blend = 100 }
         end,
     })
 

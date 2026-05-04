@@ -12,22 +12,22 @@ return function()
 
     vim.keymap.set("n", "<leader>a", function()
         harpoon:list():add()
-    end)
+    end, { desc = "Add harpoon mark" })
     vim.keymap.set("n", "<C-e>", function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
-    end)
+    end, { desc = "Toggle harpoon quick menu" })
 
     vim.keymap.set("n", "<leader>p", function()
         harpoon:list():prev()
-    end)
+    end, { desc = "Prev harpoon mark" })
 
     vim.keymap.set("n", "<leader>n", function()
         harpoon:list():next()
-    end)
+    end, { desc = "Next harpoon mark" })
 
     for i = 1, 9 do
         vim.keymap.set("n", "<leader>" .. i, function()
             harpoon:list():select(i)
-        end)
+        end, { desc = "Harpoon mark " .. i })
     end
 end

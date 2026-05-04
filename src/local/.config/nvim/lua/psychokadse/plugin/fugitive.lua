@@ -7,5 +7,5 @@ return function()
             end
         end
         vim.cmd.Git()
-    end)
+    end, { desc = "Toggle fugitive status" })
 end
