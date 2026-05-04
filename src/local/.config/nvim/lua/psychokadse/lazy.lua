@@ -99,6 +99,14 @@ require("lazy").setup({
     },
 
     {
+        "nvim-tree/nvim-tree.lua",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = require("psychokadse.plugin.nvimtree"),
+    },
+
+    {
         "tpope/vim-fugitive",
         config = require("psychokadse.plugin.fugitive"),
     },

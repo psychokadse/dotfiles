@@ -14,6 +14,11 @@ return function()
             hl.LineNrBelow = { fg = colors.dark5 }
             -- which-key.nvim
             hl.WhichKeyNormal = { blend = 100 }
+            -- nvim-tree.lua
+            hl.NvimTreeNormal = { blend = 100 }
+            hl.NvimTreeNormalFloat = { blend = 100 }
+            hl.NvimTreeNormalNC = { blend = 100 }
+            hl.NvimTreeOpenedHL = { fg = colors.orange }
         end,
     })
 
