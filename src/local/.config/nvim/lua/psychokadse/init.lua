@@ -1,6 +1,2 @@
-require("psychokadse.indent")
-require("psychokadse.netrw")
-require("psychokadse.remap")
-require("psychokadse.set")
-require("psychokadse.autocmds")
+require("psychokadse.core")
 require("psychokadse.lazy")
