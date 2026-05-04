@@ -1,7 +1,7 @@
-function ReconfigureColors(color)
-    color = color or "tokyonight"
+return function()
+    local color = "tokyonight"
 
-    require("tokyonight").setup({
+    require(color).setup({
         style = "moon",
         transparent = true,
         terminal_colors = true,
@@ -17,5 +17,3 @@ function ReconfigureColors(color)
 
     vim.cmd.colorscheme(color)
 end
-
-ReconfigureColors()

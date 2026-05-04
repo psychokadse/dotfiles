@@ -66,9 +66,7 @@ require("lazy").setup({
     {
         "folke/tokyonight.nvim",
         name = "tokyonight",
-        config = function()
-            require("psychokadse.colors")
-        end,
+        config = require("psychokadse.plugin.colors"),
     },
 
     {
