@@ -60,6 +60,7 @@ require("lazy").setup({
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
+        config = require("psychokadse.plugin.telescope"),
     },
 
     -- UI / visuals
@@ -72,11 +73,19 @@ require("lazy").setup({
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = require("psychokadse.plugin.lualine"),
     },
 
     -- editor features
-    "tpope/vim-fugitive",
-    "mbbill/undotree",
+    {
+        "tpope/vim-fugitive",
+        config = require("psychokadse.plugin.fugitive"),
+    },
+
+    {
+        "mbbill/undotree",
+        config = require("psychokadse.plugin.undotree"),
+    },
 
     {
         "ThePrimeagen/harpoon",
