@@ -24,8 +24,7 @@ function M.get_root()
 end
 
 -- switch to root if cwd is not root
-function M.ensure_root()
-    local root = M.get_root()
+function M.ensure_root(root)
     if root and vim.uv.cwd() ~= root then
         vim.api.nvim_set_current_dir(root)
     end

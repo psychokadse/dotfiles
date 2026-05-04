@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd({ "VimEnter", "BufEnter", "LspAttach" }, {
 
         if root and root ~= last_root then
             last_root = root
-            project.ensure_root()
+            project.ensure_root(root)
         end
     end,
 })
