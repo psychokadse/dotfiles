@@ -60,6 +60,13 @@ require("lazy").setup({
         config = require("psychokadse.plugin.cmp"),
     },
 
+    {
+        "debugloop/telescope-undo.nvim",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+        },
+    },
+
     -- telescope
     {
         "nvim-telescope/telescope.nvim",
@@ -114,11 +121,6 @@ require("lazy").setup({
     {
         "tpope/vim-fugitive",
         config = require("psychokadse.plugin.fugitive"),
-    },
-
-    {
-        "mbbill/undotree",
-        config = require("psychokadse.plugin.undotree"),
     },
 
     {

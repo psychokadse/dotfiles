@@ -1,6 +1,19 @@
 return function()
     local project = require("psychokadse.core.project")
     local builtin = require("telescope.builtin")
+    local telescope = require("telescope")
+
+    telescope.setup({
+        extensions = {
+            undo = {
+                side_by_side = true,
+                layout_strategy = "vertical",
+            },
+        },
+    })
+
+    telescope.load_extension("undo")
+    telescope.load_extension("harpoon")
 
     vim.keymap.set("n", "<leader>pf", function()
         builtin.find_files({ cwd = vim.uv.cwd(), hidden = true, no_ignore = true, no_ignore_parent = true })
@@ -18,10 +31,11 @@ return function()
             additional_args = { "--hidden" },
         }) -- Additional args correspond to ripgrep CLI args
     end, { desc = "Grep string" })
-
-    local telescope = require("telescope")
-    telescope.load_extension("harpoon")
-
+    -- undo
+    vim.keymap.set("n", "<leader>uv", function()
+        telescope.extensions.undo.undo()
+    end, { desc = "Find in undo history" })
+    -- harpoon
     vim.keymap.set("n", "<leader>hf", function()
         telescope.extensions.harpoon.marks()
     end, { desc = "Find harpoon marks" })
