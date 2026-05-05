@@ -8,10 +8,14 @@
 [core]
 	editor = nvim
 	hooksPath = .githooks
-	pager = less
+	pager = delta
 	sshCommand = ssh -i ~/.ssh/psychokadse@github.com_ed25519 -o IdentitiesOnly=yes
 [credential "https://github.com/psychokadse"]
 	username = psychokadse
+[delta]
+	line-numbers = true
+	side-by-side = true
+	navigate = true
 [diff]
 	tool = nvimdiff
 [difftool]
@@ -21,8 +25,11 @@
 	pruneTags = true
 [init]
 	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
 [merge]
 	tool = nvimmerge
+	conflictStyle = zdiff3
 [mergetool]
 	keepBackup = false
 	prompt = false
