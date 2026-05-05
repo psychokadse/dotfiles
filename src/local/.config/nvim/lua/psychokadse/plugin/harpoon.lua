@@ -17,11 +17,11 @@ return function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = "Toggle harpoon quick menu" })
 
-    vim.keymap.set("n", "<leader>p", function()
+    vim.keymap.set("n", "<leader>hp", function()
         harpoon:list():prev()
     end, { desc = "Prev harpoon mark" })
 
-    vim.keymap.set("n", "<leader>n", function()
+    vim.keymap.set("n", "<leader>hn", function()
         harpoon:list():next()
     end, { desc = "Next harpoon mark" })
 
