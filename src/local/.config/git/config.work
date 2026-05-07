@@ -1,7 +1,9 @@
 [core]
 	sshCommand = ssh -i ~/.ssh/pkerschbaumer@github.com_ed25519 -o IdentitiesOnly=yes
+
 [credential "https://github.com/pkerschbaumer"]
 	username = pkerschbaumer
+
 [user]
 	name = pkerschbaumer
 	email = paul.kerschbaumer@ausbildung-bbw.de
