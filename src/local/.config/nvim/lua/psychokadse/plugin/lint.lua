@@ -4,7 +4,7 @@ return function()
     -- Set up global linters
     lint.linters_by_ft = {
         gitcommit = { "commitlint" },
-        python = { "ruff", "mypy" },
+        python = { "mypy" },
         ["*"] = { "cspell" },
     }
 

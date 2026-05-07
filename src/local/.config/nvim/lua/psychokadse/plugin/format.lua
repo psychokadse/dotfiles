@@ -10,7 +10,7 @@ return function()
             json = { "prettier" },
             lua = { "stylua" },
             nix = { "nixfmt" },
-            python = { "isort", "black" },
+            python = { "ruff_format" },
             scss = { "prettier" },
             tex = { "latexindent" },
             typescript = { "prettier" },
