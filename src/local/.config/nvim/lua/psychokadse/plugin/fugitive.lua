@@ -1,8 +1,9 @@
 return function()
+    -- toggle the fugitive status window on the current tabpage
     vim.keymap.set("n", "<leader>gs", function()
-        for nr = 1, vim.fn.winnr("$") do
-            if vim.fn.getwinvar(nr, "fugitive_status") ~= "" then
-                vim.cmd.close({ count = nr })
+        for _, winid in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+            if pcall(vim.api.nvim_win_get_var, winid, "fugitive_status") then
+                vim.api.nvim_win_close(winid, false)
                 return
             end
         end
