@@ -18,7 +18,6 @@ vim.opt.wrap = false
 
 -- swapfile
 vim.opt.swapfile = false
-vim.opt.updatetime = 50
 
 -- file backups
 vim.opt.backup = false
