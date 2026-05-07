@@ -35,16 +35,3 @@ vim.opt.colorcolumn = "120"
 vim.opt.showmode = false
 
 vim.opt.foldlevelstart = 99 -- start with all folds open
-
--- Also show diagnostics when no LSP is attached
-vim.diagnostic.config({
-    virtual_text = true,
-    underline = true,
-    signs = true,
-    update_in_insert = false,
-    severity_sort = true,
-    float = {
-        source = true,
-        border = "rounded",
-    },
-})
