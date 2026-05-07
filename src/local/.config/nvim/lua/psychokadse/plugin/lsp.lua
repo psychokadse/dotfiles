@@ -14,7 +14,7 @@ return function()
         },
     }
 
-    local on_attach = function(_, bufnr)
+    local function on_attach(_, bufnr)
         local function opts(desc)
             return { desc = desc or "", buffer = bufnr, remap = false }
         end
