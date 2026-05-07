@@ -106,7 +106,7 @@ require("lazy").setup({
                 function()
                     require("which-key").show({ global = true })
                 end,
-                desc = "Buffer Local Keymaps (which-key)",
+                desc = "Show keymaps (which-key)",
             },
         },
     },
