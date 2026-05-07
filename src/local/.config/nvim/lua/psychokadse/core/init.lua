@@ -1,5 +1,5 @@
 require("psychokadse.core.autocmds")
 require("psychokadse.core.indent")
-require("psychokadse.core.remap")
-require("psychokadse.core.set")
+require("psychokadse.core.keymaps")
+require("psychokadse.core.options")
 require("psychokadse.core.diagnostics")
