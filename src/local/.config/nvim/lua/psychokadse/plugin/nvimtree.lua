@@ -15,6 +15,9 @@ return function()
                 enable = true,
             },
         },
+        view = {
+            width = 35,
+        },
     })
     local api = require("nvim-tree.api")
 
