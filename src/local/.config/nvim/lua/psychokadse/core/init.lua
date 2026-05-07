@@ -1,5 +1,4 @@
 require("psychokadse.core.autocmds")
 require("psychokadse.core.indent")
-require("psychokadse.core.netrw")
 require("psychokadse.core.remap")
 require("psychokadse.core.set")
