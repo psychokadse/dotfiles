@@ -134,7 +134,7 @@ require("lazy").setup({
     -- treesitter
     {
         "nvim-treesitter/nvim-treesitter",
-        branch = "master",
+        lazy = false,
         build = vim.cmd.TSUpdate,
         config = require("psychokadse.plugin.treesitter"),
     },
