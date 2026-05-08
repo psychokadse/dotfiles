@@ -1,26 +1,28 @@
-[submodule "src/.config/zsh/plugins/fast-syntax-highlighting"]
-	path = src/local/.config/zsh/plugins/fast-syntax-highlighting
-	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+[submodule "src/local/dot_config/zsh/plugins/fast-syntax-highlighting"]
+	path = src/local/dot_config/zsh/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
 	branch = master
-[submodule "src/.config/zsh/plugins/zsh-autocomplete"]
-	path = src/local/.config/zsh/plugins/zsh-autocomplete
-	url = https://github.com/marlonrichert/zsh-autocomplete.git
+[submodule "src/local/dot_config/zsh/plugins/zsh-autocomplete"]
+	path = src/local/dot_config/zsh/plugins/zsh-autocomplete
+	url = https://github.com/marlonrichert/zsh-autocomplete
 	branch = main
-[submodule "src/.config/zsh/plugins/zsh-autosuggestions"]
-	path = src/local/.config/zsh/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "src/local/dot_config/zsh/plugins/zsh-autosuggestions"]
+	path = src/local/dot_config/zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
 	branch = master
-[submodule "src/.config/zsh/plugins/zsh-completions"]
-	path = src/local/.config/zsh/plugins/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "src/local/dot_config/zsh/plugins/zsh-completions"]
+	path = src/local/dot_config/zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
 	branch = master
-[submodule "src/.config/zsh/themes/powerlevel10k"]
-	path = src/local/.config/zsh/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "src/local/dot_config/zsh/themes/powerlevel10k"]
+	path = src/local/dot_config/zsh/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k
 	branch = master
-[submodule "src/.config/tmux/tmux-sessionizer"]
-	path = src/local/.config/tmux/tmux-sessionizer
-	url = https://github.com/ThePrimeagen/tmux-sessionizer.git
-[submodule "src/local/.config/tmux/plugins/tpm"]
-	path = src/local/.config/tmux/plugins/tpm
+[submodule "src/local/dot_config/tmux/tmux-sessionizer"]
+	path = src/local/dot_config/tmux/tmux-sessionizer
+	url = https://github.com/ThePrimeagen/tmux-sessionizer
+    branch = master
+[submodule "src/local/dot_config/tmux/plugins/tpm"]
+	path = src/local/dot_config/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+    branch = master
