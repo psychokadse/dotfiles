@@ -1,42 +1,42 @@
 # Former Git submodules
 [".config/zsh/plugins/fast-syntax-highlighting"]
     type = "archive"
-	url = "https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/master.tar.gz"
+    url = "https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/master.tar.gz"
     exact = true
     stripComponents = 1
 
 [".config/zsh/plugins/zsh-autocomplete"]
     type = "archive"
-	url = "https://github.com/marlonrichert/zsh-autocomplete/archive/bbba73ebdc7c01323e09d4d518e51e2d6847ccc2.tar.gz"
+    url = "https://github.com/marlonrichert/zsh-autocomplete/archive/bbba73ebdc7c01323e09d4d518e51e2d6847ccc2.tar.gz"
     exact = true
     stripComponents = 1
     
 [".config/zsh/plugins/zsh-autosuggestions"]
     type = "archive"
-	url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
+    url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
     exact = true
     stripComponents = 1
 
 [".config/zsh/plugins/zsh-completions"]
     type = "archive"
-	url = "https://github.com/zsh-users/zsh-completions/archive/master.tar.gz"
+    url = "https://github.com/zsh-users/zsh-completions/archive/master.tar.gz"
     exact = true
     stripComponents = 1
 
 [".config/zsh/themes/powerlevel10k"]
     type = "archive"
-	url = "https://github.com/romkatv/powerlevel10k/archive/master.tar.gz"
+    url = "https://github.com/romkatv/powerlevel10k/archive/master.tar.gz"
     exact = true
     stripComponents = 1
 
 [".config/tmux/tmux-sessionizer"]
     type = "archive"
-	url = "https://github.com/ThePrimeagen/tmux-sessionizer/archive/master.tar.gz"
+    url = "https://github.com/ThePrimeagen/tmux-sessionizer/archive/master.tar.gz"
     exact = true
     stripComponents = 1
 
 [".config/tmux/plugins/tpm"]
     type = "archive"
-	url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
+    url = "https://github.com/tmux-plugins/tpm/archive/master.tar.gz"
     exact = true
     stripComponents = 1
