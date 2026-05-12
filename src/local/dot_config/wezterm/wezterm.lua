@@ -28,7 +28,18 @@ config.font = wezterm.font_with_fallback({
 })
 
 -- Shell detection
-local shell = os.getenv("SHELL") or "/bin/bash"
+local function default_shell()
+    if wezterm.target_triple:find("windows") then
+        -- We're on Windows, always prefer PowerShell
+        return "pwsh.exe"
+    else
+        -- We're on a POSIX system
+        -- A better fallback strategy might be "$SHELL > zsh > bash > sh"
+        return os.getenv("SHELL") or "/bin/sh"
+    end
+end
+
+local shell = default_shell()
 
 -- Check whether tmux is available
 local function tmux_available()
@@ -37,7 +48,7 @@ end
 
 -- If tmux is available, use it as the default program
 -- and attach to or create the main session, else use detected shell
-if tmux_available() then
+if wezterm.target_triple:find("windows") == nil and tmux_available() then
     config.default_prog = {
         "tmux",
         "new",

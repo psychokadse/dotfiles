@@ -1,41 +1,59 @@
 # About this repository
 ## Description
 This repository synchronizes my personal dotfiles and provides a reference for configuring my desktop based on my home machine.
-To be used with GNU Stow on Arch Linux or distros based on Arch that provide pacman and systemd.
+Most of the configuration is written with Linux in mind, but I am gradually improving cross-platform support for the tools that support it.
 
 The actual configuration files are located in the `src` directory at the root of the repository's working tree.
 All files outside this directory are related to the repository itself and should not be copied or symlinked into the user's environment.
 
-## Usage
-1. Clone this repository into `~/.dotfiles`:
-   ```sh
-   git clone --recursive https://github.com/psychokadse/dotfiles.git ~/.dotfiles
-   ```
+## Installation
+This repository uses chezmoi to sychronize the state between the source and the user's home directory.
 
-   This repository currently includes submodules for the plugins and themes required by the `.zshrc`, which should be synchronized regularly from the remote using:
-   ```sh
-   git submodule update --remote
-   ```
+chezmoi is also used to manage some external dependencies:
+* https://github.com/zdharma-continuum/fast-syntax-highlighting
+* https://github.com/marlonrichert/zsh-autocomplete
+* https://github.com/zsh-users/zsh-autosuggestions
+* https://github.com/zsh-users/zsh-completions
+* https://github.com/romkatv/powerlevel10k
+* https://github.com/ThePrimeagen/tmux-sessionizer
+* https://github.com/tmux-plugins/tpm
 
-   This is a list of the included submodules:
-   * https://github.com/zdharma-continuum/fast-syntax-highlighting
-   * https://github.com/marlonrichert/zsh-autocomplete
-   * https://github.com/zsh-users/zsh-autosuggestions
-   * https://github.com/zsh-users/zsh-completions
-   * https://github.com/romkatv/powerlevel10k
-   * https://github.com/ThePrimeagen/tmux-sessionizer
-   * https://github.com/tmux-plugins/tpm
+These will be installed when first applying the target state using chezmoi and do not need to be managed manually.
 
-2. Update your pacman mirrors and enable all servers:
+Install and initialize the repository using chezmoi:
+```sh
+chezmoi init --branch cross-platform https://github.com/psychokadse/dotfiles.git
+````
+
+Bring the home directory into the target state:
+```sh
+chezmoi apply
+```
+
+To subsequently pull any changes and synchronize the home directory, run:
+```sh
+chezmoi update
+```
+
+## Required dependencies
+**⚠️This section is incomplete⚠️**
+
+These are used in the configuration and need to be installed manually for the it to work correctly.
+
+## System configuration on Arch
+This is the Linux setup these dotfiles are primarily used and developed on.
+You can use this step-by-step guide to set up the system as originally intended.
+
+1. Update your pacman mirrors and enable all servers:
    ```sh
    curl 'https://archlinux.org/mirrorlist/?country=DE&protocol=https&ip_version=4' | sed '/^#Server/s/^#//' | sudo tee /etc/pacman.d/mirrorlist > /dev/null
    ```
-3. Force pacman to refresh its database:
+2. Force pacman to refresh its database:
    ```sh
    sudo pacman -Syy
    ```
-4. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies).
-5. Enable the following services using `systemctl` (requires a reboot):
+3. Install the [required packages](#required-packages) and afterwards the [other dependencies](#other-dependencies).
+4. Enable the following services using `systemctl` (requires a reboot):
     * apparmor
     * cronie
     * NetworkManager
@@ -46,35 +64,30 @@ All files outside this directory are related to the repository itself and should
     ```sh
     sudo systemctl enable apparmor cronie lightdm NetworkManager systemd-{resolved,timesyncd}
     ```
-6. Enable pulseaudio for your user so it starts automatically when a client attempts to connect:
+5. Enable pulseaudio for your user so it starts automatically when a client attempts to connect:
    ```sh
    systemctl --user enable --now pulseaudio.socket
    ```
-7. Set your hardware clock to use UTC rather than localtime:
+6. Set your hardware clock to use UTC rather than localtime:
    ```sh
    timedatectl set-local-rtc 0
    ```
-8. Make zsh your default shell:
+7. Make zsh your default shell:
    ```sh
    chsh -s /usr/bin/zsh
    ```
-9. Run `xdg-user-dirs-update` to create the standard XDG desktop directories below your home directory. This won't overwrite any existing files.
-10. Remove any files that cause a conflict when stow is run. They'll be replaced by symlinks into `~/.dotfiles/src/local`.
-11. Create symlinks from your home directory to the repository:
-    ```sh
-    stow -d ~/.dotfiles/src -t ~ local
-    ```
-12. Open `nvim` to install https://github.com/folke/lazy.nvim and the plugins in the plugin specification. `~/.config/nvim/init.lua` should source `~/.config/nvim/lua/psychokadse/lazy.lua` automatically, which installs lazy.nvim using `git clone` if it isn't present.
-13. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/src/global/etc` and `~/.dotfiles/src/global/usr` into `/etc` and `/usr` respectively:
+8. Run `xdg-user-dirs-update` to create the standard XDG desktop directories below your home directory. This won't overwrite any existing files.
+9. Open `nvim` to install https://github.com/folke/lazy.nvim and the plugins in the plugin specification. `~/.config/nvim/init.lua` should source `~/.config/nvim/lua/psychokadse/lazy.lua` automatically, which installs lazy.nvim using `git clone` if it isn't present.
+10. Recursively copy (using prompts to avoid accidental overwrites) the global configuration files under `~/.dotfiles/src/global/etc` and `~/.dotfiles/src/global/usr` into `/etc` and `/usr` respectively:
     ```sh
     sudo cp -ir ~/.dotfiles/src/global/{etc,usr} /
     ```
-14. Finally, the included wallpapers have to be made accessible system-wide:
+11. Finally, the included wallpapers have to be made accessible system-wide:
     ```sh
     sudo cp -r ~/Pictures/wallpapers /usr/share/wallpapers
     ```
 
-## Notes
+### Notes
 * Copy `~/.dotfiles/src/global/etc/default/grub` to `/etc/default/grub` and run `grub-mkconfig -o /boot/grub/grub.cfg` to update the grub configuration
 * `~/.dotfiles/src/global/etc/X11/xorg.conf.d/00-keyboard.conf` should be adjusted to fit keyboard layout (`Option "XkbModel"` set to `"pc104"` for US, and `"pc105"` for German keyboard)
 * dunst is configured as a dbus service in `~/.dotfiles/src/global/usr/share/dbus-1/services/org.freedesktop.Notifications.service`, copy the file to the appropriate location to run it on startup
@@ -82,14 +95,14 @@ All files outside this directory are related to the repository itself and should
 * Any ssh keys need to be generated using `ssh-keygen -t ed25519 -C <EMAIL_ADDRESS>`, and the public keys subsequently added to the corresponding GitHub accounts
 * `~/.dotfiles/src/global/etc/ld.so.conf` mirrors the necessary configuration to provide `xkb-switch` with the required shared objects created during the system-wide installation
 
-## Required packages
+### Required packages
 Install these using pacman, ideally from the official Arch repositories.
 Get packages from the AUR where noted.
 Install the yay AUR helper from https://github.com/Jguer/yay for easier installation of AUR packages.
 A complete list of required packages is provided in [requirements.toml](/requirements.toml).
 **When you're done installing these, move on to the [other dependencies](#other-dependencies).**
 
-## Other dependencies
+### Other dependencies
 Install these according to the instructions in their respective READMEs on GitHub.
 Make sure you installed all of the required packages above.
 Install zsh plugins into `~/.config/zsh/plugins` and zsh themes into `~/.config/zsh/themes`.
