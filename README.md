@@ -22,7 +22,7 @@ These will be installed when first applying the target state using chezmoi and d
 
 Install and initialize the repository using chezmoi:
 ```sh
-chezmoi init --branch cross-platform https://github.com/psychokadse/dotfiles.git
+chezmoi init psychokadse
 ````
 
 Bring the home directory into the target state:
@@ -36,7 +36,6 @@ chezmoi update
 ```
 
 ## TMUX
-
 TPM is used to manage plugins for TMUX, including:
 * TPM itself
 * tmux-sensible
