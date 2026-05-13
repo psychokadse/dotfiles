@@ -35,6 +35,23 @@ To subsequently pull any changes and synchronize the home directory, run:
 chezmoi update
 ```
 
+## TMUX
+
+TPM is used to manage plugins for TMUX, including:
+* TPM itself
+* tmux-sensible
+* tmux-resurrect
+* tmux-continuum
+
+These are included to provide a smooth TMUX experience with session persistence across server lifetimes.
+
+To make these plugins available, TPM first has to be told to install and source them.
+This is done by pressing `prefix` + <kbd>I</kbd>, `prefix` being either the standard `C-b` or the more ergonomic `C-Space`.
+After this, the plugins are ready for use immediately.
+Plugins are configured in the main TMUX configuration at `~/.config/tmux/tmux.conf`.
+
+For further information on plugin management with TPM, consult its documentation at https://github.com/tmux-plugins/tpm/blob/master/README.md#tmux-plugin-manager.
+
 ## Required dependencies
 **⚠️This section is incomplete⚠️**
 
